@@ -6,7 +6,7 @@
 	Connection conn = null;
 	PreparedStatement psa = null;
 	try {
-		Class.forName("com.mysql.jdbc.Driver").newInstance();
+        Class.forName("com.mysql.jdbc.Driver").newInstance();
         conn = DriverManager.getConnection(url, "Application", "JAAYS");
         String user = request.getParameter("username");
         String pw = request.getParameter("password");
@@ -18,7 +18,7 @@
             fname != null  && !fname.isEmpty() && lname != null && !lname.isEmpty() 
 			&& email != null && !email.isEmpty())
 			{
-			String enter = "INSERT INTO Person (user, pw, fname, lname, email)" + "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+			String enter = "INSERT INTO Person (username, password, fname, lname, email)" + "VALUES(?, ?, ?, ?, ?);";
             
             psa = conn.prepareStatement(enter);
 			psa.setString(1, user);
@@ -28,7 +28,7 @@
             psa.setString(5, email);
             
             int outcome = 0;
-	        outcome = psa.executeUpdate();
+            outcome = psa.executeUpdate();
             if (outcome == 0) 
             {
                 response.sendRedirect("registerFailure.jsp");
