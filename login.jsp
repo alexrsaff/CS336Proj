@@ -72,7 +72,7 @@ span.psw {
 
 
     <div class="container" style="background-color: white">
-        <span class="psw">I forgot my <a href="#" onclick="location.href = 'ForgotPassword.jsp';">password</a></span>
+        <span class="psw">I forgot my <a href="#" onclick="location.href = 'forgotPassword.jsp';">password</a></span>
     </div>
 
   </div>
