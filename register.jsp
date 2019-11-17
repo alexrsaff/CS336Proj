@@ -9,13 +9,14 @@
         <title>Register</title>
     </head>
     <body>
-        <h1>Create your Account</h1>>
+        <h1>Create your Account</h1>
         <form action = "checkRegistration.jsp" method = "POST">
             <input type="text" name="firstname" placeholder="Enter your firstname" required maxlength="15"
                 pattern="[A-Z]{1}[a-z '-]{1,19}">
             <br>
             <input type="text" name="lastname" placeholder="Enter your firstname" required maxlength="15"
                 pattern="[A-Z]{1}[a-z '-]{1,19}">
+            <br>
             <input type="text" name="username" placeholder="Enter a username" required maxlength="15" 
 			    pattern="[A-Za-z0-9]{1,20}">
             <br>
