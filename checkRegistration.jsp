@@ -10,8 +10,8 @@
         conn = DriverManager.getConnection(url, "Application", "JAAYS");
         String user = request.getParameter("username");
         String pw = request.getParameter("password");
-		String fname = request.getParameter("fname");
-		String lname = request.getParameter("lname");
+		String fname = request.getParameter("firstname");
+		String lname = request.getParameter("lastname");
 		String email = request.getParameter("email");
         
 		if(user != null && !user.isEmpty() && pw != null && !pw.isEmpty() && 
