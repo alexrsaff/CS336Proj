@@ -9,8 +9,8 @@
     <body>
     <%
         Class.forName("com.mysql.jdbc.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project"+
-        "user=Application&password=JAAYS");
+        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
+        Connection connection = DriverManager.getConnection(url, "Application", "JAAYS");
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -18,7 +18,7 @@
         PreparedStatement preparedStatement = connection.prepareStatement(q);
 
         preparedStatement.setString(1, username);
-        preparedStatement.setString(2, request.getConnection("password"));
+        preparedStatement.setString(2, request.getParameter("password"));
 
         ResultSet rs;
         rs = preparedStatement.executeQuery();
