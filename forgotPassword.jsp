@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <h2>We're sorry this functionality isn't available yet. It will be after Jan 1, 2020</h2>
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+    </style>
+    <h2>We're sorry this functionality isn't available yet.</h2>
 
 </head>
 </html>
