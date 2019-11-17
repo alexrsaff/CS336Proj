@@ -90,7 +90,9 @@ FOREIGN KEY(flightNumber) REFERENCES Flight(flightNumber));
 CREATE TABLE Person(
 user_name VARCHAR(15)
 password VARCHAR(10)
-name VARCHAR(15), 
+fname VARCHAR(15),
+lname VARCHAR(15),
+email VARCHAR(50),	
 PRIMARY KEY(user_name));
 
 CREATE TABLE Administrator(
