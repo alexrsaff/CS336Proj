@@ -3,8 +3,8 @@
 
 <%
 	String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
-	Connection conn = NULL;
-	PreparedStatement psa = NULL;
+	Connection conn = null;
+	PreparedStatement psa = null;
 	try {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
         conn = DriverManager.getConnection(url, "Application", "JAAYS");
@@ -14,9 +14,9 @@
 		String lname = request.getParameter("lname");
 		String email = request.getParameter("email");
         
-		if(user != NULL && !user.isEmpty() && pw != NULL && !pw.isEmpty() && 
-            fname != NULL  && !fname.isEmpty() && lname != NULL && !lname.isEmpty() 
-			&& email != NULL && !email.isEmpty())
+		if(user != null && !user.isEmpty() && pw != null && !pw.isEmpty() && 
+            fname != null  && !fname.isEmpty() && lname != null && !lname.isEmpty() 
+			&& email != null && !email.isEmpty())
 			{
 			String enter = "INSERT INTO Person (user, pw, fname, lname, email)" + "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
             
