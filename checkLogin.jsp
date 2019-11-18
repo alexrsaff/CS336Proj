@@ -26,7 +26,7 @@
             session.setAttribute("username", username);
             out.println("welcome " + username);
             out.println("<a href='logout.jsp'>Log out</a>");
-            response.sendRedirect("success.jsp");
+            response.sendRedirect("loginSuccess.jsp");
         } else {
             out.println("Invalid password <a href='login.jsp'>try again</a>");
         }
