@@ -45,10 +45,16 @@
 			response.sendRedirect("registerFailure.jsp");
 			return;
 		}
-    } catch(Exception e) 
+    }catch(Exception e) 
     {
+        if(e instanceof java.sql.SQLIntegrityConstraintViolationException)
+        {
+            out.print("That username is taken. Go back and try again.");
+        }
+        else{
         out.print("<p>Server Connection Error.</p>");
-        e.printStackTrace();
+        out.print(e);
+        e.printStackTrace();}
     } 
     finally 
     {
