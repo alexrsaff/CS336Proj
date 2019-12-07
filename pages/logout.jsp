@@ -8,7 +8,7 @@
     </head>
     <body>
         <% session.invalidate();
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("homepage.jsp");
         %>
     </body>
 </html>
