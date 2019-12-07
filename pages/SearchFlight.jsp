@@ -3,19 +3,19 @@
 <head>
 <title>Insert title here</title>
 </head>
-<body
+<body>
 	<h2>
 	Please Select a Trip Type below (*Required):
     </h2>
     
 	<br> <br>
 	<form method="post" action="searchOneWay.jsp">
-		<button onclick="location.href = 'search_flight.jsp';" type="submit">One Way</button> 
+		<button type="submit">One Way</button> 
     </form>
     
     <br>
     <form method="post" action="searchRoundTrip.jsp">
-		<button onclick="location.href = 'search_flight.jsp';" type="submit">Round Trip</button> 
+		<button type="submit">Round Trip</button> 
 	</form>
 </body>
 </html>
