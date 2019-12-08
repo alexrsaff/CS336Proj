@@ -1,12 +1,14 @@
+<%@ page import ="java.io.*,java.util.*,java.sql.*,java.lang.*" %>
+<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
+
 <!DOCTYPE html>
 <html>
 <body>
 <%
-    String userid = request.getParameter("username");
-    out.println("Welcome "+ userid);
+    String userid = (String)session.getAttribute("username");
+    out.println("<h2>" + "Welcome "+ userid + "</h2>");
 %>
 
-<h2>Welcome Customer</h2>
 <p>Select what you would like to do:</p>
 
 <button onclick="location.href = 'searchFlight.jsp';" type="submit">Search Flight</button>
