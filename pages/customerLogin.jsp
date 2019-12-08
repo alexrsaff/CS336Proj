@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <body>
+<%
+    String userid = request.getParameter("username");
+    out.println("Welcome "+ userid);
+%>
 
 <h2>Welcome Customer</h2>
 <p>Select what you would like to do:</p>
