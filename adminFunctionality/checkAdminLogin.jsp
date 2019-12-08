@@ -30,12 +30,12 @@
             else {
                 session.setAttribute("username", username);
                 out.println("welcome " + username);
-                out.println("<a href='logout.jsp'>Log out</a>");
-                response.sendRedirect("loginSuccess.jsp");
+                out.println("<a href='../logout.jsp'>Log out</a>");
+                response.sendRedirect("../loginSuccess.jsp");
             }
         }
         else {
-            out.println("ah");
+            out.println("Please enter username or password.");
         }
     }
 
