@@ -4,7 +4,7 @@
     </head>
     <body>
         <h1>
-		    <b>Please enter the customer's information you want to add into the database.</b>
+		    <b>Please enter the customer representative's information you want to add into the database.</b>
 	    </h1>
 		
 	    <form method="post" action="addCustomerRepB.jsp">
