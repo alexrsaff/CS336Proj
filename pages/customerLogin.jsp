@@ -3,10 +3,12 @@
 
 <!DOCTYPE html>
 <html>
+    
 <body>
 <%
     String userid = (String)session.getAttribute("username");
     out.println("<h2>" + "Welcome "+ userid + "</h2>");
+    session.setAttribute("username", userid);
 %>
 
 <p>Select what you would like to do:</p>
