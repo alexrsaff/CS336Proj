@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Insert title here</title>
+        <title>Admin: Add Customer</title>
     </head>
     <body>
         <%
