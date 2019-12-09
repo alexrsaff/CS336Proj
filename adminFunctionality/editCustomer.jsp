@@ -2,13 +2,12 @@
     <head>
         <title>Admin: Edit Customer</title>
     </head>
-    <body>
-        <h2>Select an attribute you want to edit below:</h2>
-        
+    <body>        
         <form method="post" action="editCustomerB.jsp">
             <p>Original customerID</p>
             <p><input type="text" name="username" required></p>
 
+            <h2>Select an attribute you want to edit below:</h2>
             <select name="action" size=1 required>
                 <option value="1">Edit password</option>
                 <option value="2">Edit first name</option>
