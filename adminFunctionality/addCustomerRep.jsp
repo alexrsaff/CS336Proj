@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Admin: Add Customer</title>
+        <title>Admin: Add Customer Representative</title>
     </head>
     <body>
         <h1>
