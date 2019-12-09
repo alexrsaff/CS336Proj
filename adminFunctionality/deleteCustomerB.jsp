@@ -16,7 +16,7 @@
             connection = DriverManager.getConnection(url, "Application", "JAAYS");
             String username = request.getParameter("username");
 
-            String q1 = "SELECT count(*) FROM Person WHERE username = ?";
+            String q1 = "SELECT count(*) FROM Person p, Customer c WHERE p.username = c.username AND p.username = ?";
 
             ps = connection.prepareStatement(q1);
             ps.setString(1, username);
