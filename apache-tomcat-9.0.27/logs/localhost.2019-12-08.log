@@ -1,0 +1,285 @@
+08-Dec-2019 19:43:37.570 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+08-Dec-2019 19:43:37.570 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+08-Dec-2019 19:43:37.573 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@424e1977')
+08-Dec-2019 19:45:24.310 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+08-Dec-2019 19:45:24.310 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+08-Dec-2019 19:47:53.383 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+08-Dec-2019 19:47:53.383 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+08-Dec-2019 19:47:53.385 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@548e6d58')
+08-Dec-2019 19:54:00.621 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+08-Dec-2019 19:54:00.621 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+08-Dec-2019 19:54:21.478 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+08-Dec-2019 19:54:21.478 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+08-Dec-2019 19:54:21.478 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@548e6d58')
+08-Dec-2019 20:17:29.859 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+08-Dec-2019 20:17:29.859 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+08-Dec-2019 20:17:29.862 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@10d68fcd')
+08-Dec-2019 20:17:49.409 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/project] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [8] in the jsp file: [/SalesReportOut.jsp]
+conn cannot be resolved
+5:     try
+6:     {
+7:         String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
+8:         PreparedStatement query = conn.prepareStatement("SELECT * FROM Ticket, Buy WHERE EXTRACT(MONTH FROM date) = ?;");
+9:         query.setString(1, request.getParameter("Month"));
+10:         Class.forName("com.mysql.jdbc.Driver").newInstance();
+11:         Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
+
+
+An error occurred at line: [12] in the jsp file: [/SalesReportOut.jsp]
+The method executeQuery(String) in the type Statement is not applicable for the arguments (PreparedStatement)
+9:         query.setString(1, request.getParameter("Month"));
+10:         Class.forName("com.mysql.jdbc.Driver").newInstance();
+11:         Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
+12:         ResultSet output = query.executeQuery(query);
+13:         out.print(output);
+14:         query.close();
+15:         conn.close();
+
+
+An error occurred at line: [19] in the jsp file: [/SalesReportOut.jsp]
+Syntax error, insert ";" to complete BlockStatements
+16:     }
+17:     catch(Exception e)
+18:     {
+19:         out.print(e)
+20:     }
+21: %>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [8] in the jsp file: [/SalesReportOut.jsp]
+conn cannot be resolved
+5:     try
+6:     {
+7:         String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
+8:         PreparedStatement query = conn.prepareStatement("SELECT * FROM Ticket, Buy WHERE EXTRACT(MONTH FROM date) = ?;");
+9:         query.setString(1, request.getParameter("Month"));
+10:         Class.forName("com.mysql.jdbc.Driver").newInstance();
+11:         Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
+
+
+An error occurred at line: [12] in the jsp file: [/SalesReportOut.jsp]
+The method executeQuery(String) in the type Statement is not applicable for the arguments (PreparedStatement)
+9:         query.setString(1, request.getParameter("Month"));
+10:         Class.forName("com.mysql.jdbc.Driver").newInstance();
+11:         Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
+12:         ResultSet output = query.executeQuery(query);
+13:         out.print(output);
+14:         query.close();
+15:         conn.close();
+
+
+An error occurred at line: [19] in the jsp file: [/SalesReportOut.jsp]
+Syntax error, insert ";" to complete BlockStatements
+16:     }
+17:     catch(Exception e)
+18:     {
+19:         out.print(e)
+20:     }
+21: %>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:103)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:519)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:392)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:362)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+08-Dec-2019 20:21:57.498 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+08-Dec-2019 20:21:57.498 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+08-Dec-2019 20:22:01.981 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+08-Dec-2019 20:22:01.981 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+08-Dec-2019 20:22:01.981 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@548e6d58')
+08-Dec-2019 20:22:21.131 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/project] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [9] in the jsp file: [/SalesReportOut.jsp]
+conn cannot be resolved
+6:     try
+7:     {
+8:         String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
+9:         PreparedStatement query = conn.prepareStatement("SELECT * FROM Ticket, Buy WHERE DATE_FORMAT(date, '%M') = ?;");
+10:         query.setString(1, request.getParameter("Month"));
+11:         Class.forName("com.mysql.jdbc.Driver").newInstance();
+12:         Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
+
+
+An error occurred at line: [13] in the jsp file: [/SalesReportOut.jsp]
+The method executeQuery(String) in the type Statement is not applicable for the arguments (PreparedStatement)
+10:         query.setString(1, request.getParameter("Month"));
+11:         Class.forName("com.mysql.jdbc.Driver").newInstance();
+12:         Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
+13:         ResultSet output = query.executeQuery(query);
+14:         out.print(output);
+15:         query.close();
+16:         conn.close();
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [9] in the jsp file: [/SalesReportOut.jsp]
+conn cannot be resolved
+6:     try
+7:     {
+8:         String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
+9:         PreparedStatement query = conn.prepareStatement("SELECT * FROM Ticket, Buy WHERE DATE_FORMAT(date, '%M') = ?;");
+10:         query.setString(1, request.getParameter("Month"));
+11:         Class.forName("com.mysql.jdbc.Driver").newInstance();
+12:         Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
+
+
+An error occurred at line: [13] in the jsp file: [/SalesReportOut.jsp]
+The method executeQuery(String) in the type Statement is not applicable for the arguments (PreparedStatement)
+10:         query.setString(1, request.getParameter("Month"));
+11:         Class.forName("com.mysql.jdbc.Driver").newInstance();
+12:         Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
+13:         ResultSet output = query.executeQuery(query);
+14:         out.print(output);
+15:         query.close();
+16:         conn.close();
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:103)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:519)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:392)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:362)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+08-Dec-2019 20:28:00.818 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+08-Dec-2019 20:28:00.818 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+08-Dec-2019 20:28:09.885 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+08-Dec-2019 20:28:09.885 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+08-Dec-2019 20:28:09.887 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@548e6d58')
+08-Dec-2019 20:28:23.455 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/project] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [15] in the jsp file: [/SalesReportOut.jsp]
+Syntax error, insert ";" to complete Statement
+12:         String query = "SELECT * FROM Ticket, Buy WHERE DATE_FORMAT(date, '%M') = " + request.getParameter("Month");
+13:         ResultSet output = stmt.executeQuery(query);
+14:         out.print(output);
+15:         output.close()
+16:         stmt.close();
+17:         conn.close();
+18:     }
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [15] in the jsp file: [/SalesReportOut.jsp]
+Syntax error, insert ";" to complete Statement
+12:         String query = "SELECT * FROM Ticket, Buy WHERE DATE_FORMAT(date, '%M') = " + request.getParameter("Month");
+13:         ResultSet output = stmt.executeQuery(query);
+14:         out.print(output);
+15:         output.close()
+16:         stmt.close();
+17:         conn.close();
+18:     }
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:103)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:519)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:392)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:362)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+08-Dec-2019 20:28:41.660 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+08-Dec-2019 20:28:41.660 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+08-Dec-2019 20:28:46.943 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+08-Dec-2019 20:28:46.943 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+08-Dec-2019 20:28:46.946 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@548e6d58')
+08-Dec-2019 20:44:31.031 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+08-Dec-2019 20:44:31.031 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+08-Dec-2019 20:44:39.723 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+08-Dec-2019 20:44:39.723 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+08-Dec-2019 20:44:39.725 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2f465398')
+08-Dec-2019 20:45:22.018 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+08-Dec-2019 20:45:22.018 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()

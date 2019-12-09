@@ -1,0 +1,488 @@
+08-Dec-2019 19:43:33.698 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.27
+08-Dec-2019 19:43:34.195 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 7 2019 09:57:22 UTC
+08-Dec-2019 19:43:34.199 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.27.0
+08-Dec-2019 19:43:34.199 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+08-Dec-2019 19:43:34.199 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Dec-2019 19:43:34.200 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Dec-2019 19:43:34.200 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_231
+08-Dec-2019 19:43:34.200 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_231-b11
+08-Dec-2019 19:43:34.200 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Dec-2019 19:43:34.200 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 19:43:34.200 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 19:43:34.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\conf\logging.properties
+08-Dec-2019 19:43:34.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Dec-2019 19:43:34.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+08-Dec-2019 19:43:34.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+08-Dec-2019 19:43:34.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+08-Dec-2019 19:43:34.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 19:43:34.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 19:43:34.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\temp
+08-Dec-2019 19:43:34.213 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+08-Dec-2019 19:43:34.213 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+08-Dec-2019 19:43:34.214 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08-Dec-2019 19:43:34.222 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+08-Dec-2019 19:43:35.084 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 19:43:35.366 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 19:43:35.366 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [2,789] milliseconds
+08-Dec-2019 19:43:35.413 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Dec-2019 19:43:35.413 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.27]
+08-Dec-2019 19:43:35.444 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war]
+08-Dec-2019 19:43:35.475 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project] was found with a last modified time that did not match the associated WAR. It will be deleted.
+08-Dec-2019 19:43:35.913 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war] has finished in [469] ms
+08-Dec-2019 19:43:35.913 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs]
+08-Dec-2019 19:43:35.959 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs] has finished in [46] ms
+08-Dec-2019 19:43:35.959 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples]
+08-Dec-2019 19:43:37.581 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples] has finished in [1,622] ms
+08-Dec-2019 19:43:37.582 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager]
+08-Dec-2019 19:43:37.640 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager] has finished in [58] ms
+08-Dec-2019 19:43:37.640 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager]
+08-Dec-2019 19:43:37.714 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager] has finished in [74] ms
+08-Dec-2019 19:43:37.716 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname]
+08-Dec-2019 19:43:37.763 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname] has finished in [47] ms
+08-Dec-2019 19:43:37.764 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT]
+08-Dec-2019 19:43:37.824 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT] has finished in [59] ms
+08-Dec-2019 19:43:37.841 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 19:43:37.856 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 19:43:37.861 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2,482] milliseconds
+08-Dec-2019 19:45:23.942 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+08-Dec-2019 19:45:23.942 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 19:45:24.124 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 19:45:24.294 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Dec-2019 19:45:24.341 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 19:45:24.341 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 19:45:24.357 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 19:45:24.357 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 19:47:51.150 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.27
+08-Dec-2019 19:47:51.150 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 7 2019 09:57:22 UTC
+08-Dec-2019 19:47:51.150 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.27.0
+08-Dec-2019 19:47:51.150 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+08-Dec-2019 19:47:51.150 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Dec-2019 19:47:51.150 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Dec-2019 19:47:51.150 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_231
+08-Dec-2019 19:47:51.150 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_231-b11
+08-Dec-2019 19:47:51.150 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Dec-2019 19:47:51.150 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 19:47:51.150 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 19:47:51.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\conf\logging.properties
+08-Dec-2019 19:47:51.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Dec-2019 19:47:51.167 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+08-Dec-2019 19:47:51.167 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+08-Dec-2019 19:47:51.168 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+08-Dec-2019 19:47:51.172 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 19:47:51.174 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 19:47:51.175 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\temp
+08-Dec-2019 19:47:51.176 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+08-Dec-2019 19:47:51.177 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+08-Dec-2019 19:47:51.177 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08-Dec-2019 19:47:51.187 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+08-Dec-2019 19:47:51.572 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 19:47:51.806 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 19:47:51.806 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [984] milliseconds
+08-Dec-2019 19:47:51.869 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Dec-2019 19:47:51.869 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.27]
+08-Dec-2019 19:47:51.900 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war]
+08-Dec-2019 19:47:51.931 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project] was found with a last modified time that did not match the associated WAR. It will be deleted.
+08-Dec-2019 19:47:52.879 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war] has finished in [963] ms
+08-Dec-2019 19:47:52.879 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs]
+08-Dec-2019 19:47:52.921 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs] has finished in [42] ms
+08-Dec-2019 19:47:52.922 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples]
+08-Dec-2019 19:47:53.392 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples] has finished in [470] ms
+08-Dec-2019 19:47:53.393 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager]
+08-Dec-2019 19:47:53.432 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager] has finished in [39] ms
+08-Dec-2019 19:47:53.433 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager]
+08-Dec-2019 19:47:53.468 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager] has finished in [35] ms
+08-Dec-2019 19:47:53.470 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname]
+08-Dec-2019 19:47:53.518 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname] has finished in [48] ms
+08-Dec-2019 19:47:53.522 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT]
+08-Dec-2019 19:47:53.579 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT] has finished in [57] ms
+08-Dec-2019 19:47:53.592 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 19:47:53.607 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 19:47:53.613 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1,792] milliseconds
+08-Dec-2019 19:54:00.241 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+08-Dec-2019 19:54:00.242 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 19:54:00.426 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 19:54:00.601 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Dec-2019 19:54:00.646 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 19:54:00.648 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 19:54:00.650 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 19:54:00.651 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 19:54:19.427 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.27
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 7 2019 09:57:22 UTC
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.27.0
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_231
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_231-b11
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\conf\logging.properties
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\temp
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+08-Dec-2019 19:54:19.443 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08-Dec-2019 19:54:19.459 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+08-Dec-2019 19:54:19.787 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 19:54:20.062 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 19:54:20.078 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [923] milliseconds
+08-Dec-2019 19:54:20.113 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Dec-2019 19:54:20.113 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.27]
+08-Dec-2019 19:54:20.153 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war]
+08-Dec-2019 19:54:20.189 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project] was found with a last modified time that did not match the associated WAR. It will be deleted.
+08-Dec-2019 19:54:20.936 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war] has finished in [784] ms
+08-Dec-2019 19:54:20.936 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs]
+08-Dec-2019 19:54:20.967 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs] has finished in [31] ms
+08-Dec-2019 19:54:20.967 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples]
+08-Dec-2019 19:54:21.494 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples] has finished in [527] ms
+08-Dec-2019 19:54:21.494 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager]
+08-Dec-2019 19:54:21.541 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager] has finished in [47] ms
+08-Dec-2019 19:54:21.541 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager]
+08-Dec-2019 19:54:21.603 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager] has finished in [62] ms
+08-Dec-2019 19:54:21.603 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname]
+08-Dec-2019 19:54:21.650 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname] has finished in [47] ms
+08-Dec-2019 19:54:21.650 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT]
+08-Dec-2019 19:54:21.681 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT] has finished in [31] ms
+08-Dec-2019 19:54:21.697 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 19:54:21.712 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 19:54:21.712 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1,640] milliseconds
+08-Dec-2019 19:55:12.372 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+08-Dec-2019 20:16:48.804 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Could not contact [localhost:8005] (base port [8005] and offset [0]). Tomcat may not be running.
+08-Dec-2019 20:16:48.807 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Error stopping Catalina
+	java.net.ConnectException: Connection refused: connect
+		at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+		at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+		at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+		at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+		at java.net.PlainSocketImpl.connect(Unknown Source)
+		at java.net.SocksSocketImpl.connect(Unknown Source)
+		at java.net.Socket.connect(Unknown Source)
+		at java.net.Socket.connect(Unknown Source)
+		at java.net.Socket.<init>(Unknown Source)
+		at java.net.Socket.<init>(Unknown Source)
+		at org.apache.catalina.startup.Catalina.stopServer(Catalina.java:513)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+		at java.lang.reflect.Method.invoke(Unknown Source)
+		at org.apache.catalina.startup.Bootstrap.stopServer(Bootstrap.java:390)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:480)
+08-Dec-2019 20:17:28.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.27
+08-Dec-2019 20:17:28.300 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 7 2019 09:57:22 UTC
+08-Dec-2019 20:17:28.300 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.27.0
+08-Dec-2019 20:17:28.301 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+08-Dec-2019 20:17:28.302 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Dec-2019 20:17:28.302 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Dec-2019 20:17:28.302 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_231
+08-Dec-2019 20:17:28.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_231-b11
+08-Dec-2019 20:17:28.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Dec-2019 20:17:28.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:17:28.304 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:17:28.304 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\conf\logging.properties
+08-Dec-2019 20:17:28.304 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Dec-2019 20:17:28.304 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+08-Dec-2019 20:17:28.305 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+08-Dec-2019 20:17:28.305 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+08-Dec-2019 20:17:28.305 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:17:28.310 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:17:28.311 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\temp
+08-Dec-2019 20:17:28.311 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+08-Dec-2019 20:17:28.312 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+08-Dec-2019 20:17:28.313 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08-Dec-2019 20:17:28.318 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+08-Dec-2019 20:17:28.675 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:17:28.962 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:17:28.967 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [933] milliseconds
+08-Dec-2019 20:17:29.007 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Dec-2019 20:17:29.007 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.27]
+08-Dec-2019 20:17:29.029 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war]
+08-Dec-2019 20:17:29.059 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project] was found with a last modified time that did not match the associated WAR. It will be deleted.
+08-Dec-2019 20:17:29.379 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war] has finished in [349] ms
+08-Dec-2019 20:17:29.380 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs]
+08-Dec-2019 20:17:29.414 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs] has finished in [34] ms
+08-Dec-2019 20:17:29.415 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples]
+08-Dec-2019 20:17:29.871 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples] has finished in [457] ms
+08-Dec-2019 20:17:29.872 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager]
+08-Dec-2019 20:17:29.924 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager] has finished in [52] ms
+08-Dec-2019 20:17:29.925 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager]
+08-Dec-2019 20:17:29.966 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager] has finished in [41] ms
+08-Dec-2019 20:17:29.967 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname]
+08-Dec-2019 20:17:30.006 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname] has finished in [39] ms
+08-Dec-2019 20:17:30.007 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT]
+08-Dec-2019 20:17:30.036 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT] has finished in [29] ms
+08-Dec-2019 20:17:30.044 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:17:30.058 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:17:30.064 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1,090] milliseconds
+08-Dec-2019 20:21:57.127 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+08-Dec-2019 20:21:57.128 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:21:57.314 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:21:57.483 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Dec-2019 20:21:57.529 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:21:57.529 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:21:57.529 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:21:57.529 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:22:00.511 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.27
+08-Dec-2019 20:22:00.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 7 2019 09:57:22 UTC
+08-Dec-2019 20:22:00.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.27.0
+08-Dec-2019 20:22:00.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+08-Dec-2019 20:22:00.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Dec-2019 20:22:00.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Dec-2019 20:22:00.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_231
+08-Dec-2019 20:22:00.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_231-b11
+08-Dec-2019 20:22:00.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Dec-2019 20:22:00.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:22:00.516 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:22:00.517 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\conf\logging.properties
+08-Dec-2019 20:22:00.517 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Dec-2019 20:22:00.517 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+08-Dec-2019 20:22:00.517 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+08-Dec-2019 20:22:00.517 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+08-Dec-2019 20:22:00.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:22:00.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:22:00.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\temp
+08-Dec-2019 20:22:00.519 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+08-Dec-2019 20:22:00.520 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+08-Dec-2019 20:22:00.520 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08-Dec-2019 20:22:00.528 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+08-Dec-2019 20:22:00.870 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:22:01.164 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:22:01.169 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [986] milliseconds
+08-Dec-2019 20:22:01.202 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Dec-2019 20:22:01.202 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.27]
+08-Dec-2019 20:22:01.218 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war]
+08-Dec-2019 20:22:01.249 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project] was found with a last modified time that did not match the associated WAR. It will be deleted.
+08-Dec-2019 20:22:01.561 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war] has finished in [343] ms
+08-Dec-2019 20:22:01.561 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs]
+08-Dec-2019 20:22:01.577 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs] has finished in [16] ms
+08-Dec-2019 20:22:01.577 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples]
+08-Dec-2019 20:22:01.997 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples] has finished in [420] ms
+08-Dec-2019 20:22:01.997 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager]
+08-Dec-2019 20:22:02.047 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager] has finished in [50] ms
+08-Dec-2019 20:22:02.048 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager]
+08-Dec-2019 20:22:02.077 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager] has finished in [29] ms
+08-Dec-2019 20:22:02.077 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname]
+08-Dec-2019 20:22:02.108 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname] has finished in [31] ms
+08-Dec-2019 20:22:02.124 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT]
+08-Dec-2019 20:22:02.155 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT] has finished in [47] ms
+08-Dec-2019 20:22:02.155 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:22:02.170 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:22:02.170 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1,011] milliseconds
+08-Dec-2019 20:28:00.438 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+08-Dec-2019 20:28:00.439 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:28:00.630 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:28:00.802 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Dec-2019 20:28:00.833 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:28:00.849 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:28:00.849 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:28:00.865 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:28:04.737 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Could not contact [localhost:8005] (base port [8005] and offset [0]). Tomcat may not be running.
+08-Dec-2019 20:28:04.741 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Error stopping Catalina
+	java.net.ConnectException: Connection refused: connect
+		at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+		at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+		at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+		at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+		at java.net.PlainSocketImpl.connect(Unknown Source)
+		at java.net.SocksSocketImpl.connect(Unknown Source)
+		at java.net.Socket.connect(Unknown Source)
+		at java.net.Socket.connect(Unknown Source)
+		at java.net.Socket.<init>(Unknown Source)
+		at java.net.Socket.<init>(Unknown Source)
+		at org.apache.catalina.startup.Catalina.stopServer(Catalina.java:513)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+		at java.lang.reflect.Method.invoke(Unknown Source)
+		at org.apache.catalina.startup.Bootstrap.stopServer(Bootstrap.java:390)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:480)
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.27
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 7 2019 09:57:22 UTC
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.27.0
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_231
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_231-b11
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\conf\logging.properties
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\temp
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+08-Dec-2019 20:28:07.853 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08-Dec-2019 20:28:07.868 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+08-Dec-2019 20:28:08.254 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:28:08.487 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:28:08.487 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [973] milliseconds
+08-Dec-2019 20:28:08.519 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Dec-2019 20:28:08.519 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.27]
+08-Dec-2019 20:28:08.550 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war]
+08-Dec-2019 20:28:08.581 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project] was found with a last modified time that did not match the associated WAR. It will be deleted.
+08-Dec-2019 20:28:09.110 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war] has finished in [560] ms
+08-Dec-2019 20:28:09.113 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs]
+08-Dec-2019 20:28:09.165 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs] has finished in [51] ms
+08-Dec-2019 20:28:09.166 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples]
+08-Dec-2019 20:28:09.894 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples] has finished in [729] ms
+08-Dec-2019 20:28:09.895 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager]
+08-Dec-2019 20:28:09.959 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager] has finished in [64] ms
+08-Dec-2019 20:28:09.959 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager]
+08-Dec-2019 20:28:10.006 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager] has finished in [47] ms
+08-Dec-2019 20:28:10.006 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname]
+08-Dec-2019 20:28:10.057 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname] has finished in [51] ms
+08-Dec-2019 20:28:10.059 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT]
+08-Dec-2019 20:28:10.091 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT] has finished in [32] ms
+08-Dec-2019 20:28:10.097 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:28:10.108 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:28:10.112 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1,614] milliseconds
+08-Dec-2019 20:28:41.193 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+08-Dec-2019 20:28:41.193 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:28:41.403 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:28:41.639 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Dec-2019 20:28:41.691 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:28:41.707 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:28:41.707 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:28:41.707 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:28:44.735 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.27
+08-Dec-2019 20:28:44.747 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 7 2019 09:57:22 UTC
+08-Dec-2019 20:28:44.748 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.27.0
+08-Dec-2019 20:28:44.748 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+08-Dec-2019 20:28:44.748 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Dec-2019 20:28:44.749 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Dec-2019 20:28:44.749 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_231
+08-Dec-2019 20:28:44.749 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_231-b11
+08-Dec-2019 20:28:44.751 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Dec-2019 20:28:44.751 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:28:44.752 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:28:44.753 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\conf\logging.properties
+08-Dec-2019 20:28:44.753 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Dec-2019 20:28:44.754 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+08-Dec-2019 20:28:44.754 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+08-Dec-2019 20:28:44.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+08-Dec-2019 20:28:44.763 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:28:44.765 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:28:44.766 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\temp
+08-Dec-2019 20:28:44.769 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+08-Dec-2019 20:28:44.771 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+08-Dec-2019 20:28:44.772 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08-Dec-2019 20:28:44.780 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+08-Dec-2019 20:28:45.346 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:28:45.652 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:28:45.657 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1,266] milliseconds
+08-Dec-2019 20:28:45.695 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Dec-2019 20:28:45.695 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.27]
+08-Dec-2019 20:28:45.721 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war]
+08-Dec-2019 20:28:45.760 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project] was found with a last modified time that did not match the associated WAR. It will be deleted.
+08-Dec-2019 20:28:46.198 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war] has finished in [477] ms
+08-Dec-2019 20:28:46.198 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs]
+08-Dec-2019 20:28:46.245 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs] has finished in [47] ms
+08-Dec-2019 20:28:46.245 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples]
+08-Dec-2019 20:28:46.957 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples] has finished in [711] ms
+08-Dec-2019 20:28:46.958 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager]
+08-Dec-2019 20:28:47.036 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager] has finished in [79] ms
+08-Dec-2019 20:28:47.037 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager]
+08-Dec-2019 20:28:47.088 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager] has finished in [51] ms
+08-Dec-2019 20:28:47.089 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname]
+08-Dec-2019 20:28:47.141 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname] has finished in [52] ms
+08-Dec-2019 20:28:47.195 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT]
+08-Dec-2019 20:28:47.246 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT] has finished in [51] ms
+08-Dec-2019 20:28:47.257 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:28:47.274 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:28:47.279 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1,619] milliseconds
+08-Dec-2019 20:44:30.643 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+08-Dec-2019 20:44:30.644 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:44:30.824 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:44:31.012 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Dec-2019 20:44:31.060 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:44:31.064 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:44:31.066 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:44:31.068 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:44:34.779 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Could not contact [localhost:8005] (base port [8005] and offset [0]). Tomcat may not be running.
+08-Dec-2019 20:44:34.779 SEVERE [main] org.apache.catalina.startup.Catalina.stopServer Error stopping Catalina
+	java.net.ConnectException: Connection refused: connect
+		at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+		at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+		at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+		at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+		at java.net.PlainSocketImpl.connect(Unknown Source)
+		at java.net.SocksSocketImpl.connect(Unknown Source)
+		at java.net.Socket.connect(Unknown Source)
+		at java.net.Socket.connect(Unknown Source)
+		at java.net.Socket.<init>(Unknown Source)
+		at java.net.Socket.<init>(Unknown Source)
+		at org.apache.catalina.startup.Catalina.stopServer(Catalina.java:513)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+		at java.lang.reflect.Method.invoke(Unknown Source)
+		at org.apache.catalina.startup.Bootstrap.stopServer(Bootstrap.java:390)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:480)
+08-Dec-2019 20:44:37.821 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.27
+08-Dec-2019 20:44:37.825 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 7 2019 09:57:22 UTC
+08-Dec-2019 20:44:37.825 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.27.0
+08-Dec-2019 20:44:37.825 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+08-Dec-2019 20:44:37.826 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+08-Dec-2019 20:44:37.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Dec-2019 20:44:37.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_231
+08-Dec-2019 20:44:37.827 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_231-b11
+08-Dec-2019 20:44:37.828 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+08-Dec-2019 20:44:37.828 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:44:37.828 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:44:37.829 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\conf\logging.properties
+08-Dec-2019 20:44:37.829 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Dec-2019 20:44:37.830 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+08-Dec-2019 20:44:37.830 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+08-Dec-2019 20:44:37.830 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+08-Dec-2019 20:44:37.831 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:44:37.835 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27
+08-Dec-2019 20:44:37.836 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\temp
+08-Dec-2019 20:44:37.837 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+08-Dec-2019 20:44:37.837 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+08-Dec-2019 20:44:37.838 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+08-Dec-2019 20:44:37.845 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+08-Dec-2019 20:44:38.355 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:44:38.652 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:44:38.667 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1,199] milliseconds
+08-Dec-2019 20:44:38.698 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Dec-2019 20:44:38.698 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.27]
+08-Dec-2019 20:44:38.714 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war]
+08-Dec-2019 20:44:38.745 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project] was found with a last modified time that did not match the associated WAR. It will be deleted.
+08-Dec-2019 20:44:39.062 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\project.war] has finished in [347] ms
+08-Dec-2019 20:44:39.063 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs]
+08-Dec-2019 20:44:39.091 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\docs] has finished in [28] ms
+08-Dec-2019 20:44:39.092 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples]
+08-Dec-2019 20:44:39.731 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\examples] has finished in [640] ms
+08-Dec-2019 20:44:39.731 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager]
+08-Dec-2019 20:44:39.777 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager] has finished in [46] ms
+08-Dec-2019 20:44:39.777 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager]
+08-Dec-2019 20:44:39.833 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\manager] has finished in [56] ms
+08-Dec-2019 20:44:39.835 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname]
+08-Dec-2019 20:44:39.874 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\projectname] has finished in [38] ms
+08-Dec-2019 20:44:39.874 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT]
+08-Dec-2019 20:44:39.947 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Alexr\Google_Drive\College\Fall_2019\Data_Info\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT] has finished in [73] ms
+08-Dec-2019 20:44:39.962 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:44:39.981 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:44:39.990 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1,317] milliseconds
+08-Dec-2019 20:45:21.625 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+08-Dec-2019 20:45:21.626 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:45:21.808 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:45:21.998 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Dec-2019 20:45:22.053 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:45:22.056 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+08-Dec-2019 20:45:22.059 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+08-Dec-2019 20:45:22.060 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
