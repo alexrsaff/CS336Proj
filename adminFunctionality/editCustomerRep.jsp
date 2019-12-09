@@ -20,6 +20,5 @@
 
             <input type="submit" value="submit">
 	    </form>
-	    <a href="http://localhost:8080/336test/adminFunction/Adminlogin.jsp"> <mark>Back to management page</mark></a>
     </body>
 </html>
