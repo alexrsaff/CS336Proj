@@ -17,8 +17,6 @@
 	</h2>
 	<%
 		String flightNumber;
-		int total;
-
 		String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -29,7 +27,7 @@
 			Class.forName("com.mysql.jdbc.Driver"); 
             connection = DriverManager.getConnection(url, "Application", "JAAYS");
     
-			String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID, f.fare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID;";
+			String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.fare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID;";
 			
 			preparedStatement = connection.prepareStatement(str);
             
@@ -40,18 +38,18 @@
 
 
 	<!--  Make an HTML table to show the results in: -->
-	<table border="3" style=color:skyblue cellspacing="4" cellpadding="4">
+	<table border="3" style=color:black cellspacing="2" cellpadding="2">
 		<tr style=color:red>
 			<th>Airline Company</th>
 			<th>Flight Number</th>
-			<th>Type</th>
+			<th>Flight Type</th>
 			<th>Departure Time</th>
 			<th>Departure Date</th>
+			<th>Departure Airport</th>
 			<th>Arrival Time</th>
 			<th>Arrival Date</th>
-			<th>Departure Airport</th>
 			<th>Arrival Airport</th>
-			<th>Price</th>
+			<th>Ticket Price</th>
 			<th>Reserve</th>
 		</tr>
 
@@ -62,16 +60,16 @@
 		%>
 
 		<tr>
+			<td><%=rs.getString("airlineID")%></td>
 			<td><%=rs.getString("flightNumber")%></td>
-			<td><%=rs.getString("flightNumber")%></td>
-			<td><%=rs.getString("flightNumber")%></td>
-			<td><%=rs.getString("flightNumber")%></td>
-			<td><%=rs.getString("flightNumber")%></td>
-			<td><%=rs.getString("flightNumber")%></td>
-			<td><%=rs.getString("flightNumber")%></td>
-			<td><%=rs.getString("flightNumber")%></td>
-			<td><%=rs.getString("flightNumber")%></td>
-			<td><%=rs.getString("flightNumber")%></td>
+			<td><%=rs.getString("domInt")%></td>
+			<td><%=rs.getString("departTime")%></td>
+			<td><%=rs.getString("departDate")%></td>
+			<td><%=rs.getString("airportID")%></td>
+			<td><%=rs.getString("arriveTime")%></td>
+			<td><%=rs.getString("arriveDate")%></td>
+			<td><%=rs.getString("arriveairportID")%></td>
+			<td>$ <%=rs.getString("fare")%></td>
 			<td><%=rs.getString("flightNumber")%></td>
 
 		</tr>
@@ -87,42 +85,64 @@
 	%>
 
 	<br>
-	<form method="post" action="OneWay.jsp">
+	<form method="post" action="searchOneWaySortFilter.jsp">
 		<!-- hidden type name trip_type = "1"-->
 		<table>
-		<tr>
-				<td>Enter Trip Type again</td>
-				<td><input type="text" name="trip_type"></td>
+			<tr>
+				<td>Departure Airport (three letters)</td>
+				<td><input type="text" name="departureAirport"></td>
 			</tr>
 			<tr>
-				<td>Departure Airport</td>
-				<td><input type="text" name="departure_airport"></td>
-			</tr>
-			<tr>
-				<td>Arrival Airport</td>
-				<td><input type="text" name="arrival_airport"></td>
+				<td>Arrival Airport (three letters)</td>
+				<td><input type="text" name="arrivalAirport"></td>
 			</tr>
 			<tr>
 				<td>Departure Date</td>
-				<td><input type="date" name="departure_date"></td>
+				<td><input type="date" name="departureDate"></td>
 			</tr>
-		</table>
-		<p>
-			<select name="sortBy" size=1>
-				<!-- 1 means one way, 2 means round-trip-->
-				<option value="total_fare">Price</option>
-				<option value="departure_time">take-off time</option>
-				<option value="arrival_time">landing time</option>
-			</select>&nbsp;
-		</p>
+			<tr>
+				<td>Arrival Date</td>
+				<td><input type="date" name="arrivalDate"></td>
+			</tr>
 
-		<br> <select name="flexible_or_not" size=1>
-			<!-- 1 means flexible, 0 means not-->
-			<option value="1">Flexible</option>
-			<option value="0">Not flexible</option>
-		</select>&nbsp; <br> <input type="submit" value="submit">
+			<tr>
+				<td>---</td>
+			</tr>
+
+			<tr>
+				<td><b>Additional Filters:</b></td>
+			</tr>
+			<tr>
+				<td>Airline Company (2 letters)</td>
+				<td><input type="text" name="airlineCompany"></td>
+			</tr>
+			<tr>
+				<td>Date Flexibility (+ or - 3 days): </td>
+				<td>
+					<select name="flexibility" size=1>
+							<option value="1">Not flexible</option>
+							<option value="0">Flexible</option>
+					</select>	
+				</td>
+			</tr>
+			<tr>
+				<td>Price Range Filter: </td>
+				<td>
+					<select name="pricerange" size=1>
+							<option value="500">$500 and under</option>
+							<option value="1000">$1000 and under</option>
+							<option value="2000">$2000 and under</option>
+					</select>					
+				</td>
+			</tr>
+	
+		</table>
+
+		<br>
+		<br>
+
+	<input type="submit" value="Search">
 	</form>
-	<br>
 </body>
 
 </html>
