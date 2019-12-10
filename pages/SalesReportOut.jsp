@@ -9,7 +9,7 @@
         String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
         Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
         Statement statement=conn.createStatement();
-        String query = "SELECT * FROM Ticket, Buy WHERE DATE_FORMAT(date, '%Y-%c') = " + request.getParameter("Month");
+        String query = "SELECT * FROM Ticket, Buy WHERE DATE_FORMAT(date, '%Y-%c') = " + request.getParameter("Month") + " AND Buy.ticketNumber = Ticket.ticketNumber";
         ResultSet output = statement.executeQuery(query);
         %>
             <HTML>
