@@ -12,9 +12,9 @@
 %>
 
 <body>
-	<h2>
+	<p>
 	Please Select a Trip Type below (*Required):
-    </h2>
+    </p>
     
 	<br> <br>
 	<form method="post" action="searchOneWay.jsp">

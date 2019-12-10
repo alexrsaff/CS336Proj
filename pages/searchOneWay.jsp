@@ -18,46 +18,62 @@
 	<%
 		String flightNumber;
 		int total;
+
+		String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
 		try {
 
 			//Get the database connection
-			//Class.forName("com.mysql.jdbc.Driver"); 
-			//java.sql.Connection con = DriverManager.getConnection("jdbc:mysql:" + "//groupone.chnfim8mzrlx.us-east-2.rds.amazonaws.com:3306/" + "GroupOne336","cody","codychen1005!"); 
-			/****right now we know the attribute trip_type  = oneway, so we skip it and put it as a conditional statement***/
+			Class.forName("com.mysql.jdbc.Driver"); 
+            connection = DriverManager.getConnection(url, "Application", "JAAYS");
+    
+			String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID, f.fare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID;";
+			
+			preparedStatement = connection.prepareStatement(str);
             
-            //Make a SELECT query from the table specified by the 'command' parameter at the index.jsp
-			//String str = "SELECT a.name, o.flight_number, departure_time, arrival_time, departure_airport, arrival_airport, operating_days, total_fare from Flight, Airline_Company as a, Operate as o where o.companyID = a.companyID and o.flight_number = Flight.flight_number;";
-            
-            //Create a SQL statement
-			//Statement stmt = con.createStatement();
-            
-            //Run the query against the database.
-			//ResultSet result = stmt.executeQuery(str);
+			//Run the query against the database.
+			ResultSet rs;
+			rs = preparedStatement.executeQuery(str);
 	%>
 
 
 	<!--  Make an HTML table to show the results in: -->
-	<table border="5" style=color:skyblue cellspacing="4" cellpadding="4">
+	<table border="3" style=color:skyblue cellspacing="4" cellpadding="4">
 		<tr style=color:red>
 			<th>Airline Company</th>
 			<th>Flight Number</th>
+			<th>Type</th>
 			<th>Departure Time</th>
+			<th>Departure Date</th>
 			<th>Arrival Time</th>
+			<th>Arrival Date</th>
 			<th>Departure Airport</th>
 			<th>Arrival Airport</th>
-			<th>Operating Date</th>
 			<th>Price</th>
 			<th>Reserve</th>
 		</tr>
 
 		<%
 			//parse out the results
-				//while (result.next()) {
-					//flightNumber = result.getString("flight_number");
+				while (rs.next()) {
+					flightNumber = rs.getString("flightNumber");
 		%>
 
 		<tr>
-			
+			<td><%=rs.getString("flightNumber")%></td>
+			<td><%=rs.getString("flightNumber")%></td>
+			<td><%=rs.getString("flightNumber")%></td>
+			<td><%=rs.getString("flightNumber")%></td>
+			<td><%=rs.getString("flightNumber")%></td>
+			<td><%=rs.getString("flightNumber")%></td>
+			<td><%=rs.getString("flightNumber")%></td>
+			<td><%=rs.getString("flightNumber")%></td>
+			<td><%=rs.getString("flightNumber")%></td>
+			<td><%=rs.getString("flightNumber")%></td>
+			<td><%=rs.getString("flightNumber")%></td>
+
 		</tr>
 		<%
 			}
