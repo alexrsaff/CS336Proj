@@ -11,12 +11,12 @@
                 <td width = 350px><a href = 'salesReport.jsp'>Find Monthly Sales Report</a></td>
                 <td width = 350px><a href = '.jsp'>List Reservations</a></td>
             </tr>
-            <tr></tr>
+            <tr>
                 <td width = 350px><a href = 'revenueGeneratedBy.jsp'>Find Revenue Generated</a></td>
                 <td width = 350px><a href = '.jsp'>Find Customer with Greatest Total Revenue</a></td>
                 <td width = 350px><a href = 'mostActiveFlightsB.jsp'>Find Most Active Flights</a></td>
                 <td width = 350px><a href = 'allFlightsForAirport.jsp'>Find All Flights For an Airport</a></td>
-                </tr>
+            </tr>
             </table>
     </body>
 </html>
