@@ -15,6 +15,6 @@
             <br>
             <input type="submit" value="Generate report"/>
 		</form>
-		<a href="../project/login.jsp"> <b>Back to login page</b></a>
+		<input type="button" onclick="window.location.href='../project/login.jsp'" value="Back to login page">
     </body>
 </html>
