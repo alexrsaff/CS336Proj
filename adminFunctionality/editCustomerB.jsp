@@ -22,7 +22,7 @@
             ResultSet rs;
             int outcome = 0;
 
-            q = "SELECT count(*) FROM Person p, Customer c WHERE p.username = c.username AND username = ?";
+            q = "SELECT count(*) FROM Person p, Customer c WHERE p.username = c.username AND p.username = ?";
             ps = connection.prepareStatement(q);
             ps.setString(1, username);
             
