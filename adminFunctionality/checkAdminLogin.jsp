@@ -28,10 +28,7 @@
                 out.println("Invalid username or password <a href='adminLogin.jsp'>try again</a>");
             }
             else {
-                session.setAttribute("username", username);
-                out.println("welcome " + username);
-                out.println("<a href='../logout.jsp'>Log out</a>");
-                response.sendRedirect("../loginSuccess.jsp");
+                response.sendRedirect("adminNavigation.jsp");
             }
         }
         else {
