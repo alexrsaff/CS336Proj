@@ -15,6 +15,7 @@ PRIMARY KEY(airportID));
 CREATE TABLE Ticket(
 ticketNumber INT, 
 bookingFee FLOAT,
+fare FLOAT,
 ticketTime DATETIME,
 PRIMARY KEY(ticketNumber));
 
