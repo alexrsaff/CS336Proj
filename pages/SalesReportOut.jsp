@@ -1,8 +1,8 @@
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
-
+<HTML>
+    <BODY>
 <%
-    out.print(request.getParameter("Month"));
     try
     {
         Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -12,8 +12,6 @@
         String query = "SELECT * FROM Ticket, Buy WHERE DATE_FORMAT(date, '%Y-%c') = " + request.getParameter("Month") + " AND Buy.ticketNumber = Ticket.ticketNumber";
         ResultSet output = statement.executeQuery(query);
         %>
-            <HTML>
-            <BODY>
             <TABLE BORDER="1">
                 <TR>
                     <TH>Ticket Number</TH>
@@ -36,10 +34,10 @@
             <%
         }
         %>
-            </TABLE>
+                    </TABLE>
                     <input type="button" onclick="window.location.href='../project/SalesReport.jsp'" value="Back to sales report page"><br>
                     <input type="button" onclick="window.location.href='../project/login.jsp'" value="Back to login page">
-            </BODY>
+                </BODY>
             </HTML>
         <%
         output.close();
