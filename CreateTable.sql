@@ -15,6 +15,7 @@ PRIMARY KEY(airportID));
 CREATE TABLE Ticket(
 ticketNumber INT, 
 bookingFee FLOAT,
+fare FLOAT,
 ticketTime DATETIME,
 PRIMARY KEY(ticketNumber));
 
@@ -73,6 +74,19 @@ FOREIGN KEY (airportID) REFERENCES Airport(airportID),
 FOREIGN KEY (flightNumber) REFERENCES Flight(flightNumber),
 FOREIGN KEY (airlineID) REFERENCES Airline(airlineID));
 
+CREATE TABLE Person(
+username VARCHAR(15),
+password VARCHAR(10),
+fname VARCHAR(15),
+lname VARCHAR(15),
+email VARCHAR(50),	
+PRIMARY KEY(username));
+
+CREATE TABLE Customer(
+username VARCHAR(15),
+PRIMARY KEY(username),
+FOREIGN KEY(username) references Person(username));
+
 CREATE TABLE Waitlist(
 username VARCHAR(15), 
 airlineID VARCHAR(10), 
@@ -88,19 +102,6 @@ flightNumber INT,
 PRIMARY KEY(airlineID, flightNumber), 
 FOREIGN KEY(airlineID) REFERENCES Airline(airlineID),
 FOREIGN KEY(flightNumber) REFERENCES Flight(flightNumber));
-
-CREATE TABLE Person(
-username VARCHAR(15),
-password VARCHAR(10),
-fname VARCHAR(15),
-lname VARCHAR(15),
-email VARCHAR(50),	
-PRIMARY KEY(username));
-
-CREATE TABLE Customer(
-username VARCHAR(15),
-PRIMARY KEY(username),
-FOREIGN KEY(username) references Person(username));
 
 CREATE TABLE Administrator(
 username VARCHAR(15), 
