@@ -21,7 +21,7 @@
             if(output.getInt(1) >= 1)
             {
 
-                out.println("The flight number wanted already exists: output, <a href='manageInfo.jsp'>please try again.</a>");
+                out.println("The flight number wanted already exists: <a href='manageInfo.jsp'>please try again.</a>");
             }
             else
             {
@@ -33,8 +33,12 @@
                         request.getParameter("firstClassFare")+","+request.getParameter("businessClassFare")+","+
                         request.getParameter("economyClassFare")+","+request.getParameter("economyClassOccupancy")+","+
                         request.getParameter("businessClassOccupancy")+","+request.getParameter("firstClassOccupancy")+")";
-                out.println(query);
-                out.println(statement.executeUpdate(query));
+                int outcome = statement.executeUpdate(query);
+                if (outcome == 0) {
+                    response.sendRedirect("../registerFailure.jsp");
+                    return;
+                }
+                out.println("Flight data is successfully inserted. <a href='manageInfo.jsp'>Back.</a>");
             }
         }catch(Error e)
         {
