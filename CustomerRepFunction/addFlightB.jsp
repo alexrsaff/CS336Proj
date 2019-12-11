@@ -1,84 +1,104 @@
-  
-<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+
+<%@ page import ="java.io.*,java.util.*,java.sql.*,java.lang.*,java.text.*" %>
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
+<%@ page import="java.text.SimpleDateFormat" %>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Add Flight</title>
+    </head>
+    <body>
+        <%
+        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+		try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            connection = DriverManager.getConnection(url, "Application", "JAAYS");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyy-MM-dd");
 
-<%
-	String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
-	Connection conn = null;
-	PreparedStatement psa = null;
-	try {
-        Class.forName("com.mysql.jdbc.Driver").newInstance();
-        conn = DriverManager.getConnection(url, "Application", "JAAYS");
-        int flightNumber = Integer.parseInt(request.getParameter(flightNumber));
-        String airlineID = request.getParameter("airlineID");
-        String domInt = request.getParameter("domInt");
-        String arrivalAirport = request.getParameter("arrivalAirport");
-        String departureAirport = request.getParameter("departureAirport");
-        String arrivalTime = request.getParameter("arrivalTime");
-        String departureTime = request.getParameter("adepartureTime");
-        String dayOfWeek = request.getParameter("dayOfWeek");
-        int fare = Integer.parseInt(request.getParameter(fare));
-
-        
-        if(airlineID != null && !airlineID.isEmpty() && !flightNumber.isEmpty() && domInt != null && !domInt.isEmpty()
-            && arrivalAirport != null && !arrivalAirport.isEmpty() && departureAirport != null && !departureAirport.isEmpty(),
-                && arrivalTime != null && !arrivalTime.isEmpty() && departureTime != null && !departureTime.isEmpty() &&
-                    dayOfWeek != null && !dayOfWeek.isEmpty() && !fare.isEmpty())
-			{
-			String enter = "INSERT INTO Flight (flightNumber,airlineID,domInt,arrivalAirport,departureAirport,arrivalTime,departureTime,dayOfWeek,fare)" + "VALUES(?,?,?,?,?,?,?,?,?);";
-            
-            psa = conn.prepareStatement(enter);
-            psa.setString(1, flightNumber);
-            psa.setString(2, airlineID);
-            psa.setString(3, domInt);
-            psa.setString(4, arrivalAirport);
-            psa.setString(5, departureAirport);
-            psa.setString(6, arrivalTime);
-            psa.setString(7, departureTime);
-            psa.setString(8, dayOfWeek);
-            psa.setString(9, fare);
+            String airlineID = request.getParameter("airlineID");
+            int flightNumber = Integer.parseInt(request.getParameter("flightNumber"));
+            String domInt = request.getParameter("domInt");
+            String dayOfWeek = request.getParameter("dayOfWeek");
+            Date departDate = sdf.parse(request.getParameter("departDate"));
+            String departTime = request.getParameter("departTime");
+            Date arriveDate = sdf.parse(request.getParameter("arrivalDate"));
+            String arriveTime = request.getParameter("arrivalTime");
+            float firstClassFare= Float.parseFloat(request.getParameter("firstClassFare"));
+            float businessClassFare = Float.parseFloat(request.getParameter("businessClassFare"));
+            float economyClassFare = Float.parseFloat(request.getParameter("economyClassFare"));
+            int firstClassOccupancy = Integer.parseInt(request.getParameter("firstClassOccupancy"));
+            int businessClassOccupancy = Integer.parseInt(request.getParameter("businessClassOccupancy"));
+            int economyClassOccupancy = Integer.parseInt(request.getParameter("economyClassOccupancy"));
+            String aID = request.getParameter("aID");
+            String dID = request.getParameter("dID");
 
             
-            int outcome = 0;
-            outcome = psa.executeUpdate();
-            if (outcome == 0) 
-            {
-                out.println("Addition of Flight Failed. Try again.");
-                response.sendRedirect("manageInfo.jsp");
-                return;
-            } 
-            else 
-            {
-	        	out.println("Flight Added!");
-	        	return;
-	        }
-        } 
-        else 
-        {
-            out.println("Addition of Flight Failed. Try again.");
-			response.sendRedirect("manageInfo.jsp");
-			return;
+            String q = "SELECT count(*) FROM Flight WHERE airlineID = ? AND flightNumber = ?";
+            preparedStatement = connection.prepareStatement(q);
+            preparedStatement.setString(1, airlineID);
+            preparedStatement.setInt(2, flightNumber);
+            ResultSet rs;
+            rs = preparedStatement.executeQuery(q);
+            try {
+                rs.next();
+            } catch (Exception e) {
+                out.print("ure query's wrong, bitch.");
+            }
+            String cnt = rs.getString(1); 
+            if(cnt.equals("1")) {
+                out.println("The flight number wanted already exists, <a href='manageInfo.jsp'>please try again.</a>");
+            }
+            else {
+                String update1 = "INSERT INTO Flight(flightNumber,domInt ,dayOfWeek, departDate, departTime,arriveDate,arriveTime,firstClassFare,businessClassFare,economyClassFare,airlineID,firstClassOccupancy,businessClassOccupancy,economyClassOccupancy) VALUES(?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?)";
+                preparedStatement = connection.prepareStatement(update1);
+                
+                preparedStatement.setInt(1, flightNumber);
+                preparedStatement.setString(2, domInt);
+                preparedStatement.setString(3, dayOfWeek);
+                preparedStatement.setDate(4, new java.sql.Date(departDate.getTime()));
+                preparedStatement.setTimestamp(5, new java.sql.Timestamp(departTime.getTime()));
+                preparedStatement.setDate(6, new java.sql.Date(arrivalDate.getTime()));
+                preparedStatement.setTime(stamp(7, new java.sql.Timestamp(arrivalTime.getTime())));
+                preparedStatement.setFloat(8, firstClassFare);
+                preparedStatement.setFloat(9, businessClassFare);
+                preparedStatement.setFloat(10, economyClassFare);
+                preparedStatement.setString(11, airlineID);
+                preparedStatement.setInt(12, firstClassOccupancy);
+                preparedStatement.setInt(13, businessClassOccupancy);
+                preparedStatement.setInt(14, economyClassOccupancy);
+                int outcome = 0;
+                outcome = preparedStatement.executeUpdate();
+                if (outcome == 0) {
+                    response.sendRedirect("../registerFailure.jsp");
+                    return;
+                }
+                else {
+                    String update2 = "INSERT INTO Departs(airportID,flightNumber,airlineID) VALUES(?,?,?)";
+                    preparedStatement = connection.prepareStatement(update2);
+                    preparedStatement.setString(1, dID);
+                    preparedStatement.setInt(2, flightNumber);
+                    preparedStatement.setString(3, airlineID);
+                    outcome = 0;
+                    outcome = preparedStatement.executeUpdate();
+                    String update3 = "INSERT INTO Arrives(airportID,flightNumber,airlineID) VALUES(?,?,?)";
+                    preparedStatement = connection.prepareStatement(update3);
+                    preparedStatement.setString(1, dID);
+                    preparedStatement.setInt(2, flightNumber);
+                    preparedStatement.setString(3, airlineID);
+                    outcome = 0;
+                    outcome = preparedStatement.executeUpdate();
+                    if (outcome == 0) {
+                        response.sendRedirect("../registerFailure.jsp");
+                        return;
+                    }
+                    out.println("Flight data is successfully inserted.");
+                }
+            }
+		} catch (Exception e) {
+			out.print(e);
 		}
-    }catch(Exception e) 
-    {
-        if(e instanceof java.sql.SQLIntegrityConstraintViolationException)
-        {
-            out.print("Invalid ID.");
-        }
-        else{
-        out.print("<p>Server Connection Error.</p>");
-        out.print(e);
-        e.printStackTrace();}
-    } 
-    finally 
-    {
-        try { psa.close(); } catch (Exception e) {}
-        try { conn.close(); } catch (Exception e) {}
-    }
-%>
-
-
-%>
-
-</body>
+	%>
+    </body>
 </html>
