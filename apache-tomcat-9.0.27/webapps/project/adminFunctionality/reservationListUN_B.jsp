@@ -53,7 +53,7 @@
         </body>
         </html>
         <%
-        output.close();
+        rs.close();
         statement.close();
         conn.close();
 		} catch (Exception e) {
