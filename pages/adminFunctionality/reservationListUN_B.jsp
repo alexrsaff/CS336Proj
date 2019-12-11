@@ -70,6 +70,6 @@
         rs.close();
         conn.close();
 		} catch (Exception e) {
-			out.print(e);
+			System.out.print(e);
 		}
     %>
