@@ -5,17 +5,8 @@
         <title>Generate Reservation List</title>
     </head>
     <body>
-        <form method = "post" action = "reservationListB.jsp">
-            <h1>Are you producing the list by flight number or customer name?</h1>
-            <select name = "action" required>
-                <option value="1">Flight Number</option>
-                <option value="2">Customer Name</option>
-            </select>
-
-            <p>Please input your search:</p>
-            <p><input type = "text" name = "newValue" required></p>
-
-            <input type = "submit" value = "submit">
-        </form>
+        <h1>Are you generating the list by flight number or customer ID?</h1>
+        <button onclick="location.href = 'reservationListFlight.jsp';" type="submit">Flight Number</button>
+        <button onclick="location.href = 'reservationListUN.jsp';" type="submit">CustomerID</button>
     </body>
 </html>
