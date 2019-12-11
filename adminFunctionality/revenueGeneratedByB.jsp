@@ -9,154 +9,22 @@
         String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-		try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            connection = DriverManager.getConnection(url, "Application", "JAAYS");
+        Class.forName("com.mysql.jdbc.Driver").newInstance();
+        connection = DriverManager.getConnection(url, "Application", "JAAYS");
 
-            String action = request.getParameter("action");
-            String username = request.getParameter("username");
-            String searchValue = request.getParameter("searchValue");
-            String q;
-            PreparedStatement ps;
-            ResultSet rs;
-            int outcome = 0;
-            float bookingFee = 0;
+        String action = request.getParameter("action");
 
-            if(action.equals("1")) { //by flight
-                q = "SELECT f.flightNumber, t.bookingFee FROM Flight f, TicketFor tf, Ticket t WHERE f.flightNumber = tf.flightNumber AND tf.ticketNumber = t.ticketNumber AND f.flightNumber = ?";
+        if(action.equals("1")) { //by flight
+            response.sendRedirect("rGBFlight.jsp");
+        }
 
-                ps = connection.prepareStatement(q);
-                ps.setString(1, searchValue);
-                rs = ps.executeQuery();
+        else if(action.equals("2")) { //by airline
+            response.sendRedirect("rGBAirline.jsp");
+        }
 
-            %>
-            <table>
-                <tr>
-                    <td width = 200px>Flight Number</td>
-                    <td width = 500px>Amount of Each Ticket</td>
-                </tr>
-                <%
-                while (rs.next()) {
-                %>
-                    <tr>
-                        <td>
-                            <%=rs.getString("f.flightNumber")%>
-                        </td>
-                        <td>
-                            <%=rs.getFloat("t.bookingFee")%>
-                        </td>
-                    </tr>
-                <%
-                }
-                q = "SELECT SUM(t.bookingFee) FROM Flight f, TicketFor tf, Ticket t WHERE f.flightNumber = tf.flightNumber AND tf.ticketNumber = t.ticketNumber AND f.flightNumber = ?";
-                ps = connection.prepareStatement(q);
-                ps.setString(1, searchValue);
-                rs = ps.executeQuery();
-                %>
-                <tr> </tr>
-                <tr>
-                    <td>Total Sales:</td>
-                    <td><%=rs.getFloat("SUM(t.bookingFee)")%></td>
-                </tr>
-            </table>
-            <%
-            }
-
-            else if(action.equals("2")) { //by airline
-                q = "SELECT f.airlineId, t.bookingFee FROM Flight f, TicketFor tf, Ticket t WHERE f.flightNumber = tf.flightNumber AND tf.ticketNumber = t.ticketNumber AND f.airlineID = ?";
-
-                ps = connection.prepareStatement(q);
-                ps.setString(1, searchValue);
-                rs = ps.executeQuery();
-
-            %>
-            <table>
-                <tr>
-                    <td width = 200px>Airline</td>
-                    <td width = 500px>Amount of Each Ticket</td>
-                </tr>
-                <%
-                while (rs.next()) {
-                %>
-                    <tr>
-                        <td>
-                            <%=rs.getString("f.airlineID")%>
-                        </td>
-                        <td>
-                            <%=rs.getFloat("t.bookingFee")%>
-                        </td>
-                    </tr>
-                <%
-                }
-                q = "SELECT SUM(t.bookingFee) FROM Flight f, TicketFor tf, Ticket t WHERE f.flightNumber = tf.flightNumber AND tf.ticketNumber = t.ticketNumber AND f.airlineID = ?";
-                ps = connection.prepareStatement(q);
-                ps.setString(1, searchValue);
-                rs = ps.executeQuery();
-                %>
-                <tr> </tr>
-                <tr>
-                    <td>Total Sales of Airline:</td>
-                    <td><%=rs.getFloat("SUM(t.bookingFee)")%></td>
-                </tr>
-            </table>
-            <%
-            }
-
-            else if(action.equals("3")) { //by customer
-                q = "SELECT count(*) FROM Person p, Customer c WHERE p.username = c.username AND p.username = ?";
-                ps = connection.prepareStatement(q);
-                ps.setString(1, searchValue);
-                
-                rs = ps.executeQuery();
-                rs.next();
-                String cnt = rs.getString(1);
-
-                if (cnt.equals("1")){ //username exists in the db
-                    q = "SELECT c.username, t.bookingFee FROM Customer c, Buy b, Ticket t WHERE c.username = b.username AND b.ticketNumber = t.ticketNumber AND c.username = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setString(1, searchValue);
-                    
-                    rs = ps.executeQuery();
-                %>
-                <table>
-                    <tr>
-                        <td width = 200px>Customer</td>
-                        <td width = 500px>Amount of Each Ticket</td>
-                    </tr>
-                    <%
-                    while (rs.next()) {
-                    %>
-                        <tr>
-                            <td>
-                                <%=rs.getString("f.airlineID")%>
-                            </td>
-                            <td>
-                                <%=rs.getFloat("t.bookingFee")%>
-                            </td>
-                        </tr>
-                    <%
-                    }
-                    q = "SELECT SUM(t.bookingFee) FROM Customer c, Buy b, Ticket t WHERE c.username = b.username AND b.ticketNumber = t.ticketNumber AND c.username = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setString(1, searchValue);
-                    rs = ps.executeQuery();
-                    %>
-                    <tr> </tr>
-                    <tr>
-                        <td>Total Sales of Airline:</td>
-                        <td><%=rs.getFloat("SUM(t.bookingFee)")%></td>
-                    </tr>
-                </table>
-                <%
-                }
-                else {
-                    out.println("The customer you're searching for does not exist, <a href = 'editCustomer.jsp'>please try again.</a>");
-                }
-            }
-
-	    } catch (Exception e) {
-			out.print(e);
-		}
+        else if(action.equals("3")) { //by customer
+            response.sendRedirect("rGBCustomer.jsp");
+        }
 	%>
     </body>
 </html>
