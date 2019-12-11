@@ -9,8 +9,6 @@
         <%
         String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
         Connection conn = null;
-        PreparedStatement preparedStatement = null;
-        System.out.println("help");
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             conn = DriverManager.getConnection(url, "Application", "JAAYS");
@@ -19,18 +17,12 @@
             ResultSet rs;
             String q;
             
-            System.out.println("test 1");
-
             q = "SELECT count(*) FROM TicketFor t4, Buy b WHERE t4.ticketNumber=b.ticketNumber AND b.username = ?";
             ps = conn.prepareStatement(q);
             ps.setString(1,newValue);
 
-            System.out.println("test 2");
-            System.out.println(q);
-
             rs = ps.executeQuery();
             rs.next();
-            //ResultSet rs = statement.executeQuery(q);
 
             String cnt = rs.getString(1);
 
@@ -69,7 +61,7 @@
                 } 
             }
             else {
-                out.println("The username does not exist in the database.");
+                out.println("The username does not exist in the database or this user has not made any reservations.");
             }
         rs.close();
         conn.close();
