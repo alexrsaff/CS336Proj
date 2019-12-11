@@ -1086,3 +1086,8 @@ Stacktrace:
 11-Dec-2019 00:32:08.529 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@41c2284a')
 11-Dec-2019 00:32:41.479 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
 11-Dec-2019 00:32:41.479 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+11-Dec-2019 00:33:08.554 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+11-Dec-2019 00:33:08.554 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+11-Dec-2019 00:33:08.557 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@41c2284a')
+11-Dec-2019 00:34:02.554 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+11-Dec-2019 00:34:02.554 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
