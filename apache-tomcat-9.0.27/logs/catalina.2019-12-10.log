@@ -160,3 +160,57 @@
 10-Dec-2019 23:51:04.164 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
 10-Dec-2019 23:51:04.170 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
 10-Dec-2019 23:51:04.171 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+10-Dec-2019 23:51:47.874 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.27
+10-Dec-2019 23:51:47.876 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 7 2019 09:57:22 UTC
+10-Dec-2019 23:51:47.876 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.27.0
+10-Dec-2019 23:51:47.877 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+10-Dec-2019 23:51:47.877 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+10-Dec-2019 23:51:47.877 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+10-Dec-2019 23:51:47.877 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_161\jre
+10-Dec-2019 23:51:47.877 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_161-b12
+10-Dec-2019 23:51:47.878 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+10-Dec-2019 23:51:47.878 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27
+10-Dec-2019 23:51:47.878 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27
+10-Dec-2019 23:51:47.879 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\conf\logging.properties
+10-Dec-2019 23:51:47.879 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+10-Dec-2019 23:51:47.879 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+10-Dec-2019 23:51:47.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+10-Dec-2019 23:51:47.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+10-Dec-2019 23:51:47.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27
+10-Dec-2019 23:51:47.881 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27
+10-Dec-2019 23:51:47.881 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\temp
+10-Dec-2019 23:51:47.882 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+10-Dec-2019 23:51:47.883 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+10-Dec-2019 23:51:47.883 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+10-Dec-2019 23:51:47.894 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+10-Dec-2019 23:51:48.285 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+10-Dec-2019 23:51:48.703 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+10-Dec-2019 23:51:48.713 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1,114] milliseconds
+10-Dec-2019 23:51:48.761 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+10-Dec-2019 23:51:48.762 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.27]
+10-Dec-2019 23:51:48.789 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\project.war]
+10-Dec-2019 23:51:48.826 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\project] was found with a last modified time that did not match the associated WAR. It will be deleted.
+10-Dec-2019 23:51:49.320 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\project.war] has finished in [531] ms
+10-Dec-2019 23:51:49.321 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\docs]
+10-Dec-2019 23:51:49.390 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\docs] has finished in [69] ms
+10-Dec-2019 23:51:49.391 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\examples]
+10-Dec-2019 23:51:49.946 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\examples] has finished in [555] ms
+10-Dec-2019 23:51:49.946 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager]
+10-Dec-2019 23:51:50.009 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\host-manager] has finished in [63] ms
+10-Dec-2019 23:51:50.009 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\manager]
+10-Dec-2019 23:51:50.056 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\manager] has finished in [47] ms
+10-Dec-2019 23:51:50.056 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\projectname]
+10-Dec-2019 23:51:50.102 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\projectname] has finished in [46] ms
+10-Dec-2019 23:51:50.102 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT]
+10-Dec-2019 23:51:50.149 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\webapps\ROOT] has finished in [32] ms
+10-Dec-2019 23:51:50.149 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+10-Dec-2019 23:51:50.165 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+10-Dec-2019 23:51:50.165 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1,455] milliseconds
+10-Dec-2019 23:52:22.286 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+10-Dec-2019 23:52:22.286 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+10-Dec-2019 23:52:22.536 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+10-Dec-2019 23:52:22.776 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+10-Dec-2019 23:52:22.803 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+10-Dec-2019 23:52:22.809 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+10-Dec-2019 23:52:22.811 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+10-Dec-2019 23:52:22.812 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
