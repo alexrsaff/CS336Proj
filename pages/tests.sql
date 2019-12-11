@@ -5,6 +5,7 @@ INSERT INTO Person VALUES("alex","alex","Alex","Saff","alex@saff.com");
 
 INSERT INTO Airport VALUES('NWK');
 INSERT INTO Airport VALUES('JFK');
+INSERT INTO Airport VALUES('CHI');
 
 INSERT INTO Airline VALUES('AA');
 INSERT INTO Airline VALUES('UA');
@@ -14,4 +15,11 @@ INSERT INTO Flight VALUES(4402,"domestic","Monday",'2019-11-12','13:30','2019-11
 INSERT INTO Departs VALUES('NWK',4402,'AA');
 INSERT INTO Arrives VALUES('JFK',4402,'AA');
 
-SELECT * FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID;
+
+INSERT INTO Flight VALUES(90210,"International","Tuesday",'2019-12-25','13:30','2019-12-26','09:40',750,'UA');
+INSERT INTO Departs VALUES('NWK',90210,'UA');
+INSERT INTO Arrives VALUES('CHI',90210,'UA');
+
+INSERT INTO Flight VALUES(4567,"International","Wednesday",'2019-12-27','04:30','2019-12-28','06:50',968,'AA');
+INSERT INTO Departs VALUES('CHI',4567,'AA');
+INSERT INTO Arrives VALUES('NWK',4567,'AA');

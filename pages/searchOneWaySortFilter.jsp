@@ -131,7 +131,8 @@
 			preparedStatement = connection.prepareStatement(str);
             
 			ResultSet rs;
-			rs = preparedStatement.executeQuery(str);
+            rs = preparedStatement.executeQuery(str);
+            session.setAttribute("searchString",str);
 
     %>
     <text>Search criteria: </text>
@@ -192,29 +193,21 @@
 	%>
 	<br>
 
-	<form method="post" action="SortOneWay.jsp">
-		<select name="price" size=1>
-			<b> Price range from</b>
-			<!-- 1 means one way, 2 means round-trip-->
-			<option value="500">$500 and under</option>
-			<option value="1500">$1500 and under</option>
-			<option value="3000">$3000 and under</option>
-		</select>
-
-		<p>
-			<select name="stops" size=1>
-				<!-- stops = number of stops-->
-				<option value="0">Nonstop</option>
-				<option value="1">1 Stop</option>
-			</select>
-		</p>
-
-		<select name="name" size=1>
-			<!-- 1 means one way, 2 means round-trip-->
-			<option value="CA">China Airline</option>
-			<option value="UA">United Airline</option>
-        </select>&nbsp; <br> 
+	<form method="post" action="sortOneWay.jsp">
+		<select name="filter" size=1>
+			<b> Choose which attribute to sort by</b>
+            <option value="price">Ticket Price (Economy)</option>
+            <option value="price">Ticket Price (Business)</option>
+            <option value="price">Ticket Price (First Class)</option>
+			<option value="1500">Take-off Time</option>
+			<option value="3000">Landing Time</option>
+        </select>
+        <br>
+        <select name="sortmethod" size=1>
+            <b>Choose how to sort</b>
+            <option value="price">Lowest to Highest (Earliest to Latest)</option>
+            <option value="price">Highest to Earliest (Latest to Earliest)</option>
+        </select>
 	</form>
-	<br>
 </body>
 </html>

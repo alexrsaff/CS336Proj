@@ -34,7 +34,7 @@ FOREIGN KEY (airlineID) REFERENCES Airline(airlineID));
 
 CREATE TABLE Flight(
 flightNumber INT,
-domInt VARCHAR(10),
+domInt VARCHAR(13),
 dayOfWeek VARCHAR(10),
 departDate DATE,
 departTime TIME,
