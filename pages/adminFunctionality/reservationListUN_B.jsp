@@ -63,7 +63,6 @@
         </html>
         <%
         rs.close();
-        statement.close();
         conn.close();
 		} catch (Exception e) {
 			out.print(e);

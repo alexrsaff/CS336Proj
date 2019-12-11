@@ -18,3 +18,4 @@
 172.31.74.134 - - [11/Dec/2019:00:41:07 -0500] "GET /HNAP1/ HTTP/1.1" 404 1084
 0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:41:44 -0500] "POST /project/adminFunctionality/reservationListUN_B.jsp HTTP/1.1" 200 220
 0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:42:45 -0500] "POST /project/adminFunctionality/reservationListUN_B.jsp HTTP/1.1" 200 220
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:47:32 -0500] "POST /project/adminFunctionality/reservationListUN_B.jsp HTTP/1.1" 500 2517

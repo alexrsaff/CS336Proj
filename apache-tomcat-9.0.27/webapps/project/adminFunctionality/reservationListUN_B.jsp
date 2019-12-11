@@ -8,18 +8,21 @@
     <body>
         <%
         String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
-		try {
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
-            Statement statement = conn.createStatement();
-            PreparedStatement ps;
+            conn = DriverManager.getConnection(url, "Application", "JAAYS");
             String newValue = request.getParameter("username");
+            PreparedStatement ps;
+            ResultSet rs;
             
             String q = "SELECT t4.ticketNumber, t4.airlineID, t4.flightNumber, b.time, b.date, t4.class, t4.seatNumber, t4.meal FROM TicketFor t4, Buy b WHERE t4.ticketNumber=b.ticketNumber AND b.username = ?";
             ps = conn.prepareStatement(q);
             ps.setString(1,newValue);
 
-            ResultSet rs = ps.executeQuery();
+            rs = ps.executeQuery();
+            rs.next();
             //ResultSet rs = statement.executeQuery(q);
             System.out.println("Reached this part.");
 
