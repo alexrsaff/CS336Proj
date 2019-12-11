@@ -2,39 +2,46 @@
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
 
 <html>
-    <head>
-        <title>Check Customer Rep Login</title>
-    </head>
-
-    <body>
+  <body>
     <%
-        Class.forName("com.mysql.jdbc.Driver");
-        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
-        Connection connection = DriverManager.getConnection(url, "Application", "JAAYS");
+    String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
+	Connection connection = null;
+    PreparedStatement preparedStatement = null;
+    try {
+        Class.forName("com.mysql.jdbc.Driver").newInstance();
+        connection = DriverManager.getConnection(url, "Application", "JAAYS");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        Statement st = conn.createStatement();
-        ResultSet rs;
-        rs = st.executeQuery(SELECT)
-        String q = "SELECT * FROM CustomerRep WHERE username = ? AND password = ?";
-
-        PreparedStatement preparedStatement = connection.prepareStatement(q);
-        preparedStatement.setString(1, username);
-        preparedStatement.setString(2, request.getParameter("password"));
-        ResultSet rs;
-        rs = preparedStatement.executeQuery();
-        if (rs.next()) {
-            session.setAttribute("username", username);
-            out.println("welcome " + username);
-			out.println("<p align='center'> <a href='resFlight.jsp'>Reserve Flight for Customer</a>  </p>");
-			out.println("<p align='center'> <a href='manageInfo.jsp'>Manage Data</a>  </p>");
-			out.println("<p align='center'> <a href='editFlightRes.jsp'>Edit Flight reservation for Customer</a>  </p>");
-			out.println("<p align='center'> <a href='checkWaitlist.jsp'>Check Waitting List</a>  </p>");
-            out.println("<a href='index.jsp'>Log out</a>");
-            response.sendRedirect("loginSuccess.jsp");
-        } else {
-            out.println("Invalid password <a href='custRepLogin.jsp'>try again</a>");
+        if (username != null && !username.isEmpty() && password != null && !password.isEmpty()) {
+            String q = "SELECT * FROM Person p, CustomerRep c WHERE p.username = c.username AND p.username = ? AND c.password = ?";
+            preparedStatement = connection.prepareStatement(q);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
+            ResultSet rs;
+            rs = preparedStatement.executeQuery();
+            if (!rs.next()) {
+                out.println("Lol Good Try");
+                out.println("Invalid username or password <a href='custRepLogin.jsp'>try again</a>");
+            }
+            else {
+                session.setAttribute("username", username);
+                out.println("welcome " + username);
+                out.println("<a href='logout.jsp'>Log out</a>");
+                response.sendRedirect("manageInfo.jsp");
+            }
         }
+        else {
+            out.println("ah");
+        }
+    }
+    catch(Exception e) {
+        out.print("<p>Server Connection Error.</p>");
+        e.printStackTrace();
+    } 
+    finally {
+        try { preparedStatement.close(); } catch (Exception e) {}
+        try { connection.close(); } catch (Exception e) {}
+    }
     %>
-    </body>
+  </body>
 </html>
