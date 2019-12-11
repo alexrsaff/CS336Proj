@@ -44,6 +44,7 @@
         if(e instanceof java.sql.SQLIntegrityConstraintViolationException)
         {
             out.print("Invalid.");
+            out.println("<a href='manageInfo.jsp'>Return</a>");
         }
         else{
         out.print("<p>Server Connection Error.</p>");

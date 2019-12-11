@@ -9,23 +9,22 @@
         Class.forName("com.mysql.jdbc.Driver").newInstance();
         conn = DriverManager.getConnection(url, "Application", "JAAYS");
         String aircraftID = request.getParameter("aircraftID");
-        String attribute = request.getParameter("attribute");
         String data = request.getParameter("data");
         
-		if(aircraftID != null && !aircraftID.isEmpty())
+		if(aircraftID != null && !aircraftID.isEmpty() && data != null && !data.isEmpty())
 			{
-			String enter = "UPDATE Aircraft SET attribute = ? where aircraftID = ?";
+			String enter = "UPDATE Aircraft SET aircraftID = ? where aircraftID = ?";
             
             psa = conn.prepareStatement(enter);
             psa.setString(1, data);
-            psa.setString(2,aircraftID)
+            psa.setString(2,aircraftID);
             
             int outcome = 0;
             outcome = psa.executeUpdate();
             if (outcome == 0) 
             {
                 out.println("Aircraft Edit Failure! Try again.");
-                response.sendRedirect("manageInfo.jsp");
+                out.println("<a href='manageInfo.jsp'>Return</a>");
                 return;
             } 
             else 
@@ -38,7 +37,7 @@
         else 
         {
             out.println("Aircraft Edit Failure!.");
-			response.sendRedirect("manageInfo.jsp");
+			out.println("<a href='manageInfo.jsp'>Return</a>");
 			return;
 		}
     }catch(Exception e) 

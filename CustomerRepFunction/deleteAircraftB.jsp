@@ -13,7 +13,7 @@
         
 		if(aircraftID != null && !aircraftID.isEmpty())
 			{
-                String enter = "DELETE FROM Aircraft WHERE aircraftID = ?");
+                String enter = "DELETE FROM Aircraft WHERE aircraftID = ?";
             
             psa = conn.prepareStatement(enter);
 			psa.setString(1, aircraftID);
@@ -22,7 +22,9 @@
             outcome = psa.executeUpdate();
             if (outcome == 0) 
             {
-                response.sendRedirect("manageInfo.jsp");
+                out.println("No such Aircraft exists!");
+                out.println();
+                out.println("<a href='manageInfo.jsp'>Return</a>");
                 return;
             } 
             else 
@@ -42,7 +44,7 @@
     {
         if(e instanceof java.sql.SQLIntegrityConstraintViolationException)
         {
-            out.print("Invalid.");
+            out.print("No aircraft exists.");
         }
         else{
         out.print("<p>Server Connection Error.</p>");

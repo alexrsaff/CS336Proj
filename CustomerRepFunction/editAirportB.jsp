@@ -12,20 +12,20 @@
         String attribute = request.getParameter("attribute");
         String data = request.getParameter("data");
         
-		if(airpotID != null && !airportID.isEmpty())
+		if(airportID != null && !airportID.isEmpty() && attribute != null && !attribute.isEmpty() && data != null && !data.isEmpty())
 			{
-			String enter = "UPDATE Airport SET attribute = ? where airportID = ?";
+			String enter = "UPDATE Airport SET airportID = ? where airportID = ?";
             
             psa = conn.prepareStatement(enter);
             psa.setString(1, data);
-            psa.setString(2,airportID)
+            psa.setString(2,airportID);
             
             int outcome = 0;
             outcome = psa.executeUpdate();
             if (outcome == 0) 
             {
                 out.println("Airport Edit Failure! Try again.");
-                response.sendRedirect("manageInfo.jsp");
+                out.println("<a href='manageInfo.jsp'>Return</a>");
                 return;
             } 
             else 
@@ -38,7 +38,7 @@
         else 
         {
             out.println("Airport Edit Error!");
-			response.sendRedirect("manageInfo.jsp");
+			out.println("<a href='manageInfo.jsp'>Return</a>");
 			return;
 		}
     }catch(Exception e) 

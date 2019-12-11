@@ -10,9 +10,9 @@
         conn = DriverManager.getConnection(url, "Application", "JAAYS");
 		String airportID = request.getParameter("airportID");
         
-		if(airpotID != null && !airportID.isEmpty())
+		if(airportID != null && !airportID.isEmpty())
 			{
-			String enter = "DELETE FROM Airport WHERE airportID = ?");
+			String enter = "DELETE FROM Airport WHERE airportID = ?";
             
             psa = conn.prepareStatement(enter);
 			psa.setString(1, airportID);
@@ -21,8 +21,9 @@
             outcome = psa.executeUpdate();
             if (outcome == 0) 
             {
-                out.println("Airport Deletion Fail!");
-                response.sendRedirect("manageInfo.jsp");
+                out.println("No Airport exists!");
+                out.println();
+                out.println("<a href='manageInfo.jsp'>Return</a>");
                 return;
             } 
             else 
@@ -35,7 +36,7 @@
         else 
         {   
             out.println("Airport Deletion Error!");
-			response.sendRedirect("manageInfo.jsp");
+			
 			return;
 		}
     }catch(Exception e) 

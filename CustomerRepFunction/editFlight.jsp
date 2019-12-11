@@ -1,25 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ page import="java.io.*,java.util.*,java.sql.*"%>
-<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
-<%@ page import="java.lang.String" %>
-
-<!DOCTYPE html>
 <html>
     <head>
-        <title>Edit Flight</title>
+        <title>Customer Rep: Edit Flight</title>
     </head>
-    <body>
-        <h1>Edit Flight</h1>
-        <form action = "editFlightB.jsp" method = "POST">
-            <input type="text" name="flightNumber" placeholder="Enter the flightNumber" required maxlength="15">
-            <br>
-            <input type="text" name="airlineID" placeholder="Enter the Airline ID" required maxlength="15">
-            <br>
-            <input type="text" name="attribute" placeholder="Enter the attribute to change" required maxlength="30">
-            <br>
-            <input type="text" name="data" placeholder="Enter the new data" required maxlength="30">
-            <br>
-            <input type="submit" value="Submit"/>
-        </form>
+    <body>        
+        <form method="post" action="editFlightB.jsp">
+            <p>Flight Information</p>
+            <p></p><input type="text" name="airlineID" placeholder="Enter the Airline ID" required></p>
+            <p></p><input type="text" name="flightNumber" placeholder="Enter the Flight Number" required></p>
+            
+
+            <p>Select an attribute you want to edit below:</p>
+            <select name="action" size=1 required>
+                <option value="1">Edit password</option>
+                <option value="2">Edit first name</option>
+                <option value="3">Edit last name</option>
+                <option value="4">Edit e-mail</option>
+            </select>
+
+            <p>New update value</p>
+            <p><input type="text" name="newValue" required></p>
+
+            <input type="submit" value="submit">
+	    </form>
     </body>
 </html>

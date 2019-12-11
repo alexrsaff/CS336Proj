@@ -1,27 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page import ="java.io.*,java.util.*,java.sql.*,java.lang.*" %>
+<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
+
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Customer Rep login</title>
-</head>
-<body>
-<form action="custRepLoginB.jsp" method = "post">
-<pre>
+    <head>
+        <h1>hi, admin!</h1>
+    </head>
 
-Username : <input type = "text" placeholder = "Enter Username" name = "username">
+    <body>
+        <h2>hewo customer wep :3</h2>
 
-Password : <input type = "password" placeholder = "Enter Password" name = "password">
-
-           <input type = "submit" value = "Submit">
-           
-</pre>
-
-
-
-</form>
-
-
-</body>
+        <form method="post" action="custRepLoginB.jsp">
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+        
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" required>
+                    
+                <button onclick="location.href = 'custRepLoginB.jsp';" type="submit">Login</button>
+            </div>
+        </form>
+    </body>
 </html>

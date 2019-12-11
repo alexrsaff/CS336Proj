@@ -13,8 +13,6 @@
         <form action = "editAircraftB.jsp" method = "POST">
             <input type="text" name="aircraftID" placeholder="Enter the ID of the Aircraft" required maxlength="15">
             <br>
-            <input type="text" name="attribute" placeholder="Enter the attribute to change" required maxlength="30">
-            <br>
             <input type="text" name="data" placeholder="Enter the new data" required maxlength="30">
             <br>
             <input type="submit" value="Submit"/>

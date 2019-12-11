@@ -25,26 +25,27 @@
             if (outcome == 0) 
             {
                 out.println("Deletion Failure");
-                response.sendRedirect("manageInfo.jsp");
+                out.println("<a href='manageInfo.jsp'>Return</a>");
                 return;
             } 
             else 
             {
-	        	out.println("Flight Deleted!");
+                out.println("Flight Deleted!");
+                out.println("<a href='manageInfo.jsp'>Return</a>");
 	        	return;
 	        }
         } 
         else 
         {
             out.println("Deletion Failure");
-			response.sendRedirect("manageInfo.jsp");
+			out.println("<a href='manageInfo.jsp'>Return</a>");
 			return;
 		}
     }catch(Exception e) 
     {
         if(e instanceof java.sql.SQLIntegrityConstraintViolationException)
         {
-            out.print("Invalid ID.");
+            out.print("No such flight exists .");
         }
         else{
         out.print("<p>Server Connection Error.</p>");
