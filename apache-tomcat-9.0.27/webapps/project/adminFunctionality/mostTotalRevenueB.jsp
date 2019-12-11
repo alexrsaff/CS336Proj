@@ -21,7 +21,7 @@
             FROM Buy b LEFT JOIN Person p ON b.username = p.username
             LEFT JOIN Ticket t ON b.ticketNumber = t.ticketNumber
             GROUP BY p.username
-            ORDER BY revenue DESC;";
+            ORDER BY revenue DESC";
 
             ps = connection.prepareStatement(q);
             rs = ps.executeQuery();
