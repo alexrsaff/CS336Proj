@@ -9,7 +9,6 @@
         <form method ="post" action = "reservationListFlightB">
             Airline:<br>
             <input type="text" name="airline">
-            <br>
             Flight Number:<br>
             <input type="text" name="flightnum">
             <br>
