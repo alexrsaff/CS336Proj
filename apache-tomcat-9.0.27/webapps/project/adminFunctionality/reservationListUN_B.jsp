@@ -14,10 +14,7 @@
             Statement statement = conn.createStatement();
             String newValue = request.getParameter("username");
             
-            String q = "SELECT t4.ticketNumber, t4.airlineID, t4.flightNumber, b.time, b.date, t4.class, t4.seatNumber, t4.meal 
-            FROM TicketFor t4, Buy b
-            WHERE t4.ticketNumber=b.ticketNumber
-            AND buy.username = newValue";
+            String q = "SELECT t4.ticketNumber, t4.airlineID, t4.flightNumber, b.time, b.date, t4.class, t4.seatNumber, t4.meal FROM TicketFor t4, Buy b WHERE t4.ticketNumber=b.ticketNumber AND buy.username = newValue";
 
             ResultSet rs = statement.executeQuery(q);
             if(rs.next()==false) {

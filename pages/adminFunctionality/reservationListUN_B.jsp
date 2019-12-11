@@ -11,14 +11,14 @@
 		try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             Connection connection = DriverManager.getConnection(url, "Application", "JAAYS");
-            Statement statement = conn.createStatement();
+            Statement statement = con.createStatement();
             String newValue = request.getParameter("username");
             
             String q = "SELECT t4.ticketNumber, t4.airlineID, t4.flightNumber, b.time, b.date, t4.class, t4.seatNumber, t4.meal FROM TicketFor t4, Buy b WHERE t4.ticketNumber=b.ticketNumber AND buy.username = newValue";
 
             ResultSet rs = statement.executeQuery(q);
             if(rs.next()==false) {
-                System.out.println("The username does not exist in the database.")
+                System.out.println("The username does not exist in the database.");
             }
             else {
             %>
@@ -34,7 +34,7 @@
                         <th>Meal</th>
                     </tr>
                 <%
-                do {
+                while (rs.next()) {
                 %>
                     <tr>
                         <td> <%= output.getString("ticketNumber") %></td>
@@ -47,7 +47,7 @@
                         <td> <%= output.getString("meal") %></td>
                     </tr>
                 <%
-                } while (rs.next());
+                } 
                 %>
             }
         </table>
@@ -56,8 +56,8 @@
         <%
         output.close();
         statement.close();
-        conn.close();
+        connection.close();
 		} catch (Exception e) {
 			out.print(e);
 		}
-	%>
+    %>

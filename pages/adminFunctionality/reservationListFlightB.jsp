@@ -11,7 +11,7 @@
 		try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             Connection connection = DriverManager.getConnection(url, "Application", "JAAYS");
-            Statement statement = conn.createStatement();
+            Statement statement = con.createStatement();
             String airline = request.getParameter("airline");
             String flightnum = request.getParameter("flightnum");
             
@@ -19,7 +19,7 @@
 
             ResultSet rs = statement.executeQuery(q);
             if(rs.next()==false) {
-                System.out.println("The airline or flight does not exist in the database.")
+                System.out.println("The airline or flight does not exist in the database.");
             }
             else {
             %>
@@ -55,7 +55,7 @@
         <%
         output.close();
         statement.close();
-        conn.close();
+        connection.close();
 		} catch (Exception e) {
 			out.print(e);
 		}
