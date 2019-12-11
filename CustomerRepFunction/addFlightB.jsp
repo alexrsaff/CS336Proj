@@ -43,30 +43,17 @@
             try {
                 rs.next();
             } catch (Exception e) {
-                out.print("ure query's wrong.");
+                out.print("query's wrong.");
             }
             String cnt = rs.getString(1); 
             if(cnt.equals("1")) {
                 out.println("The flight number wanted already exists, <a href='manageInfo.jsp'>please try again.</a>");
             }
             else {
-                String update1 = "INSERT INTO Flight(flightNumber,domInt ,dayOfWeek, departDate, departTime,arriveDate,arriveTime,firstClassFare,businessClassFare,economyClassFare,airlineID,firstClassOccupancy,businessClassOccupancy,economyClassOccupancy) VALUES(?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?)";
-                preparedStatement = connection.prepareStatement(update1);
-                
-                preparedStatement.setInt(1, flightNumber);
-                preparedStatement.setString(2, domInt);
-                preparedStatement.setString(3, dayOfWeek);
-                preparedStatement.setString(4, departDate);
-                preparedStatement.setString(5, departTime);
-                preparedStatement.setString(6, arriveDate);
-                preparedStatement.setString(7, arriveTime);
-                preparedStatement.setFloat(8, firstClassFare);
-                preparedStatement.setFloat(9, businessClassFare);
-                preparedStatement.setFloat(10, economyClassFare);
-                preparedStatement.setString(11, airlineID);
-                preparedStatement.setInt(12, firstClassOccupancy);
-                preparedStatement.setInt(13, businessClassOccupancy);
-                preparedStatement.setInt(14, economyClassOccupancy);
+                String update1 = 
+                    "INSERT INTO Flight
+                    VALUES()
+                                
                 int outcome = 0;
                 outcome = preparedStatement.executeUpdate();
                 if (outcome == 0) {

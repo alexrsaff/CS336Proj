@@ -3,7 +3,7 @@
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
 
 <%
-	String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
+	String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
 	Connection conn = null;
 	PreparedStatement psa = null;
 	try {
@@ -12,7 +12,7 @@
         String airlineID = request.getParameter("airlineID");
         int flightNumber = Integer.parseInt(request.getParameter(flightNumber));
         
-		if(airlineID != null && !airlineID.isEmpty() && flightNumber != null && !flightNumber.isEmpty())
+		if(airlineID != null && !airlineID.isEmpty() && !flightNumber.isEmpty())
 			{
 			String enter = "DELETE FROM Flight WHERE (flightNumber,airlineID) = (?,?)";
             
