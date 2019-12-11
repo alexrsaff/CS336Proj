@@ -18,18 +18,10 @@
             ResultSet rs;
 
             q = "SELECT p.username, sum(t.bookingFee) AS revenue
-            FROM Person p INNER JOIN Buy b ON p.username=b.username
-            INNER JOIN Ticket t on b.ticketNumber=t.ticketNumber
-            ORDER BY revenue DESC";
-
-            <!-- old -->
-            SELECT c.username, f.flightNumber, count(f.flightNumber) AS freq 
-            FROM Airline a INNER JOIN Flight f ON a.airlineID = f.airlineID 
-            GROUP BY a.airlineID, f.flightNumber ORDER BY freq DESC;
-            
-
-
-
+            FROM Buy b LEFT JOIN Person p ON b.username = p.username
+            LEFT JOIN Ticket t ON b.ticketNumber = t.ticketNumber
+            GROUP BY p.username
+            ORDER BY revenue DESC;";
 
             ps = connection.prepareStatement(q);
             rs = ps.executeQuery();
@@ -44,8 +36,8 @@
             while (rs.next()) {
             %>
                 <tr>
-                    <td><%=rs.getString("__________")%></td>
-                    <td><%=rs.getString("_________")%></td>
+                    <td><%=rs.getString("username")%></td>
+                    <td><%=rs.getString("revenue")%></td>
                 </tr>
             <%
             }
@@ -53,6 +45,10 @@
             </table>
             <br>
             <%
+
+            rs.close();
+        ps.close();
+        connection.close();
 
             out.println("<a href = 'adminNavigation.jsp'>back to navigation</a>");
 	    } catch (Exception e) {

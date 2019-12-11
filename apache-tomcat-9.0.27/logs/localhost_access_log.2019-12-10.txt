@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:24:11 -0500] "GET /project/adminFunctionality/adminNavigation.jsp HTTP/1.1" 200 1095
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:24:15 -0500] "GET /project/adminFunctionality/reservationList.jsp HTTP/1.1" 200 424
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:24:18 -0500] "GET /project/adminFunctionality/reservationListFlight.jsp HTTP/1.1" 200 564
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:24:26 -0500] "GET /project/adminFunctionality/reservationListUN.jsp HTTP/1.1" 200 408
