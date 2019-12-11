@@ -11,6 +11,6 @@
     <body>
         <h1>Your account has been made!</h1>
         <h2>Welcome to our family!</h2>
-        <a href = "login.jsp">Log in here</a>
+        <input type="button" onclick="window.location.href='../project/login.jsp'" value="Log in here">
     </body>
 </html>

@@ -10,5 +10,6 @@
         <% session.invalidate();
         response.sendRedirect("homepage.jsp");
         %>
+        <input type="button" onclick="window.location.href='../project/login.jsp'" value="Back to login page">
     </body>
 </html>
