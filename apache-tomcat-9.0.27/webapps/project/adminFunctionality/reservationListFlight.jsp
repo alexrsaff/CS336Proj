@@ -6,7 +6,7 @@
     <body>
         <h1>Enter the airline and flight number to get the reservations for that flight:</h1>
         <br>
-        <form method ="post" action = "reservationListFlightB">
+        <form method ="post" action = "reservationListFlightB.jsp">
             Airline:<br>
             <input type="text" name="airline">
             <br>

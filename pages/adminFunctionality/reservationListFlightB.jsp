@@ -15,14 +15,7 @@
             String airline = request.getParameter("airline");
             String flightnum = request.getParameter("flightnum");
             
-            String q = "SELECT p.fname, p.lname, p.username, t4.seatNumber, b.time, b.date, t4.ticketNumber
-            FROM Person p, Customer c, Buy b, TicketFor t4, Flight f 
-            WHERE p.username = c.username 
-            AND b.username = c.username 
-            AND b.ticketNumber = t4.ticketNumber
-            AND t4.flightNumber = f.flightNumber
-            AND f.flightNumber = flightnum
-            AND f.airlineID = airline";
+            String q = "SELECT p.fname, p.lname, p.username, t4.seatNumber, b.time, b.date, t4.ticketNumber FROM Person p, Customer c, Buy b, TicketFor t4, Flight f WHERE p.username = c.username AND b.username = c.username AND b.ticketNumber = t4.ticketNumber AND t4.flightNumber = f.flightNumber AND f.flightNumber = flightnum AND f.airlineID = airline";
 
             ResultSet rs = statement.executeQuery(q);
             if(rs.next()==false) {

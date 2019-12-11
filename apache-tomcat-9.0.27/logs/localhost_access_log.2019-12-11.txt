@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:09:00 -0500] "GET /project/adminFunctionality/mostTotalRevenueB.jsp HTTP/1.1" 200 437
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:09:57 -0500] "GET /project/adminFunctionality/adminNavigation.jsp HTTP/1.1" 200 1095
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:10:01 -0500] "GET /project/adminFunctionality/reservationList.jsp HTTP/1.1" 200 422
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:10:02 -0500] "GET /project/adminFunctionality/reservationListUN.jsp HTTP/1.1" 200 408
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:10:05 -0500] "POST /project/adminFunctionality/reservationListUN_B HTTP/1.1" 404 1128
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:12:05 -0500] "POST /project/adminFunctionality/reservationListUN_B HTTP/1.1" 404 1128
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:12:22 -0500] "GET /project/adminFunctionality/reservationListUN.jsp HTTP/1.1" 200 412
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:12:25 -0500] "POST /project/adminFunctionality/reservationListUN_B.jsp HTTP/1.1" 500 3724
