@@ -4,7 +4,7 @@
 <html>
   <body>
     <%
-    String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempFour";
+    String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
 	Connection connection = null;
     PreparedStatement preparedStatement = null;
     try {

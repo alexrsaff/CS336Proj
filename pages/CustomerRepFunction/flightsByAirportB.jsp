@@ -6,7 +6,7 @@
     try
     {
         Class.forName("com.mysql.jdbc.Driver").newInstance();
-        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempFour";
+        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
         Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
         Statement statement=conn.createStatement();
         String query = "SELECT airlineID,flightNumber FROM flights WHERE flights.arrivalAirport = " + request.getParameter("airportName") + " OR flights.departureAirport = " + request.getParameter("airportName") + ";
