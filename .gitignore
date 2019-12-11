@@ -1,0 +1,3 @@
+LogonCredentials.txt
+apache-tomcat-9.0.27/logs/*
+apache-tomcat-9.0.27/webapps/project/
