@@ -31,8 +31,11 @@
 			String filter = request.getParameter("filter");// request.setAttribute("departureAirport", departureAirport);
 			String sortmethod = request.getParameter("sortmethod"); //request.setAttribute("arrivalAirport", arrivalAirport);
 
-            String str = (String)session.getAttribute("username");
-            
+            String str = (String)session.getAttribute("searchString");
+
+            String filterConcat = " ORDER BY " + filter + " " + sortmethod;
+            str = str + filterConcat + ";";
+
 			preparedStatement = connection.prepareStatement(str);
             
 			ResultSet rs;
@@ -41,7 +44,6 @@
     %>
     <text>Search criteria: </text>
     <%
-        out.println("<text>" + departureAirport + ", " + arrivalAirport + ", " + departureDate + ", " + arrivalDate + ", " + airlineCompany + ", " + minPrice + ", " + maxPrice + "</text><br>");
         out.println("<text>" + str + "</text>");
     %>
     <br>
@@ -59,8 +61,9 @@
             <th>Arrival Time</th>
             <th>Arrival Date</th>
             <th>Arrival Airport</th>
-            <th>Ticket Price</th>
-            <th>Reserve</th>
+			<th>Economy Class Price</th>
+			<th>Business Class Price</th>
+			<th>First Class Price</th>
         </tr>
 
 		<%
@@ -78,11 +81,9 @@
                 <td><%=rs.getString("arriveTime")%></td>
                 <td><%=rs.getString("arriveDate")%></td>
                 <td><%=rs.getString("arriveairportID")%></td>
-                <td>$ <%=rs.getString("fare")%></td>
-                <td><%=rs.getString("flightNumber")%></td>
-                
-
-			</td>
+                <td>$ <%=rs.getString("economyClassFare")%></td>
+                <td>$ <%=rs.getString("businessClassFare")%></td>
+                <td>$ <%=rs.getString("firstClassFare")%></td>
 		</tr>
 		<%
 			}

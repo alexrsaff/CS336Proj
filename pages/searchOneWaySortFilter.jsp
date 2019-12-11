@@ -126,12 +126,14 @@
 
             String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.economyClassFare, f.businessClassFare, f.firstClassFare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID";
             
-            str = str + depAirConcat + arrAirConcat + airlineConcat + minPriceConcat + maxPriceConcat + departDateConcat + arriveDateConcat + ";";
-			preparedStatement = connection.prepareStatement(str);
-            
+            String strtemp = str + depAirConcat + arrAirConcat + airlineConcat + minPriceConcat + maxPriceConcat + departDateConcat + arriveDateConcat;
+            str = strtemp + ";";
+            session.setAttribute("searchString", strtemp);
+
+            preparedStatement = connection.prepareStatement(str);
 			ResultSet rs;
             rs = preparedStatement.executeQuery(str);
-            session.setAttribute("searchString", str);
+
 
     %>
     <text>Search criteria: </text>
@@ -192,20 +194,26 @@
 	<br>
 
 	<form method="post" action="sortOneWay.jsp">
+        <text>Choose what attribute you would like to sort: </text>
 		<select name="filter" size=1>
-			<b> Choose which attribute to sort by</b>
-            <option value="fare">Ticket Price (Economy)</option>
-            <option value="fare">Ticket Price (Business)</option>
-            <option value="fare">Ticket Price (First Class)</option>
-			<option value="1500">Take-off Time</option>
-			<option value="3000">Landing Time</option>
+            <option value="f.economyClassFare">Ticket Price (Economy)</option>
+            <option value="f.businessClassFare">Ticket Price (Business)</option>
+            <option value="f.firstClassFare">Ticket Price (First Class)</option>
+			<option value="f.departTime">Take-off Time</option>
+			<option value="f.arriveTime">Landing Time</option>
         </select>
         <br>
+        <br>
+
+        <text>Choose how to sort: </text>
         <select name="sortmethod" size=1>
-            <b>Choose how to sort</b>
-            <option value="asc">Lowest to Highest (Earliest to Latest)</option>
-            <option value="desc">Highest to Earliest (Latest to Earliest)</option>
+            <option value="ASC">Lowest to Highest (Earliest to Latest)</option>
+            <option value="DESC">Highest to Lowest (Latest to Earliest)</option>
         </select>
+        <br>
+        <br>
+
+        <input type="submit" value="Filter">
 	</form>
 </body>
 </html>
