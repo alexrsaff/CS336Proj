@@ -17,10 +17,11 @@
             //String newValue = request.getParameter("username");
             PreparedStatement ps;
             ResultSet rs;
+            String q;
             
             System.out.println("test 1");
 
-            String q = "SELECT t4.ticketNumber, t4.airlineID, t4.flightNumber, b.time, b.date, t4.class, t4.seatNumber, t4.meal FROM TicketFor t4, Buy b WHERE t4.ticketNumber=b.ticketNumber AND b.username = " + request.getParameter("username");
+            q = "SELECT t4.ticketNumber, t4.airlineID, t4.flightNumber, b.time, b.date, t4.class, t4.seatNumber, t4.meal FROM TicketFor t4, Buy b WHERE t4.ticketNumber=b.ticketNumber AND b.username = " + request.getParameter("username");
             ps = conn.prepareStatement(q);
 
             System.out.println("test 2");
@@ -29,15 +30,16 @@
             rs = ps.executeQuery();
             rs.next();
             //ResultSet rs = statement.executeQuery(q);
-            System.out.println("test 3");
 
-            if(rs.next()==false) {
-                System.out.println("The username does not exist in the database.");
-            }
-            else {
-                System.out.println("yeet");
-            %>
-            <table border="1">
+            String cnt = rs.getString(1);
+
+            if(!cnt.equals("0")) {
+                q = "SELECT t4.ticketNumber, t4.airlineID, t4.flightNumber, b.time, b.date, t4.class, t4.seatNumber, t4.meal FROM TicketFor t4, Buy b WHERE t4.ticketNumber=b.ticketNumber AND b.username = " + request.getParameter("username");
+                ps = conn.prepareStatement(q);
+                
+                rs = ps.executeQuery();
+                %>
+                <table border="1">
                     <tr>
                         <th>Ticket Number</th>
                         <th>Airline ID</th>
@@ -61,16 +63,19 @@
                         <td> <%= rs.getString("seatNumber") %></td>
                         <td> <%= rs.getString("meal") %></td>
                     </tr>
+                </table>
                 <%
                 } 
             } %>
-        </table>
-        </body>
-        </html>
+            else {
+                out.println("The username does not exist in the database.");
+            }
         <%
         rs.close();
         conn.close();
 		} catch (Exception e) {
-			System.out.print(e);
+			out.print(e);
 		}
     %>
+</body>
+</html>
