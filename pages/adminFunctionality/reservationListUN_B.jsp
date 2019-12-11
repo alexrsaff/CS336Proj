@@ -21,6 +21,8 @@
 
             ResultSet rs = ps.executeQuery();
             //ResultSet rs = statement.executeQuery(q);
+            System.out.println("Reached this part.");
+
             if(rs.next()==false) {
                 System.out.println("The username does not exist in the database.");
             }

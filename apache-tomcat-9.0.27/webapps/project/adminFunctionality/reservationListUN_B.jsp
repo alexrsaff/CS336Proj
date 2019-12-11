@@ -16,10 +16,10 @@
             String newValue = request.getParameter("username");
             
             String q = "SELECT t4.ticketNumber, t4.airlineID, t4.flightNumber, b.time, b.date, t4.class, t4.seatNumber, t4.meal FROM TicketFor t4, Buy b WHERE t4.ticketNumber=b.ticketNumber AND b.username = ?";
-            ps = connection.prepareStatement(q);
+            ps = conn.prepareStatement(q);
             ps.setString(1,newValue);
 
-            ResultSet rs = ps.executeQuery()
+            ResultSet rs = ps.executeQuery();
             //ResultSet rs = statement.executeQuery(q);
             if(rs.next()==false) {
                 System.out.println("The username does not exist in the database.");
