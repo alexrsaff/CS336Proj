@@ -10,6 +10,7 @@
         String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
         Connection conn = null;
         PreparedStatement preparedStatement = null;
+        System.out.println("help");
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             conn = DriverManager.getConnection(url, "Application", "JAAYS");
@@ -21,7 +22,6 @@
 
             String q = "SELECT t4.ticketNumber, t4.airlineID, t4.flightNumber, b.time, b.date, t4.class, t4.seatNumber, t4.meal FROM TicketFor t4, Buy b WHERE t4.ticketNumber=b.ticketNumber AND b.username = " + request.getParameter("username");
             ps = conn.prepareStatement(q);
-            //ps.setString(1,newValue);
 
             System.out.println("test 2");
             System.out.println(q);
@@ -35,6 +35,7 @@
                 System.out.println("The username does not exist in the database.");
             }
             else {
+                System.out.println("yeet");
             %>
             <table border="1">
                     <tr>
