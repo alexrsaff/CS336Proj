@@ -35,19 +35,19 @@
         
                         <tr>
                             <td>Departure Date</td>
-                            <td><input type="text" name="departDate" placeholder="Enter departure date"></td>
+                            <td><input type="date" name="departDate" placeholder="Enter departure date"></td>
                         </tr>
                         <tr>
                                 <td>Departure Time</td>
-                                <td><input type="text" name="departTime" placeholder="Enter the departure time of the flight"></td>
+                                <td><input type="time" name="departTime" placeholder="Enter the departure time of the flight"></td>
                         </tr>
                         <tr>
                                 <td>Arrival Date</td>
-                                <td><input type="text" name="arrivalDate" placeholder="Enter the arrival date"></td>
+                                <td><input type="date" name="arrivalDate" placeholder="Enter the arrival date"></td>
                         </tr>
                         <tr>
                                 <td>Arrival Time</td>
-                                <td><input type="text" name="arriveTime" placeholder="Enter the arrival time"></td>
+                                <td><input type="time" name="arriveTime" placeholder="Enter the arrival time"></td>
                         </tr>
                         <tr>
                                 <td>First Class Fare</td>

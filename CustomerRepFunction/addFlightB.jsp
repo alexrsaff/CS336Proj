@@ -15,15 +15,14 @@
 		try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection(url, "Application", "JAAYS");
-            SimpleDateFormat sdf = new SimpleDateFormat("yyy-MM-dd");
 
             String airlineID = request.getParameter("airlineID");
             int flightNumber = Integer.parseInt(request.getParameter("flightNumber"));
             String domInt = request.getParameter("domInt");
             String dayOfWeek = request.getParameter("dayOfWeek");
-            Date departDate = sdf.parse(request.getParameter("departDate"));
+            String departDate = request.getParameter("departDate");
             String departTime = request.getParameter("departTime");
-            Date arriveDate = sdf.parse(request.getParameter("arrivalDate"));
+            String arriveDate = request.getParameter("arrivalDate");
             String arriveTime = request.getParameter("arrivalTime");
             float firstClassFare= Float.parseFloat(request.getParameter("firstClassFare"));
             float businessClassFare = Float.parseFloat(request.getParameter("businessClassFare"));
@@ -44,7 +43,7 @@
             try {
                 rs.next();
             } catch (Exception e) {
-                out.print("ure query's wrong, bitch.");
+                out.print("ure query's wrong.");
             }
             String cnt = rs.getString(1); 
             if(cnt.equals("1")) {
@@ -57,10 +56,10 @@
                 preparedStatement.setInt(1, flightNumber);
                 preparedStatement.setString(2, domInt);
                 preparedStatement.setString(3, dayOfWeek);
-                preparedStatement.setDate(4, new java.sql.Date(departDate.getTime()));
-                preparedStatement.setTimestamp(5, new java.sql.Timestamp(departTime.getTime()));
-                preparedStatement.setDate(6, new java.sql.Date(arrivalDate.getTime()));
-                preparedStatement.setTime(stamp(7, new java.sql.Timestamp(arrivalTime.getTime())));
+                preparedStatement.setString(4, departDate);
+                preparedStatement.setString(5, departTime);
+                preparedStatement.setString(6, arriveDate);
+                preparedStatement.setString(7, arriveTime);
                 preparedStatement.setFloat(8, firstClassFare);
                 preparedStatement.setFloat(9, businessClassFare);
                 preparedStatement.setFloat(10, economyClassFare);
