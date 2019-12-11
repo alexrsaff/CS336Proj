@@ -55,11 +55,10 @@
                 airlineConcat = " AND f.airlineID = ('" + airlineCompany + "')";
             }
             if (! minPrice.isEmpty()){
-                //int min = Integer.ParseInt(minPrice);
-                minPriceConcat = " AND f.fare >= (" + minPrice + ")";
+                minPriceConcat = " AND f.economyClassFare >= (" + minPrice + ")";
             }
             if (! maxPrice.isEmpty()){
-                maxPriceConcat = " AND f.fare <= (" + maxPrice + ")";
+                maxPriceConcat = " AND f.economyClassFare <= (" + maxPrice + ")";
             }
 
             if (flexible.equals("no")){
@@ -125,14 +124,14 @@
             }
 
 
-            String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.fare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID";
+            String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.economyClassFare, f.businessClassFare, f.firstClassFare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID";
             
             str = str + depAirConcat + arrAirConcat + airlineConcat + minPriceConcat + maxPriceConcat + departDateConcat + arriveDateConcat + ";";
 			preparedStatement = connection.prepareStatement(str);
             
 			ResultSet rs;
             rs = preparedStatement.executeQuery(str);
-            session.setAttribute("searchString",str);
+            session.setAttribute("searchString", str);
 
     %>
     <text>Search criteria: </text>
@@ -155,8 +154,9 @@
             <th>Arrival Time</th>
             <th>Arrival Date</th>
             <th>Arrival Airport</th>
-            <th>Ticket Price</th>
-            <th>Reserve</th>
+			<th>Economy Class Price</th>
+			<th>Business Class Price</th>
+			<th>First Class Price</th>
         </tr>
 
 		<%
@@ -174,11 +174,9 @@
                 <td><%=rs.getString("arriveTime")%></td>
                 <td><%=rs.getString("arriveDate")%></td>
                 <td><%=rs.getString("arriveairportID")%></td>
-                <td>$ <%=rs.getString("fare")%></td>
-                <td><%=rs.getString("flightNumber")%></td>
-                
-
-			</td>
+                <td>$ <%=rs.getString("economyClassFare")%></td>
+                <td>$ <%=rs.getString("businessClassFare")%></td>
+                <td>$ <%=rs.getString("firstClassFare")%></td>    
 		</tr>
 		<%
 			}
@@ -196,17 +194,17 @@
 	<form method="post" action="sortOneWay.jsp">
 		<select name="filter" size=1>
 			<b> Choose which attribute to sort by</b>
-            <option value="price">Ticket Price (Economy)</option>
-            <option value="price">Ticket Price (Business)</option>
-            <option value="price">Ticket Price (First Class)</option>
+            <option value="fare">Ticket Price (Economy)</option>
+            <option value="fare">Ticket Price (Business)</option>
+            <option value="fare">Ticket Price (First Class)</option>
 			<option value="1500">Take-off Time</option>
 			<option value="3000">Landing Time</option>
         </select>
         <br>
         <select name="sortmethod" size=1>
             <b>Choose how to sort</b>
-            <option value="price">Lowest to Highest (Earliest to Latest)</option>
-            <option value="price">Highest to Earliest (Latest to Earliest)</option>
+            <option value="asc">Lowest to Highest (Earliest to Latest)</option>
+            <option value="desc">Highest to Earliest (Latest to Earliest)</option>
         </select>
 	</form>
 </body>

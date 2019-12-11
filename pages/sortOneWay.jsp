@@ -31,9 +31,8 @@
 			String filter = request.getParameter("filter");// request.setAttribute("departureAirport", departureAirport);
 			String sortmethod = request.getParameter("sortmethod"); //request.setAttribute("arrivalAirport", arrivalAirport);
 
-            String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.fare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID";
+            String str = (String)session.getAttribute("username");
             
-            str = str + depAirConcat + arrAirConcat + airlineConcat + minPriceConcat + maxPriceConcat + departDateConcat + arriveDateConcat + ";";
 			preparedStatement = connection.prepareStatement(str);
             
 			ResultSet rs;
@@ -99,20 +98,6 @@
 	<br>
 
 	<form method="post" action="sortOneWay.jsp">
-		<select name="filter" size=1>
-			<b> Choose which attribute to sort by</b>
-            <option value="price">Ticket Price (Economy)</option>
-            <option value="price">Ticket Price (Business)</option>
-            <option value="price">Ticket Price (First Class)</option>
-			<option value="1500">Take-off Time</option>
-			<option value="3000">Landing Time</option>
-        </select>
-        <br>
-        <select name="sortmethod" size=1>
-            <b>Choose how to sort</b>
-            <option value="price">Lowest to Highest (Earliest to Latest)</option>
-            <option value="price">Highest to Earliest (Latest to Earliest)</option>
-        </select>
 	</form>
 </body>
 </html>
