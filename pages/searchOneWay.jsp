@@ -90,11 +90,11 @@
 		<table>
 			<tr>
 				<td>Departure Airport (three letters)</td>
-				<td><input type="text" name="departureAirport"></td>
+				<td><input type="text" name="departureAirport" pattern="[A-Z]{3}"></td>
 			</tr>
 			<tr>
 				<td>Arrival Airport (three letters)</td>
-				<td><input type="text" name="arrivalAirport"></td>
+				<td><input type="text" name="arrivalAirport" pattern="[A-Z]{3}"></td>
 			</tr>
 			<tr>
 				<td>Departure Date</td>
@@ -114,26 +114,22 @@
 			</tr>
 			<tr>
 				<td>Airline Company (2 letters)</td>
-				<td><input type="text" name="airlineCompany"></td>
+				<td><input type="text" name="airlineCompany" pattern="[A-Z]{2}"></td>
 			</tr>
 			<tr>
 				<td>Date Flexibility (+ or - 3 days): </td>
 				<td>
 					<select name="flexibility" size=1>
-							<option value="1">Not flexible</option>
-							<option value="0">Flexible</option>
+							<option value="no">Not flexible</option>
+							<option value="yes">Flexible</option>
 					</select>	
 				</td>
 			</tr>
 			<tr>
 				<td>Price Range Filter: </td>
-				<td>
-					<select name="pricerange" size=1>
-							<option value="500">$500 and under</option>
-							<option value="1000">$1000 and under</option>
-							<option value="2000">$2000 and under</option>
-					</select>					
-				</td>
+				<td><input type="number" name="priceMin"></td>
+				<td> to </td>
+				<td><input type="number" name="priceMax"></td>
 			</tr>
 	
 		</table>

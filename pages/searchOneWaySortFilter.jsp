@@ -3,6 +3,10 @@
 
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.sql.*"%>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.text.ParseException" %>
+<%@ page import="java.util.Calendar" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -13,7 +17,6 @@
 %>
 
 <body>
-	<h4>Search criteria: </h4>
 
 	<%
     String flightNumber;
@@ -29,66 +32,119 @@
 			String arrivalAirport = request.getParameter("arrivalAirport"); //request.setAttribute("arrivalAirport", arrivalAirport);
 			String departureDate = request.getParameter("departureDate"); //request.setAttribute("departureDate", departureDate);
             String arrivalDate = request.getParameter("arrivalDate"); //request.setAttribute("departureDate", departureDate);
+            String airlineCompany = request.getParameter("airlineCompany"); //request.setAttribute("departureDate", departureDate);
+            String minPrice = request.getParameter("priceMin"); //request.setAttribute("departureDate", departureDate);
+            String maxPrice = request.getParameter("priceMax"); //request.setAttribute("departureDate", departureDate);
+            String flexible = request.getParameter("flexibility"); //request.setAttribute("departureDate", departureDate);
+            
+            String depAirConcat = "";
+            String arrAirConcat = "";
+            String airlineConcat = "";
+            String minPriceConcat = "";
+            String maxPriceConcat = "";
+            String departDateConcat = "";
+            String arriveDateConcat = "";
+            
+            if(! departureAirport.isEmpty()){
+                depAirConcat = " AND d.airportID = ('" + departureAirport + "')";
+            }
+            if (! arrivalAirport.isEmpty()){
+                arrAirConcat = " AND a.airportID = ('" + arrivalAirport + "')";
+            }
+            if (! airlineCompany.isEmpty()){
+                airlineConcat = " AND f.airlineID = ('" + airlineCompany + "')";
+            }
+            if (! minPrice.isEmpty()){
+                //int min = Integer.ParseInt(minPrice);
+                minPriceConcat = " AND f.fare >= (" + minPrice + ")";
+            }
+            if (! maxPrice.isEmpty()){
+                maxPriceConcat = " AND f.fare <= (" + maxPrice + ")";
+            }
 
-            //String isFlexible = request.getParameter("flexible_or_not"); //request.setAttribute("isFlexible", isFlexible);			
-            
-            /*				
-            
-            String str1 = "SELECT weekday('" + departureDate + "') as t";
-			Statement stmt1 = con.createStatement();
-			//Run the query against the database.
-			ResultSet result1 = stmt1.executeQuery(str1);
-			result1.next();
-			
-			//flexible
-			int dayNum = Integer.valueOf(result1.getString("t")); // this is the number use for decrement
-			int dayNum2 = Integer.valueOf(result1.getString("t"));// this is the number use for increment
-			int[] before = new int[3];
-			int[] after = new int[3];
-			for(int i = 0; i < 3; i++ ){
-				dayNum -= 1;
-				dayNum2 += 1;
-				if(dayNum < 0){
-					dayNum = 6;
-				}
-				if(dayNum2 > 6){
-					dayNum2 = 0;
-				}
-				before[i] = dayNum;
-				after[i] = dayNum2;
-			}			
-			//end of counting flexible day
-			
-			String str;
-			if(isFlexible.equals("0")){
-			 str = "SELECT a.name, o.flight_number, f.departure_time, f.arrival_time, f.departure_airport, f.arrival_airport, f.operating_days, f.total_fare from Flight as f, Airline_Company as a, Operate as o where o.companyID = a.companyID and o.flight_number = f.flight_number and f.departure_airport = ('"
-					+ departureAirport + "') and f.arrival_airport =('" + arrivalAirport
-					+ "') and f.operating_days like '%" + result1.getString("t") + "%' ORDER BY " + sortFlight;
-			
-			}
-			
-			else{
-				str = "SELECT a.name, o.flight_number, f.departure_time, f.arrival_time, f.departure_airport, f.arrival_airport, f.operating_days, f.total_fare from Flight as f, Airline_Company as a, Operate as o where o.companyID = a.companyID and o.flight_number = f.flight_number and f.departure_airport = ('"
-						+ departureAirport + "') and f.arrival_airport =('" + arrivalAirport
-						+ "') and (f.operating_days like '%" + result1.getString("t") + "%' or f.operating_days like '%" + before[0] + "%' or f.operating_days like '%" + before[1] + "%' or f.operating_days like '%" + before[2] + "%' or f.operating_days like '%" + after[0] + "%' or f.operating_days like '%" + after[1] + "%' or f.operating_days like '%" + after[2] + "%') ORDER BY " + sortFlight;               
-			}
-            
-            */
+            if (flexible.equals("no")){
+                if (! departureDate.isEmpty()){
+                    departDateConcat = " AND f.departDate = ('" + departureDate + "')";
+                }
+                if (! arrivalDate.isEmpty()){
+                    arriveDateConcat = " AND f.arriveDate = ('" + arrivalDate + "')";
+                }
+            } else if (flexible.equals("yes")){
+                if (! departureDate.isEmpty()){
+                    String dt = departureDate; //Dec 11, 2019
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                    Calendar c = Calendar.getInstance();
+                    try {
+                        c.setTime(sdf.parse(dt));
+                    } catch (ParseException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                    c.add(Calendar.DATE, 1);  // number of days to add
+                    String dtone = sdf.format(c.getTime());  // dt is now the new date
+                    c.add(Calendar.DATE, 1);  // number of days to add
+                    String dttwo = sdf.format(c.getTime());  // dt is now the new date
+                    c.add(Calendar.DATE, 1);  // number of days to add
+                    String dtthree = sdf.format(c.getTime());  // dt is now the new date
+                    c.add(Calendar.DATE, -4);  // number of days to add
+                    String dtfour = sdf.format(c.getTime());  // dt is now the new date
+                    c.add(Calendar.DATE, -1);  // number of days to add
+                    String dtfive = sdf.format(c.getTime());  // dt is now the new date
+                    c.add(Calendar.DATE, -1);  // number of days to add
+                    String dtsix = sdf.format(c.getTime());  // dt is now the new date
 
-            String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.fare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID AND d.airportID = ('" + departureAirport + "') AND a.airportID = ('" + arrivalAirport + "');";
-			
+                    departDateConcat = " AND (f.departDate = ('" + departureDate + "') OR f.departDate = ('" + dtone + "') OR f.departDate = ('" + dttwo + "') OR f.departDate = ('" + dtthree + "') OR f.departDate = ('" + dtfour + "') OR f.departDate = ('" + dtfive + "') OR f.departDate = ('" + dtsix + "'))";
+                }
+
+                if (! arrivalDate.isEmpty()){
+                    String dt = arrivalDate; //Dec 11, 2019
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                    Calendar c = Calendar.getInstance();
+                    try {
+                        c.setTime(sdf.parse(dt));
+                    } catch (ParseException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                    c.add(Calendar.DATE, 1);  // number of days to add
+                    String dtone = sdf.format(c.getTime());  // dt is now the new date
+                    c.add(Calendar.DATE, 1);  // number of days to add
+                    String dttwo = sdf.format(c.getTime());  // dt is now the new date
+                    c.add(Calendar.DATE, 1);  // number of days to add
+                    String dtthree = sdf.format(c.getTime());  // dt is now the new date
+                    c.add(Calendar.DATE, -4);  // number of days to add
+                    String dtfour = sdf.format(c.getTime());  // dt is now the new date
+                    c.add(Calendar.DATE, -1);  // number of days to add
+                    String dtfive = sdf.format(c.getTime());  // dt is now the new date
+                    c.add(Calendar.DATE, -1);  // number of days to add
+                    String dtsix = sdf.format(c.getTime());  // dt is now the new date
+
+                    arriveDateConcat = " AND (f.arriveDate = ('" + arrivalDate + "') OR f.arriveDate = ('" + dtone + "') OR f.arriveDate = ('" + dttwo + "') OR f.arriveDate = ('" + dtthree + "') OR f.arriveDate = ('" + dtfour + "') OR f.arriveDate = ('" + dtfive + "') OR f.arriveDate = ('" + dtsix + "'))";
+                }
+
+            }
+
+
+            String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.fare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID";
+            
+            str = str + depAirConcat + arrAirConcat + airlineConcat + minPriceConcat + maxPriceConcat + departDateConcat + arriveDateConcat + ";";
 			preparedStatement = connection.prepareStatement(str);
             
-			//Run the query against the database.
 			ResultSet rs;
 			rs = preparedStatement.executeQuery(str);
 
-	%>
+    %>
+    <text>Search criteria: </text>
+    <%
+        out.println("<text>" + departureAirport + ", " + arrivalAirport + ", " + departureDate + ", " + arrivalDate + ", " + airlineCompany + ", " + minPrice + ", " + maxPrice + "</text><br>");
+        out.println("<text>" + str + "</text>");
+    %>
+    <br>
 
 
 	<!--  Make an HTML table to show the results in: -->
-	<table border="5" bgcolor="skyblue" cellspacing="4" cellpadding="4">
-		<tr bgcolor="B1E1A7">
+	<table border="3" style=color:black cellspacing="4" cellpadding="4">
+		<tr style=color:red>
             <th>Airline Company</th>
             <th>Flight Number</th>
             <th>Flight Type</th>
