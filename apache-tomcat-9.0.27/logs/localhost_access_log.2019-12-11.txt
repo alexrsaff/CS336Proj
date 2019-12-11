@@ -6,3 +6,5 @@
 0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:12:05 -0500] "POST /project/adminFunctionality/reservationListUN_B HTTP/1.1" 404 1128
 0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:12:22 -0500] "GET /project/adminFunctionality/reservationListUN.jsp HTTP/1.1" 200 412
 0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:12:25 -0500] "POST /project/adminFunctionality/reservationListUN_B.jsp HTTP/1.1" 500 3724
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:14:51 -0500] "POST /project/adminFunctionality/reservationListUN_B.jsp HTTP/1.1" 500 11129
+0:0:0:0:0:0:0:1 - - [11/Dec/2019:00:23:27 -0500] "POST /project/adminFunctionality/reservationListUN_B.jsp HTTP/1.1" 500 10396
