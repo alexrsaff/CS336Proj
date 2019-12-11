@@ -27,9 +27,20 @@
     String flightNumber = request.getParameter("flightNumberBooked");
     String classBooked = request.getParameter("classBooked");
 
+    String firsttripAirline = (String)session.getAttribute("airline");
+    String firsttripNumber = (String)session.getAttribute("flightNumber");
+    String firstclassBooked = (String)session.getAttribute("classBooked");
+
+
+
     out.println("<text>" + airlineBooked + "</text>");
     out.println("<text>" + flightNumber + "</text>");
-    out.println("<text>" + classBooked + "</text>");
+    out.println("<text>" + classBooked + "</text><br>");
+
+    out.println("<text> First flight:" + firsttripAirline + "</text>");
+    out.println("<text>" + firsttripNumber + "</text>");
+    out.println("<text>" + firstclassBooked + "</text>");
+
 
     session.setAttribute("airline", airlineBooked);
     session.setAttribute("flightNumber", flightNumber);
@@ -39,8 +50,8 @@
     <br>
     <br>
 
-    <form method="post" action="searchRoundTripback.jsp">
-        <input type="submit" value="Click here to book trip back">
+    <form method="post" action="finsih.jsp">
+        <input type="submit" value="Finish">
     </form>
 
 

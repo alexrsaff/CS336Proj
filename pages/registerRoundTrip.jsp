@@ -33,6 +33,7 @@
 
     session.setAttribute("airline", airlineBooked);
     session.setAttribute("flightNumber", flightNumber);
+    session.setAttribute("classBooked", classBooked);
 
     %>
     

@@ -37,6 +37,9 @@
             String firsttripNumber = (String)session.getAttribute("flightNumber");
             session.setAttribute("airline", firsttripAirline);
             session.setAttribute("flightNumber", firsttripNumber);
+            String classBooked = (String)session.getAttribute("classBooked");
+            session.setAttribute("classBooked", classBooked);
+
             
             String temp = " AND f.airlineID = ('" + firsttripAirline + "')";
             String temp2 = " AND f.flightNumber = ('" + firsttripNumber + "')";
@@ -188,7 +191,7 @@
 				</tr>
 			</table>
 			<br>
-			<input type="submit" value="Book First Flight!">
+			<input type="submit" value="Book Flight Home!">
 		</div>
 	</form>
 

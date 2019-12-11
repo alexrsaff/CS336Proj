@@ -29,6 +29,9 @@
             String firsttripNumber = (String)session.getAttribute("flightNumber");
             session.setAttribute("airline",firsttripAirline);
             session.setAttribute("flightNumber",firsttripNumber);
+            String classBooked = (String)session.getAttribute("classBooked");
+            session.setAttribute("classBooked", classBooked);
+
 
 			Class.forName("com.mysql.jdbc.Driver"); 
             connection = DriverManager.getConnection(url, "Application", "JAAYS");
@@ -106,7 +109,7 @@
 
 	<form method="post" action="registerRoundTripPartTwo.jsp">
         <div class="container" style=background-color:aqua>
-            <h3><b>Fill out the following about the flight you wish to book</b></h3>
+            <h3><b>Fill out the following about the flight you wish to book back home</b></h3>
             <table>
                 <tr>
                     <td>Airline Company (2 letters): </td>
@@ -128,7 +131,7 @@
                 </tr>
             </table>
             <br>
-            <input type="submit" value="Book Now!">
+            <input type="submit" value="Book Flight Home!">
         </div>
     </form>
     
