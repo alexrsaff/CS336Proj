@@ -10,8 +10,8 @@
         String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
 		try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            Connection connection = DriverManager.getConnection(url, "Application", "JAAYS");
-            Statement statement = con.createStatement();
+            Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
+            Statement statement = conn.createStatement();
             String newValue = request.getParameter("username");
             
             String q = "SELECT t4.ticketNumber, t4.airlineID, t4.flightNumber, b.time, b.date, t4.class, t4.seatNumber, t4.meal FROM TicketFor t4, Buy b WHERE t4.ticketNumber=b.ticketNumber AND buy.username = newValue";
@@ -56,7 +56,7 @@
         <%
         output.close();
         statement.close();
-        connection.close();
+        conn.close();
 		} catch (Exception e) {
 			out.print(e);
 		}

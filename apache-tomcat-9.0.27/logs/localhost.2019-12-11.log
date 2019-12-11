@@ -739,3 +739,279 @@ Stacktrace:
 		at java.lang.Thread.run(Unknown Source)
 11-Dec-2019 00:24:26.189 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
 11-Dec-2019 00:24:26.189 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+11-Dec-2019 00:25:08.682 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+11-Dec-2019 00:25:08.682 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+11-Dec-2019 00:25:08.685 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@41c2284a')
+11-Dec-2019 00:25:18.901 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/project] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [40] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+37:                 while (rs.next()) {
+38:                 %>
+39:                     <tr>
+40:                         <td> <%= output.getString("ticketNumber") %></td>
+41:                         <td> <%= output.getString("airlineID") %></td>
+42:                         <td> <%= output.getString("flightNumber") %></td>
+43:                         <td> <%= output.getString("time") %></td>
+
+
+An error occurred at line: [41] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+38:                 %>
+39:                     <tr>
+40:                         <td> <%= output.getString("ticketNumber") %></td>
+41:                         <td> <%= output.getString("airlineID") %></td>
+42:                         <td> <%= output.getString("flightNumber") %></td>
+43:                         <td> <%= output.getString("time") %></td>
+44:                         <td> <%= output.getString("date") %></td>
+
+
+An error occurred at line: [42] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+39:                     <tr>
+40:                         <td> <%= output.getString("ticketNumber") %></td>
+41:                         <td> <%= output.getString("airlineID") %></td>
+42:                         <td> <%= output.getString("flightNumber") %></td>
+43:                         <td> <%= output.getString("time") %></td>
+44:                         <td> <%= output.getString("date") %></td>
+45:                         <td> <%= output.getString("class") %></td>
+
+
+An error occurred at line: [43] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+40:                         <td> <%= output.getString("ticketNumber") %></td>
+41:                         <td> <%= output.getString("airlineID") %></td>
+42:                         <td> <%= output.getString("flightNumber") %></td>
+43:                         <td> <%= output.getString("time") %></td>
+44:                         <td> <%= output.getString("date") %></td>
+45:                         <td> <%= output.getString("class") %></td>
+46:                         <td> <%= output.getString("seatNumber") %></td>
+
+
+An error occurred at line: [44] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+41:                         <td> <%= output.getString("airlineID") %></td>
+42:                         <td> <%= output.getString("flightNumber") %></td>
+43:                         <td> <%= output.getString("time") %></td>
+44:                         <td> <%= output.getString("date") %></td>
+45:                         <td> <%= output.getString("class") %></td>
+46:                         <td> <%= output.getString("seatNumber") %></td>
+47:                         <td> <%= output.getString("meal") %></td>
+
+
+An error occurred at line: [45] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+42:                         <td> <%= output.getString("flightNumber") %></td>
+43:                         <td> <%= output.getString("time") %></td>
+44:                         <td> <%= output.getString("date") %></td>
+45:                         <td> <%= output.getString("class") %></td>
+46:                         <td> <%= output.getString("seatNumber") %></td>
+47:                         <td> <%= output.getString("meal") %></td>
+48:                     </tr>
+
+
+An error occurred at line: [46] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+43:                         <td> <%= output.getString("time") %></td>
+44:                         <td> <%= output.getString("date") %></td>
+45:                         <td> <%= output.getString("class") %></td>
+46:                         <td> <%= output.getString("seatNumber") %></td>
+47:                         <td> <%= output.getString("meal") %></td>
+48:                     </tr>
+49:                 <%
+
+
+An error occurred at line: [47] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+44:                         <td> <%= output.getString("date") %></td>
+45:                         <td> <%= output.getString("class") %></td>
+46:                         <td> <%= output.getString("seatNumber") %></td>
+47:                         <td> <%= output.getString("meal") %></td>
+48:                     </tr>
+49:                 <%
+50:                 } 
+
+
+An error occurred at line: [57] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+54:         </body>
+55:         </html>
+56:         <%
+57:         output.close();
+58:         statement.close();
+59:         conn.close();
+60: 		} catch (Exception e) {
+
+
+An error occurred at line: [60] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+Syntax error, insert "}" to complete Block
+57:         output.close();
+58:         statement.close();
+59:         conn.close();
+60: 		} catch (Exception e) {
+61: 			out.print(e);
+62: 		}
+63:     %>
+
+
+An error occurred at line: [229] in the generated java file: [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\work\Catalina\localhost\project\org\apache\jsp\adminFunctionality\reservationListUN_005fB_jsp.java]
+Syntax error on token "}", delete this token
+
+An error occurred at line: [230] in the generated java file: [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\work\Catalina\localhost\project\org\apache\jsp\adminFunctionality\reservationListUN_005fB_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [40] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+37:                 while (rs.next()) {
+38:                 %>
+39:                     <tr>
+40:                         <td> <%= output.getString("ticketNumber") %></td>
+41:                         <td> <%= output.getString("airlineID") %></td>
+42:                         <td> <%= output.getString("flightNumber") %></td>
+43:                         <td> <%= output.getString("time") %></td>
+
+
+An error occurred at line: [41] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+38:                 %>
+39:                     <tr>
+40:                         <td> <%= output.getString("ticketNumber") %></td>
+41:                         <td> <%= output.getString("airlineID") %></td>
+42:                         <td> <%= output.getString("flightNumber") %></td>
+43:                         <td> <%= output.getString("time") %></td>
+44:                         <td> <%= output.getString("date") %></td>
+
+
+An error occurred at line: [42] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+39:                     <tr>
+40:                         <td> <%= output.getString("ticketNumber") %></td>
+41:                         <td> <%= output.getString("airlineID") %></td>
+42:                         <td> <%= output.getString("flightNumber") %></td>
+43:                         <td> <%= output.getString("time") %></td>
+44:                         <td> <%= output.getString("date") %></td>
+45:                         <td> <%= output.getString("class") %></td>
+
+
+An error occurred at line: [43] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+40:                         <td> <%= output.getString("ticketNumber") %></td>
+41:                         <td> <%= output.getString("airlineID") %></td>
+42:                         <td> <%= output.getString("flightNumber") %></td>
+43:                         <td> <%= output.getString("time") %></td>
+44:                         <td> <%= output.getString("date") %></td>
+45:                         <td> <%= output.getString("class") %></td>
+46:                         <td> <%= output.getString("seatNumber") %></td>
+
+
+An error occurred at line: [44] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+41:                         <td> <%= output.getString("airlineID") %></td>
+42:                         <td> <%= output.getString("flightNumber") %></td>
+43:                         <td> <%= output.getString("time") %></td>
+44:                         <td> <%= output.getString("date") %></td>
+45:                         <td> <%= output.getString("class") %></td>
+46:                         <td> <%= output.getString("seatNumber") %></td>
+47:                         <td> <%= output.getString("meal") %></td>
+
+
+An error occurred at line: [45] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+42:                         <td> <%= output.getString("flightNumber") %></td>
+43:                         <td> <%= output.getString("time") %></td>
+44:                         <td> <%= output.getString("date") %></td>
+45:                         <td> <%= output.getString("class") %></td>
+46:                         <td> <%= output.getString("seatNumber") %></td>
+47:                         <td> <%= output.getString("meal") %></td>
+48:                     </tr>
+
+
+An error occurred at line: [46] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+43:                         <td> <%= output.getString("time") %></td>
+44:                         <td> <%= output.getString("date") %></td>
+45:                         <td> <%= output.getString("class") %></td>
+46:                         <td> <%= output.getString("seatNumber") %></td>
+47:                         <td> <%= output.getString("meal") %></td>
+48:                     </tr>
+49:                 <%
+
+
+An error occurred at line: [47] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+44:                         <td> <%= output.getString("date") %></td>
+45:                         <td> <%= output.getString("class") %></td>
+46:                         <td> <%= output.getString("seatNumber") %></td>
+47:                         <td> <%= output.getString("meal") %></td>
+48:                     </tr>
+49:                 <%
+50:                 } 
+
+
+An error occurred at line: [57] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+output cannot be resolved
+54:         </body>
+55:         </html>
+56:         <%
+57:         output.close();
+58:         statement.close();
+59:         conn.close();
+60: 		} catch (Exception e) {
+
+
+An error occurred at line: [60] in the jsp file: [/adminFunctionality/reservationListUN_B.jsp]
+Syntax error, insert "}" to complete Block
+57:         output.close();
+58:         statement.close();
+59:         conn.close();
+60: 		} catch (Exception e) {
+61: 			out.print(e);
+62: 		}
+63:     %>
+
+
+An error occurred at line: [229] in the generated java file: [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\work\Catalina\localhost\project\org\apache\jsp\adminFunctionality\reservationListUN_005fB_jsp.java]
+Syntax error on token "}", delete this token
+
+An error occurred at line: [230] in the generated java file: [C:\Users\sunny\Documents\RU_2019-20\Databases\project\CS336Proj\apache-tomcat-9.0.27\work\Catalina\localhost\project\org\apache\jsp\adminFunctionality\reservationListUN_005fB_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:103)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:519)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:392)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:362)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+11-Dec-2019 00:30:35.787 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+11-Dec-2019 00:30:35.787 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()

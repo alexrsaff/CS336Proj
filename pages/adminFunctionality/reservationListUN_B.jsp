@@ -37,19 +37,18 @@
                 while (rs.next()) {
                 %>
                     <tr>
-                        <td> <%= output.getString("ticketNumber") %></td>
-                        <td> <%= output.getString("airlineID") %></td>
-                        <td> <%= output.getString("flightNumber") %></td>
-                        <td> <%= output.getString("time") %></td>
-                        <td> <%= output.getString("date") %></td>
-                        <td> <%= output.getString("class") %></td>
-                        <td> <%= output.getString("seatNumber") %></td>
-                        <td> <%= output.getString("meal") %></td>
+                        <td> <%= rs.getString("ticketNumber") %></td>
+                        <td> <%= rs.getString("airlineID") %></td>
+                        <td> <%= rs.getString("flightNumber") %></td>
+                        <td> <%= rs.getString("time") %></td>
+                        <td> <%= rs.getString("date") %></td>
+                        <td> <%= rs.getString("class") %></td>
+                        <td> <%= rs.getString("seatNumber") %></td>
+                        <td> <%= rs.getString("meal") %></td>
                     </tr>
                 <%
                 } 
-                %>
-            }
+            } %>
         </table>
         </body>
         </html>
