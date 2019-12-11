@@ -2,4 +2,4 @@ LogonCredentials.txt
 apache-tomcat-9.0.27/logs/*
 apache-tomcat-9.0.27/webapps/project/
 apache-tomcat-9.0.27/webapps/project.war
-apache-tomcat-9.0.27/work/Catalina/localhost/project/
+apache-tomcat-9.0.27/work/Catalina/localhost/
