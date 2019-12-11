@@ -1,5 +1,6 @@
 <%@ page import ="java.io.*,java.util.*,java.sql.*,java.lang.*" %>
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
+
 <html>
     <head>
         <title>Admin: Most Active Flights</title>
@@ -17,8 +18,7 @@
             PreparedStatement ps;
             ResultSet rs;
 
-            q = "SELECT p.username, sum(t.bookingFee) AS revenue
-            FROM Buy b LEFT JOIN Person p ON b.username = p.username LEFT JOIN Ticket t ON b.ticketNumber = t.ticketNumber GROUP BY p.username ORDER BY revenue DESC";
+            q = "SELECT p.username, sum(t.bookingFee) AS revenue FROM Buy b LEFT JOIN Person p ON b.username = p.username LEFT JOIN Ticket t ON b.ticketNumber = t.ticketNumber GROUP BY p.username ORDER BY revenue DESC";
 
             ps = connection.prepareStatement(q);
             rs = ps.executeQuery();
