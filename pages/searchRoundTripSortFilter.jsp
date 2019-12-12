@@ -193,7 +193,7 @@
 	%>
 	<br>
 
-	<form method="post" action="sortOneWay.jsp">
+	<form method="post" action="sortRoundTrip.jsp">
         <text>Choose what attribute you would like to sort: </text>
 		<select name="filter" size=1>
             <option value="f.economyClassFare">Ticket Price (Economy)</option>
@@ -219,7 +219,7 @@
     <br>
     <br>
     
-    <form method="post" action="registerOneWay.jsp">
+    <form method="post" action="registerRoundTrip.jsp">
             <div class="container" style=background-color:aqua>
                 <h3><b>Fill out the following about the flight you wish to book</b></h3>
                 <table>

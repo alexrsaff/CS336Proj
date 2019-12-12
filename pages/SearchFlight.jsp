@@ -13,7 +13,7 @@
 
 <body>
 	<p>
-	Please Select a Trip Type below (*Required):
+	Please Select a Trip Type below:
     </p>
     
 	<br> <br>

@@ -34,7 +34,7 @@ FOREIGN KEY (airlineID) REFERENCES Airline(airlineID));
 
 CREATE TABLE Flight(
 flightNumber INT,
-domInt VARCHAR(10),
+domInt VARCHAR(13),
 dayOfWeek VARCHAR(10),
 departDate DATE,
 departTime TIME,
@@ -72,22 +72,22 @@ FOREIGN KEY (flightNumber) REFERENCES Flight(flightNumber),
 FOREIGN KEY (airlineID) REFERENCES Airline(airlineID));
 
 CREATE TABLE Departs(
-    airportID VARCHAR(3),
-    flightNumber INT,
-    airlineID VARCHAR(2),
-    PRIMARY KEY(flightNumber, airlineID),
-    FOREIGN KEY (airportID) REFERENCES Airport(airportID),
-    FOREIGN KEY (flightNumber) REFERENCES Flight(flightNumber),
-    FOREIGN KEY (airlineID) REFERENCES Airline(airlineID));
+airportID VARCHAR(3),
+flightNumber INT,
+airlineID VARCHAR(2),
+PRIMARY KEY(flightNumber, airlineID),
+FOREIGN KEY (airportID) REFERENCES Airport(airportID),
+FOREIGN KEY (flightNumber) REFERENCES Flight(flightNumber),
+FOREIGN KEY (airlineID) REFERENCES Airline(airlineID));
 
 CREATE TABLE Arrives(
-    airportID VARCHAR(3),
-    flightNumber INT,
-    airlineID VARCHAR(2),
-    PRIMARY KEY(flightNumber, airlineID),
-    FOREIGN KEY (airportID) REFERENCES Airport(airportID),
-    FOREIGN KEY (flightNumber) REFERENCES Flight(flightNumber),
-    FOREIGN KEY (airlineID) REFERENCES Airline(airlineID));
+airportID VARCHAR(3),
+flightNumber INT,
+airlineID VARCHAR(2),
+PRIMARY KEY(flightNumber, airlineID),
+FOREIGN KEY (airportID) REFERENCES Airport(airportID),
+FOREIGN KEY (flightNumber) REFERENCES Flight(flightNumber),
+FOREIGN KEY (airlineID) REFERENCES Airline(airlineID));
 
 CREATE TABLE FlightWith(
 airlineID VARCHAR(2),

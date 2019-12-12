@@ -13,7 +13,7 @@
 
 <body>
 	<h2>
-		<b>All One-Way flights </b>
+		<b>All Flights (select your first flight) </b>
 	</h2>
 	<%
 		String flightNumber;
@@ -86,7 +86,7 @@
 	%>
 
 	<br>
-	<form method="post" action="searchOneWaySortFilter.jsp">
+	<form method="post" action="searchRoundTripSortFilter.jsp">
 		<!-- hidden type name trip_type = "1"-->
 		<table>
 			<tr>
@@ -142,7 +142,7 @@
 	<br>
 	<br>
 
-	<form method="post" action="registerOneWay.jsp">
+	<form method="post" action="registerRoundTrip.jsp">
 		<div class="container" style=background-color:aqua>
 			<h3><b>Fill out the following about the flight you wish to book</b></h3>
 			<table>
@@ -166,7 +166,7 @@
 				</tr>
 			</table>
 			<br>
-			<input type="submit" value="Book Now!">
+			<input type="submit" value="Book First Flight!">
 		</div>
 	</form>
 

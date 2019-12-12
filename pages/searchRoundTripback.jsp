@@ -13,22 +13,56 @@
 
 <body>
 	<h2>
-		<b>All One-Way flights </b>
+		<b>Flights back home </b>
 	</h2>
 	<%
 		String flightNumber;
 		String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
-		Connection connection = null;
-		PreparedStatement preparedStatement = null;
+        Connection connection = null;
+        Connection connectiontemp = null;
+        PreparedStatement preparedStatement = null;
+        PreparedStatement preparedStatementtemp = null;
 
 		try {
 
 			//Get the database connection
-			Class.forName("com.mysql.jdbc.Driver"); 
+			Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(url, "Application", "JAAYS");
-    
-			String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.economyClassFare, f.businessClassFare, f.firstClassFare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID;";
-			
+            
+            //Getting info from first trip for search filters of next trip
+            
+            String strtemp = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.economyClassFare, f.businessClassFare, f.firstClassFare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID";
+            
+            String firsttripAirline = (String)session.getAttribute("airline");
+            String firsttripNumber = (String)session.getAttribute("flightNumber");
+            session.setAttribute("airline", firsttripAirline);
+            session.setAttribute("flightNumber", firsttripNumber);
+            String classBooked = (String)session.getAttribute("classBooked");
+            session.setAttribute("classBooked", classBooked);
+
+            
+            String temp = " AND f.airlineID = ('" + firsttripAirline + "')";
+            String temp2 = " AND f.flightNumber = ('" + firsttripNumber + "')";
+
+            strtemp = strtemp + temp + temp2 +";";
+
+            preparedStatement = connection.prepareStatement(strtemp);
+            ResultSet rstemp;
+            rstemp = preparedStatement.executeQuery(strtemp);
+            rstemp.next();
+            
+            String departureAirport = rstemp.getString("arriveairportID");
+            String arrivalAirport = rstemp.getString("airportID");
+            session.setAttribute("departureAirport", departureAirport);
+            session.setAttribute("arrivalAirport", arrivalAirport);
+            
+            
+            //Actual search stuff
+            String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.economyClassFare, f.businessClassFare, f.firstClassFare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID";
+            String strconcat = " AND d.airportID = ('" + departureAirport + "')";
+            String strconcat2 = " AND a.airportID = ('" + arrivalAirport + "')";
+            str = str + strconcat + strconcat2 + ";";
+
 			preparedStatement = connection.prepareStatement(str);
             
 			//Run the query against the database.
@@ -86,17 +120,9 @@
 	%>
 
 	<br>
-	<form method="post" action="searchOneWaySortFilter.jsp">
+	<form method="post" action="searchRoundTripbackSortFilter.jsp">
 		<!-- hidden type name trip_type = "1"-->
 		<table>
-			<tr>
-				<td>Departure Airport (three letters)</td>
-				<td><input type="text" name="departureAirport" pattern="[A-Z]{3}"></td>
-			</tr>
-			<tr>
-				<td>Arrival Airport (three letters)</td>
-				<td><input type="text" name="arrivalAirport" pattern="[A-Z]{3}"></td>
-			</tr>
 			<tr>
 				<td>Departure Date</td>
 				<td><input type="date" name="departureDate"></td>
@@ -105,7 +131,6 @@
 				<td>Arrival Date</td>
 				<td><input type="date" name="arrivalDate"></td>
 			</tr>
-
 			<tr>
 				<td>---</td>
 			</tr>
@@ -142,9 +167,9 @@
 	<br>
 	<br>
 
-	<form method="post" action="registerOneWay.jsp">
+	<form method="post" action="registerRoundTripPartTwo.jsp">
 		<div class="container" style=background-color:aqua>
-			<h3><b>Fill out the following about the flight you wish to book</b></h3>
+			<h3><b>Fill out the following about the flight you wish to book back home</b></h3>
 			<table>
 				<tr>
 					<td>Airline Company (2 letters): </td>
@@ -166,7 +191,7 @@
 				</tr>
 			</table>
 			<br>
-			<input type="submit" value="Book Now!">
+			<input type="submit" value="Book Flight Home!">
 		</div>
 	</form>
 

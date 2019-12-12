@@ -25,11 +25,20 @@
     PreparedStatement preparedStatement = null;
 
 		try {
+            //first trip attributes
+            String firsttripAirline = (String)session.getAttribute("airline");
+            String firsttripNumber = (String)session.getAttribute("flightNumber");
+            session.setAttribute("airline",firsttripAirline);
+            session.setAttribute("flightNumber",firsttripNumber);
+            String classBooked = (String)session.getAttribute("classBooked");
+            session.setAttribute("classBooked", classBooked);
+
+
 			Class.forName("com.mysql.jdbc.Driver"); 
             connection = DriverManager.getConnection(url, "Application", "JAAYS");
 
-			String departureAirport = request.getParameter("departureAirport");// request.setAttribute("departureAirport", departureAirport);
-			String arrivalAirport = request.getParameter("arrivalAirport"); //request.setAttribute("arrivalAirport", arrivalAirport);
+			String departureAirport = (String)session.getAttribute("departureAirport");// request.setAttribute("departureAirport", departureAirport);
+			String arrivalAirport = (String)session.getAttribute("arrivalAirport"); //request.setAttribute("arrivalAirport", arrivalAirport);
 			String departureDate = request.getParameter("departureDate"); //request.setAttribute("departureDate", departureDate);
             String arrivalDate = request.getParameter("arrivalDate"); //request.setAttribute("departureDate", departureDate);
             String airlineCompany = request.getParameter("airlineCompany"); //request.setAttribute("departureDate", departureDate);
@@ -193,7 +202,7 @@
 	%>
 	<br>
 
-	<form method="post" action="sortOneWay.jsp">
+	<form method="post" action="sortRoundTripback.jsp">
         <text>Choose what attribute you would like to sort: </text>
 		<select name="filter" size=1>
             <option value="f.economyClassFare">Ticket Price (Economy)</option>
@@ -219,9 +228,9 @@
     <br>
     <br>
     
-    <form method="post" action="registerOneWay.jsp">
+    <form method="post" action="registerRoundTripPartTwo.jsp">
             <div class="container" style=background-color:aqua>
-                <h3><b>Fill out the following about the flight you wish to book</b></h3>
+                <h3><b>Fill out the following about the flight you wish to book back home</b></h3>
                 <table>
                     <tr>
                         <td>Airline Company (2 letters): </td>
@@ -243,7 +252,7 @@
                     </tr>
                 </table>
                 <br>
-                <input type="submit" value="Book Now!">
+                <input type="submit" value="Book Flight Home!">
             </div>
         </form>
     
