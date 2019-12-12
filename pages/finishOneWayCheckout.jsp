@@ -12,6 +12,7 @@
 
 <%
     String userid = (String)session.getAttribute("username");
+    userid = "sg";
     session.setAttribute("username", userid);
     out.println("<h2>" + "Welcome "+ userid + "</h2>");
 %>
@@ -31,8 +32,11 @@
     session.setAttribute("classBooked", classBooked);
 
     String specialmeal = request.getParameter("specialMeal");
+    if (specialmeal.isEmpty()){
+        specialmeal = "none";
+    }
 
-    out.println("<text>Your want to fly with airline: " + airlineBooked + "</text><br>");
+    out.println("<text>You have successfully purchased your " + airlineBooked + "flight.</text><br>");
     out.println("<text>On flight number: " + flightNumber + "</text><br>");
     out.println("<text>With class: " + classBooked + "</text><br>");
 
@@ -65,14 +69,21 @@
         String strticket = "INSERT INTO Ticket VALUES(" + newTicketNumber + ", " + bookingfee + ", NOW());";
 
         //String for TicketFor
-        String strticketfor = "INSERT INTO TicketFor(" + newTicketNumber + ", " + flightNumber + ", '" + airlineBooked + "', '" + specialmeal + "', '" + classBooked + "', '" + seatNumber + "');";
+        String strticketfor = "INSERT INTO TicketFor VALUES(" + newTicketNumber + ", " + flightNumber + ", '" + airlineBooked + "', '" + specialmeal + "', '" + classBooked + "', '" + seatNumber + "');";
 
         //String for Buys
-        String strbuys = "INSERT INTO Buys(NOW(), NOW(), " + newTicketNumber + ", '" + userid + "');";
+        String strbuys = "INSERT INTO Buy VALUES(NOW(), NOW(), " + newTicketNumber + ", '" + userid + "');";
 
         out.println("<text>" + strticket + "</text><br>");
         out.println("<text>" + strticketfor + "</text><br>");
         out.println("<text>" + strbuys + "</text><br>");
+
+        preparedStatement = connection.prepareStatement(strticket);
+        preparedStatement.executeUpdate();
+        preparedStatement = connection.prepareStatement(strticketfor);
+        preparedStatement.executeUpdate();
+        preparedStatement = connection.prepareStatement(strbuys);
+        preparedStatement.executeUpdate();
 
     } catch (Exception e) {
         out.print(e);
@@ -82,5 +93,10 @@
     
     <br>
     <br>
+
+    <form method="post" action="customerLogin.jsp">
+            <input type="submit" value="Go Back to Start!">
+    </form>    
+
 </body>
 </html>
