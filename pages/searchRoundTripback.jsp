@@ -33,12 +33,12 @@
             
             String strtemp = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.economyClassFare, f.businessClassFare, f.firstClassFare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID";
             
-            String firsttripAirline = (String)session.getAttribute("airline");
-            String firsttripNumber = (String)session.getAttribute("flightNumber");
-            session.setAttribute("airline", firsttripAirline);
-            session.setAttribute("flightNumber", firsttripNumber);
-            String classBooked = (String)session.getAttribute("classBooked");
-            session.setAttribute("classBooked", classBooked);
+            String firsttripAirline = (String)session.getAttribute("firstairlineBooked");
+            String firsttripNumber = (String)session.getAttribute("firstflightNumberBooked");
+            session.setAttribute("firstairlineBooked", firsttripAirline);
+            session.setAttribute("firstflightNumberBooked", firsttripNumber);
+            String firstclassBooked = (String)session.getAttribute("firstclassBooked");
+            session.setAttribute("firstclassBooked", firstclassBooked);
 
             
             String temp = " AND f.airlineID = ('" + firsttripAirline + "')";
@@ -168,7 +168,7 @@
 	<br>
 
 	<form method="post" action="registerRoundTripPartTwo.jsp">
-		<div class="container" style=background-color:aqua>
+		<div class="container" style=background-color:yellow>
 			<h3><b>Fill out the following about the flight you wish to book back home</b></h3>
 			<table>
 				<tr>
