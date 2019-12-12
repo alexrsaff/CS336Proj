@@ -21,7 +21,7 @@
 
             ps = connection.prepareStatement(q);
             rs = ps.executeQuery();
-
+            rs.next();
             %>
             <table>
                 <tr>

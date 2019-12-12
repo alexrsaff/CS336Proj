@@ -19,4 +19,6 @@
             </tr>
             </table>
     </body>
+    <br>
+    <input type="button" onclick="window.location.href='../homepage.jsp'" value="Back to home page">
 </html>

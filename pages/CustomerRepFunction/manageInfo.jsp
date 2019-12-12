@@ -35,7 +35,7 @@
 <a href='makeReservationForUser.jsp'>Make Reservations For User</a>
 <br>
 <br>
-<a href='login.jsp'>Return to Login</a>\
+<a href='custRepLogin.jsp'>Return to Login</a>\
 
 </body>
 </html>

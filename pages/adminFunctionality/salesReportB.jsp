@@ -37,8 +37,8 @@
         }
         %>
                     </TABLE><br>
-                    <input type="button" onclick="window.location.href='../project/SalesReport.jsp'" value="Back to sales report page"><br><br>
-                    <input type="button" onclick="window.location.href='../project/login.jsp'" value="Back to login page">
+                    <input type="button" onclick="window.location.href='SalesReport.jsp'" value="Back to sales report page"><br><br>
+                    <input type="button" onclick="window.location.href='adminNavigation.jsp'" value="Back to admin page">
                 </BODY>
             </HTML>
         <%

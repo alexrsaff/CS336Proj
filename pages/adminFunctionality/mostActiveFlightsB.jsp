@@ -6,7 +6,7 @@
     </head>
     <body>
         <%
-        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
+        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 		try {
@@ -17,7 +17,7 @@
             PreparedStatement ps;
             ResultSet rs;
 
-            q = "SELECT a.airlineID, f.flightNumber, count(f.flightNumber) AS freq FROM Airline a INNER JOIN Flight f ON a.airlineID = f.airlineID GROUP BY a.airlineID, f.flightNumber ORDER BY freq DESC";
+            q = "SELECT f.airlineID, f.flightNumber, count(tf.ticketNumber) AS freq FROM TicketFor tf LEFT JOIN Flight f ON f.flightNumber = tf.flightNumber AND f.airlineID = tf.airlineID GROUP BY f.flightNumber ORDER BY freq DESC";
 
             ps = connection.prepareStatement(q);
             rs = ps.executeQuery();
@@ -33,9 +33,9 @@
             while (rs.next()) {
             %>
                 <tr>
-                    <td><%=rs.getString("a.airlineID")%></td>
-                    <td><%=rs.getString("f.flightNumber")%></td>
-                    <td><%=rs.getInt("freq")%></td>
+                    <td><%=rs.getString("airlineID")%></td>
+                    <td><%=rs.getString("flightNumber")%></td>
+                    <td><%=rs.getString("freq")%></td>
                 </tr>
             <%
             }
@@ -43,11 +43,10 @@
             </table>
             <br>
             <%
-
-            out.println("<a href = 'adminNavigation.jsp'>back to navigation</a>");
 	    } catch (Exception e) {
 			out.print(e);
 		}
 	%>
-    </body>
+    </body><br>
+    <input type="button" onclick="window.location.href='../adminFunctionality/adminNavigation.jsp'" value="Back to admin navigation page">
 </html>

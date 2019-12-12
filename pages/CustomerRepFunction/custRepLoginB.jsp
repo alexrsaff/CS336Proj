@@ -32,7 +32,7 @@
         }
     }
     catch(Exception e) {
-        out.println("<a href='mangeInfo.jsp'>Continue to Home</a>");
+        out.println("<a href='manageInfo.jsp'>Continue to Home</a>");
         e.printStackTrace();
     } 
     finally {
