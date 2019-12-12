@@ -20,8 +20,10 @@
         <table border="3" style=color:black cellspacing="2" cellpadding="2">
                 <tr style=color:pink>
                 <TR>
-                    <TH>Airline ID</TH>
-                    <TH>Flight Number</TH>
+                    <TH>Arrival Airline ID</TH>
+                    <TH>Arrival Flight Number</TH>
+                    <TH>Departure Airline ID</TH>
+                    <TH>Departure Flight Number</TH>
                 </TR>
         <%
         while(output.next())
