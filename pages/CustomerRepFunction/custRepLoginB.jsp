@@ -12,19 +12,20 @@
         connection = DriverManager.getConnection(url, "Application", "JAAYS");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+
         if (username != null && !username.isEmpty() && password != null && !password.isEmpty()) {
-            String q = "SELECT * FROM Person AS p, CustomerRep AS c WHERE p.username = c.username AND p.username = ? AND c.password = ?";
+            String q = "SELECT * FROM Person AS p, CustomerRep AS c WHERE p.username = c.username AND p.username = ? AND p.password = ?";
             preparedStatement = connection.prepareStatement(q);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
             ResultSet rs;
             rs = preparedStatement.executeQuery();
-            if (!rs.next()) {
-                out.println("Lol Good Try");
-                out.println("Invalid username or password <a href='custRepLogin.jsp'>try again</a>");
+
+            if (rs.next()) {                
+                response.sendRedirect("manageInfo.jsp");
             }
             else {
-                response.sendRedirect("manageInfo.jsp");
+                out.println("Invalid username or password <a href='custRepLogin.jsp'>try again</a>");
             }
         }
         else {
@@ -32,7 +33,6 @@
         }
     }
     catch(Exception e) {
-        out.println("<a href='manageInfo.jsp'>Continue to Home</a>");
         e.printStackTrace();
     } 
     finally {

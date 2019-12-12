@@ -2,12 +2,8 @@
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
 
 <html>
-    <head>
-        <h1>hi, admin!</h1>
-    </head>
-
     <body>
-        <h2>hewo customer wep :3</h2>
+        <h2>Hello customer Representative</h2>
 
         <form method="post" action="custRepLoginB.jsp">
             <div class="container">

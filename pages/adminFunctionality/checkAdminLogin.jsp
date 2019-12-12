@@ -24,7 +24,6 @@
             ResultSet rs;
             rs = preparedStatement.executeQuery();
             if (!rs.next()) {
-                out.println("u done fucked");
                 out.println("Invalid username or password <a href='adminLogin.jsp'>try again</a>");
             }
             else {

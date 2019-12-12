@@ -11,7 +11,7 @@
     <body>
         <h1>Add an Airport</h1>
         <form action = "addAirportB.jsp" method = "POST">
-            <input type="text" name="airportID" placeholder="Enter the ID of the Airport" required maxlength="15">
+            <input type="text" name="airportID" placeholder="Enter the ID of the Airport" required pattern="[A-Z]{3}">
             <br>
             <input type="submit" value="Submit"/>
             <br>

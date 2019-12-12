@@ -15,7 +15,7 @@
 		
                         <tr>
                             <td>Airline ID</td>
-                            <td><input type="text" name="airlineID" placeholder="Enter the Airline ID"></td>
+                            <td><input type="text" name="airlineID" placeholder="Enter the Airline ID" pattern="[A-Z]{2}"></td>
                         </tr>
                         
                         <tr>
@@ -75,11 +75,11 @@
                         </tr>
                         <tr>
                                 <td>Arrival Airport</td>
-                                <td><input type="text" name="aID" placeholder="Enter the ID for arriving airport" required></td>
+                                <td><input type="text" name="aID" placeholder="Enter the ID for arriving airport" required pattern="[A-Z]{3}"></td>
                         </tr>
                         <tr>
                                 <td>Departure Airport</td>
-                                <td><input type="text" name="dID" placeholder="Enter the ID for departure airport" required></td>
+                                <td><input type="text" name="dID" placeholder="Enter the ID for departure airport" required pattern="[A-Z]{3}"></td>
                         </tr>
         
                     </table>

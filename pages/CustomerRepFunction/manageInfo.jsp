@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Manage Flight,Airport,Aircraft</title>
+<title>Manage Flight, Airport, Aircraft</title>
 </head>
 <body>
 
@@ -31,11 +31,15 @@
 	</p>
 		 <input type="submit" value="Submit">
 	</form>
+<br>
 <a href='getWaitlist.jsp'>Check Waitlist</a>
+<br>
 <a href='makeReservationForUser.jsp'>Make Reservations For User</a>
 <br>
+<a href='editReservationForUser.jsp'>Edit Reservations For User</a>
 <br>
-<a href='custRepLogin.jsp'>Return to Login</a>\
+<br>
+<a href='custRepLogin.jsp'>Return to Login</a>
 
 </body>
 </html>
