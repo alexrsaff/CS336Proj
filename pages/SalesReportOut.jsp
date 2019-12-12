@@ -9,7 +9,9 @@
         String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
         Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
         Statement statement=conn.createStatement();
-        String query = "SELECT * FROM Ticket, Buy WHERE DATE_FORMAT(date, '%Y-%c') = '" + request.getParameter("Month") + "' AND Buy.ticketNumber = Ticket.ticketNumber";
+        String query = "SELECT * FROM Ticket, Buy WHERE DATE_FORMAT(date, '%Y-%c') = '"+
+            request.getParameter("Month")+
+            "' AND Buy.ticketNumber = Ticket.ticketNumber";
         ResultSet output = statement.executeQuery(query);
         %>
             <TABLE BORDER="1">
@@ -34,8 +36,8 @@
             <%
         }
         %>
-                    </TABLE>
-                    <input type="button" onclick="window.location.href='../project/SalesReport.jsp'" value="Back to sales report page"><br>
+                    </TABLE><br>
+                    <input type="button" onclick="window.location.href='../project/SalesReport.jsp'" value="Back to sales report page"><br><br>
                     <input type="button" onclick="window.location.href='../project/login.jsp'" value="Back to login page">
                 </BODY>
             </HTML>
