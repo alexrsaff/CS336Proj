@@ -11,6 +11,6 @@
                 <td width = 350px><a href = 'deleteCustomer.jsp'>Delete Customers</a></td>
             </tr>
         </table>
-        <input type="button" onclick="window.location.href='../project/login.jsp'" value="Back to admin navigation page">
+        <input type="button" onclick="window.location.href='../adminFunctionality/adminNavigation.jsp'" value="Back to admin navigation page">
     </body>
 </html>

@@ -72,7 +72,7 @@
 			out.print(e);
 		}
     %>
-    <input type="button" onclick="window.location.href='../project/login.jsp'" value="Back to admin navigation page">
+    <input type="button" onclick="window.location.href='../adminFunctionality/adminNavigation.jsp'" value="Back to admin navigation page">
 
     </body>
 </html>
