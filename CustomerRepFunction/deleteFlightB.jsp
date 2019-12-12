@@ -10,42 +10,43 @@
         Class.forName("com.mysql.jdbc.Driver").newInstance();
         conn = DriverManager.getConnection(url, "Application", "JAAYS");
         String airlineID = request.getParameter("airlineID");
-        int flightNumber = Integer.parseInt(request.getParameter(flightNumber));
+        int flightNumber = Integer.parseInt(request.getParameter("flightNumber"));
         
-		if(airlineID != null && !airlineID.isEmpty() && !flightNumber.isEmpty())
+		if(airlineID != null && !airlineID.isEmpty())
 			{
-			String enter = "DELETE FROM Flight WHERE (flightNumber,airlineID) = (?,?)";
+			String enter = "DELETE FROM Flight WHERE airlineID = ? AND flightNumber = ?";
             
             psa = conn.prepareStatement(enter);
-            psa.setInt(1,flightNumber);
-            psa.setString(2, airlineID);
+            psa.setString(1, airlineID);
+            psa.setInt(2,flightNumber);
             
             int outcome = 0;
             outcome = psa.executeUpdate();
             if (outcome == 0) 
             {
-                out.println("Deletion Failure");
-                out.println("<a href='manageInfo.jsp'>Return</a>");
+                out.println("Oops! Errrrrrror");
+                response.sendRedirect("manageInfo.jsp");
                 return;
             } 
             else 
             {
                 out.println("Flight Deleted!");
-                out.println("<a href='manageInfo.jsp'>Return</a>");
+                response.sendRedirect("manageInfo.jsp");
 	        	return;
 	        }
         } 
         else 
         {
-            out.println("Deletion Failure");
-			out.println("<a href='manageInfo.jsp'>Return</a>");
+            out.println("Whoops! Something went wrong.");
+			response.sendRedirect("manageInfo.jsp");
 			return;
 		}
     }catch(Exception e) 
     {
         if(e instanceof java.sql.SQLIntegrityConstraintViolationException)
         {
-            out.print("No such flight exists .");
+            out.print("Flight oops.");
+            out.println("<a href='manageInfo.jsp'>Return</a>");
         }
         else{
         out.print("<p>Server Connection Error.</p>");
@@ -58,9 +59,3 @@
         try { conn.close(); } catch (Exception e) {}
     }
 %>
-
-
-%>
-
-</body>
-</html>

@@ -1,4 +1,3 @@
-
 <%@ page import ="java.io.*,java.util.*,java.sql.*,java.lang.*,java.text.*" %>
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
 <%@ page import="java.text.SimpleDateFormat" %>
@@ -9,82 +8,58 @@
     </head>
     <body>
         <%
-        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-		try {
+        String query = "";
+        String q = "";
+        String q2 = "";
+        try{
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            connection = DriverManager.getConnection(url, "Application", "JAAYS");
-
-            String airlineID = request.getParameter("airlineID");
-            int flightNumber = Integer.parseInt(request.getParameter("flightNumber"));
-            String domInt = request.getParameter("domInt");
-            String dayOfWeek = request.getParameter("dayOfWeek");
-            String departDate = request.getParameter("departDate");
-            String departTime = request.getParameter("departTime");
-            String arriveDate = request.getParameter("arrivalDate");
-            String arriveTime = request.getParameter("arrivalTime");
-            float firstClassFare= Float.parseFloat(request.getParameter("firstClassFare"));
-            float businessClassFare = Float.parseFloat(request.getParameter("businessClassFare"));
-            float economyClassFare = Float.parseFloat(request.getParameter("economyClassFare"));
-            int firstClassOccupancy = Integer.parseInt(request.getParameter("firstClassOccupancy"));
-            int businessClassOccupancy = Integer.parseInt(request.getParameter("businessClassOccupancy"));
-            int economyClassOccupancy = Integer.parseInt(request.getParameter("economyClassOccupancy"));
-            String aID = request.getParameter("aID");
-            String dID = request.getParameter("dID");
-
-            
-            String q = "SELECT count(*) FROM Flight WHERE airlineID = ? AND flightNumber = ?";
-            preparedStatement = connection.prepareStatement(q);
-            preparedStatement.setString(1, airlineID);
-            preparedStatement.setInt(2, flightNumber);
-            ResultSet rs;
-            rs = preparedStatement.executeQuery(q);
-            try {
-                rs.next();
-            } catch (Exception e) {
-                out.print("query's wrong.");
+            String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
+            Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
+            Statement statement=conn.createStatement();
+            query = "SELECT count(*) FROM Flight WHERE airlineID = '" + request.getParameter("airlineID")+
+                        "' AND flightNumber = '" + request.getParameter("flightNumber") + "'";
+            ResultSet output = statement.executeQuery(query);
+            output.next();
+            if(output.getInt(1) >= 1)
+            {
+                out.println("The flight number wanted already exists: <a href='manageInfo.jsp'>please try again.</a>");
             }
-            String cnt = rs.getString(1); 
-            if(cnt.equals("1")) {
-                out.println("The flight number wanted already exists, <a href='manageInfo.jsp'>please try again.</a>");
-            }
-            else {
-                String update1 = 
-                    "INSERT INTO Flight
-                    VALUES()
-                                
-                int outcome = 0;
-                outcome = preparedStatement.executeUpdate();
-                if (outcome == 0) {
-                    response.sendRedirect("../registerFailure.jsp");
+            else
+            {
+                query = "INSERT INTO Flight VALUES(" +
+                        request.getParameter("flightNumber")+",'"+request.getParameter("domInt")+"','"+
+                        request.getParameter("dayOfWeek")+"','"+request.getParameter("departDate")+"','"+
+                        request.getParameter("departTime")+"','"+request.getParameter("arrivalDate")+"','"+
+                        request.getParameter("arriveTime")+"','"+request.getParameter("airlineID")+"',"+
+                        request.getParameter("firstClassFare")+","+request.getParameter("businessClassFare")+","+
+                        request.getParameter("economyClassFare")+","+request.getParameter("firstClassOccupancy")+","+
+                        request.getParameter("businessClassOccupancy")+","+request.getParameter("economyClassOccupancy")+")";
+                int outcome = statement.executeUpdate(query);
+                
+                q = "INSERT INTO Arrives VALUES('" +
+                            request.getParameter("aID")+"',"+request.getParameter("flightNumber")+",'"+
+                            request.getParameter("airlineID")+"')";
+                int stop = statement.executeUpdate(q);
+                if(stop == 0){
                     return;
                 }
-                else {
-                    String update2 = "INSERT INTO Departs(airportID,flightNumber,airlineID) VALUES(?,?,?)";
-                    preparedStatement = connection.prepareStatement(update2);
-                    preparedStatement.setString(1, dID);
-                    preparedStatement.setInt(2, flightNumber);
-                    preparedStatement.setString(3, airlineID);
-                    outcome = 0;
-                    outcome = preparedStatement.executeUpdate();
-                    String update3 = "INSERT INTO Arrives(airportID,flightNumber,airlineID) VALUES(?,?,?)";
-                    preparedStatement = connection.prepareStatement(update3);
-                    preparedStatement.setString(1, dID);
-                    preparedStatement.setInt(2, flightNumber);
-                    preparedStatement.setString(3, airlineID);
-                    outcome = 0;
-                    outcome = preparedStatement.executeUpdate();
-                    if (outcome == 0) {
-                        response.sendRedirect("../registerFailure.jsp");
-                        return;
-                    }
-                    out.println("Flight data is successfully inserted.");
+                q2 = "INSERT INTO Departs VALUES('" +
+                            request.getParameter("dID")+"',"+request.getParameter("flightNumber")+",'"+
+                            request.getParameter("airlineID")+"')";
+                int stop1 = statement.executeUpdate(q2);
+                if(stop == 0 || outcome == 0 || stop1 == 0){
+                    out.println("Flight Addition Failed");
+                    return;
                 }
+                
+                out.println("Flight data is successfully inserted. <a href='manageInfo.jsp'>Back.</a>");
             }
-		} catch (Exception e) {
-			out.print(e);
-		}
-	%>
+            
+        }catch(Error e)
+        {
+            out.println(query);
+            out.println(e);
+        }
+		%>
     </body>
 </html>

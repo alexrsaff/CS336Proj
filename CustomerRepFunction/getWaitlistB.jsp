@@ -34,11 +34,13 @@
                 ps.setString(2, airlineID);
                 rs = ps.executeQuery();
                 %>
-                <table>
+                <table border="3" style=color:black cellspacing="2" cellpadding="2">
+                    <tr style=color:pink>
                     <tr>
-                        <td width = 200px>Username</td>
+                        <TH width = 200px>Usernames on Waitlist:</Th>
                     </tr>
                 <%
+
                 while (rs.next()) {
                 %>
                     <tr>

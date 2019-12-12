@@ -20,11 +20,11 @@
                         
                         <tr>
                             <td>Flight Number</td>
-                            <td><input type="text" name="flightNumber" placeholder="Enter the Flight Number"></td>
+                            <td><input type="number" name="flightNumber" placeholder="Enter the Flight Number"></td>
                         </tr>
         
                         <tr>
-                            <td>Domestic or Interational</td>
+                            <td>Domestic or International</td>
                             <td><input type="text" name="domInt" placeholder="Enter domestic or international for the flight"></td>
                         </tr>
         
@@ -51,27 +51,27 @@
                         </tr>
                         <tr>
                                 <td>First Class Fare</td>
-                                <td><input type="text" name="firstClassFare" placeholder="Enter the fare for First Class" required></td>
+                                <td><input type="number" name="firstClassFare" placeholder="Enter the fare for First Class" required></td>
                         </tr>
                         <tr>
                                 <td>Business Class Fare</td>
-                                <td><input type="text" name="businessClassFare" placeholder="Enter the fare for Business Class" required></td>
+                                <td><input type="number" name="businessClassFare" placeholder="Enter the fare for Business Class" required></td>
                         </tr>
                         <tr>
                                 <td>Economy Fare</td>
-                                <td><input type="text" name="economyClassFare" placeholder="Enter the fare for Ecomomy" required></td>
+                                <td><input type="number" name="economyClassFare" placeholder="Enter the fare for Economy" required></td>
                         </tr>
                         <tr>
                                 <td>First Class Occupancy</td>
-                                <td><input type="text" name="firstClassOccupancy" placeholder="Enter the total seats for First Class" required></td>
+                                <td><input type="number" name="firstClassOccupancy" placeholder="Enter the total seats for First Class" required></td>
                         </tr>
                         <tr>
                                 <td>Business Class Occupancy</td>
-                                <td><input type="text" name="businessClassOccupancy" placeholder="Enter the total seats for Business Class" required></td>
+                                <td><input type="number" name="businessClassOccupancy" placeholder="Enter the total seats for Business Class" required></td>
                         </tr>
                         <tr>
                                 <td>Economy Occupancy</td>
-                                <td><input type="text" name="economyClassOccupancy" placeholder="Enter the total seats for Economy" required></td>
+                                <td><input type="number" name="economyClassOccupancy" placeholder="Enter the total seats for Economy" required></td>
                         </tr>
                         <tr>
                                 <td>Arrival Airport</td>
