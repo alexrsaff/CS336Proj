@@ -11,7 +11,7 @@
     <body>
         <h1>Delete a Flight</h1>
         <form action = "deleteFlightB.jsp" method = "POST">
-            <input type="text" name="airlineID" placeholder="Enter the Airline ID" required maxlength="15">
+            <input type="text" name="airlineID" placeholder="Enter the Airline ID" required pattern="[A-Z]{2}">
             <br>
             <input type="number" name="flightNumber" placeholder="Enter the Flight Number" required maxlength="15">
             <br>

@@ -38,6 +38,15 @@
                     response.sendRedirect("../registerFailure.jsp");
                     return;
                 }
+
+                query = "INSERT INTO Departs VALUES('" + 
+                        request.getParameter("dID") + "', " + request.getParameter("flightNumber") + ", '" + request.getParameter("airlineID") + "')";
+                statement.executeUpdate(query);
+
+                query = "INSERT INTO Arrives VALUES('" + 
+                request.getParameter("aID") + "', " + request.getParameter("flightNumber") + ", '" + request.getParameter("airlineID") + "')";
+                statement.executeUpdate(query);
+                
                 out.println("Flight data is successfully inserted. <a href='manageInfo.jsp'>Back.</a>");
             }
         }catch(Error e)
