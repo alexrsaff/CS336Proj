@@ -46,10 +46,11 @@
 
     //Random r = new Random();
     //char c = (char)(r.nextInt(26) + 'a');
-    char c = 'A';
+    char[] c = {'A', 'B', 'C', 'D', 'E', 'F'};
     int x = (int)(Math.random() * 100) + 1;
+    int charnum = (int)(Math.random() * 6);
     String seatNumber = Integer.toString(x);
-    seatNumber = seatNumber + c;
+    seatNumber = seatNumber + c[charnum];
 
     float bookingfee = 75;
 

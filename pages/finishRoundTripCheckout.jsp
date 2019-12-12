@@ -58,8 +58,15 @@
 
     String str = "SELECT MAX(ticketNumber) AS tnum FROM Ticket;";
     int newTicketNumber = 0;
-    String seatNumber = "69A";
+    //String seatNumber = "69A";
     float bookingfee = 75;
+
+    char[] c = {'A', 'B', 'C', 'D', 'E', 'F'};
+    int x = (int)(Math.random() * 100) + 1;
+    int charnum = (int)(Math.random() * 6);
+    String seatNumber = Integer.toString(x);
+    seatNumber = seatNumber + c[charnum];
+
 
     try{
 
