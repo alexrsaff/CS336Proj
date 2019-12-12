@@ -18,15 +18,8 @@
                 ResultSet rs;
                 String q;
                 String dt;
-
                 dt = "SELECT NOW()";
                 
-
-
-
-
-                
-    
                 q = "SELECT count(*) FROM Person p, Customer c, Buy b, TicketFor t4, Flight f WHERE p.username = c.username AND b.username = c.username AND b.ticketNumber = t4.ticketNumber AND t4.flightNumber = f.flightNumber AND f.flightNumber = ? AND f.airlineID = ?";
                 ps = conn.prepareStatement(q);
                 ps.setString(1,flightnum);
