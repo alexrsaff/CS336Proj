@@ -9,7 +9,7 @@
         <title>Generate Sales Report</title>
     </head>
     <body>
-		<h1>Enter the month for which you would like the report to be generated</h1>
+		<h1>How would you like the report to be aggregated</h1>
 		<form action = "RevenueReportOut.jsp" method = "POST">
             <label>Aggregate by: </label>
 			<select name = "Aggregator">

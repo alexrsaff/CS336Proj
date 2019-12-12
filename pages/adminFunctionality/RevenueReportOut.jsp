@@ -9,7 +9,7 @@
         String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
         Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
 		Statement statement=conn.createStatement();
-		String midChunk = ", SUM(F.firstClassFare + F.economyClassFare + F.businessClassFare + T.bookingFee) AS Revenue FROM Flight F LEFT JOIN TicketFor TF ON F.flightNumber = TF.flightNumber AND F.airlineID = TF.airlineID LEFT JOIN Ticket T ON TF.ticketNumber = T.ticketNumber RIGHT JOIN Buy B ON TF.ticketNumber = B.ticketNumber LEFT JOIN Person P ON B.username = P.username GROUP BY P.username ";
+		String midChunk = ", SUM(IF(TF.class='first',F.firstClassFare,0) + IF(TF.class='economy',F.economyClassFare,0) + IF(TF.class='business',F.businessClassFare,0) + T.bookingFee) AS Revenue FROM Flight F LEFT JOIN TicketFor TF ON F.flightNumber = TF.flightNumber AND F.airlineID = TF.airlineID LEFT JOIN Ticket T ON TF.ticketNumber = T.ticketNumber RIGHT JOIN Buy B ON TF.ticketNumber = B.ticketNumber LEFT JOIN Person P ON B.username = P.username GROUP BY P.username ";
 		String startChunk = "";
 		String endChunk = "";
 		String option = "";
@@ -44,15 +44,15 @@
         {
             %>
                 <TR>
-                        <TD> <%= output.getString(0) %></td>
-                        <TD> <%= output.getString(1) %></TD>
+                        <TD> <%= output.getString(1) %></td>
+                        <TD> <%= output.getString(2) %></TD>
                 </TR>
             <%
         }
         %>
                     </TABLE><br>
-                    <input type="button" onclick="window.location.href='../project/RevenueReport.jsp'" value="Back to revenue report page"><br><br>
-                    <input type="button" onclick="window.location.href='../project/login.jsp'" value="Back to login page">
+                    <input type="button" onclick="window.location.href='RevenueReport.jsp'" value="Back to revenue report page"><br><br>
+                    <input type="button" onclick="window.location.href='../login.jsp'" value="Back to login page">
                 </BODY>
             </HTML>
         <%
