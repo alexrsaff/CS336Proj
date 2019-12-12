@@ -13,7 +13,7 @@
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         if (username != null && !username.isEmpty() && password != null && !password.isEmpty()) {
-            String q = "SELECT * FROM Person p, CustomerRep c WHERE p.username = c.username AND p.username = ? AND c.password = ?";
+            String q = "SELECT * FROM Person AS p, CustomerRep AS c WHERE p.username = c.username AND p.username = ? AND c.password = ?";
             preparedStatement = connection.prepareStatement(q);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
@@ -24,18 +24,15 @@
                 out.println("Invalid username or password <a href='custRepLogin.jsp'>try again</a>");
             }
             else {
-                session.setAttribute("username", username);
-                out.println("welcome " + username);
-                out.println("<a href='logout.jsp'>Log out</a>");
                 response.sendRedirect("manageInfo.jsp");
             }
         }
         else {
-            out.println("ah");
+            out.println("Enter username or password");
         }
     }
     catch(Exception e) {
-        out.print("<p>Server Connection Error.</p>");
+        out.println("<a href='mangeInfo.jsp'>Continue to Home</a>");
         e.printStackTrace();
     } 
     finally {

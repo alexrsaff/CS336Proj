@@ -31,9 +31,11 @@
 	</p>
 		 <input type="submit" value="Submit">
 	</form>
+<a href='getWaitlist.jsp'>Check Waitlist</a>
+<a href='makeReservationForUser.jsp'>Make Reservations For User</a>
 <br>
 <br>
-<a href='login.jsp'>Return to Login</a>
+<a href='login.jsp'>Return to Login</a>\
 
 </body>
 </html>
