@@ -17,7 +17,7 @@
             PreparedStatement ps;
             ResultSet rs;
 
-            q = "SELECT UN as username, MAX(revenue) as maxRevenue FROM(SELECT P.username AS un, SUM(IF(TF.class='first',F.firstClassFare,0) + IF(TF.class='economy',F.economyClassFare,0) + IF(TF.class='business',F.businessClassFare,0) + T.bookingFee) AS Revenue FROM Flight F LEFT JOIN TicketFor TF ON F.flightNumber = TF.flightNumber AND F.airlineID = TF.airlineID LEFT JOIN Ticket T ON TF.ticketNumber = T.ticketNumber RIGHT JOIN Buy B ON TF.ticketNumber = B.ticketNumber LEFT JOIN Person P ON B.username = P.username GROUP BY P.username) AS indvRev";
+            q = "SELECT un as username, MAX(Revenue) as maxRevenue FROM(SELECT P.username AS un, SUM(IF(TF.class='first',F.firstClassFare,0) + IF(TF.class='economy',F.economyClassFare,0) + IF(TF.class='business',F.businessClassFare,0) + T.bookingFee) AS Revenue FROM Flight F LEFT JOIN TicketFor TF ON F.flightNumber = TF.flightNumber AND F.airlineID = TF.airlineID LEFT JOIN Ticket T ON TF.ticketNumber = T.ticketNumber RIGHT JOIN Buy B ON TF.ticketNumber = B.ticketNumber LEFT JOIN Person P ON B.username = P.username GROUP BY P.username) AS indvRev";
 
             ps = connection.prepareStatement(q);
             rs = ps.executeQuery();
