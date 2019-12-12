@@ -38,8 +38,7 @@
     session.setAttribute("firstflightNumberBooked", firsttripNumber);
     String firstclassBooked = (String)session.getAttribute("firstclassBooked");
     session.setAttribute("firstclassBooked", firstclassBooked);
-
-
+    
     %>
 
     <form method="post" action="finishRoundTripCheckout.jsp">

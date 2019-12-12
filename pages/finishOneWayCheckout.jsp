@@ -42,7 +42,15 @@
 
     String str = "SELECT MAX(ticketNumber) AS tnum FROM Ticket;";
     int newTicketNumber = 0;
-    String seatNumber = "69A";
+    //String seatNumber = "69A";
+
+    //Random r = new Random();
+    //char c = (char)(r.nextInt(26) + 'a');
+    char c = 'A';
+    int x = (int)(Math.random() * 100) + 1;
+    String seatNumber = Integer.toString(x);
+    seatNumber = seatNumber + c;
+
     float bookingfee = 75;
 
     try{
