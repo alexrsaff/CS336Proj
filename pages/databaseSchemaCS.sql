@@ -58,9 +58,9 @@ meal VARCHAR (10),
 class VARCHAR(10),
 seatNumber VARCHAR(10),
 PRIMARY KEY(ticketNumber, airlineID, flightNumber),
-FOREIGN KEY (ticketNumber) REFERENCES Ticket(ticketNumber),
-FOREIGN KEY (flightNumber) REFERENCES Flight(flightNumber),
-FOREIGN KEY (airlineID) REFERENCES Airline(airlineID));
+FOREIGN KEY (ticketNumber) REFERENCES Ticket(ticketNumber) ON DELETE CASCADE,
+FOREIGN KEY (flightNumber) REFERENCES Flight(flightNumber) ON DELETE CASCADE,
+FOREIGN KEY (airlineID) REFERENCES Airline(airlineID) ON DELETE CASCADE);
 
 CREATE TABLE AircraftOn(
 flightNumber INT,
