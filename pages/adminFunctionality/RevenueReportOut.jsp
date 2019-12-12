@@ -52,7 +52,7 @@
         %>
                     </TABLE><br>
                     <input type="button" onclick="window.location.href='../project/RevenueReport.jsp'" value="Back to revenue report page"><br><br>
-                    <input type="button" onclick="window.location.href='../adminNavigation.jsp'" value="Back to admin navigation page">
+                    <input type="button" onclick="window.location.href='../project/adminNavigation.jsp'" value="Back to admin navigation page">
                 </BODY>
             </HTML>
         <%
