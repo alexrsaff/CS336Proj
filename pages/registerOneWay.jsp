@@ -30,7 +30,7 @@
     session.setAttribute("flightNumberBooked", flightNumber);
     session.setAttribute("classBooked", classBooked);
 
-    out.println("<text>Your want to fly with airline: " + airlineBooked + "</text><br>");
+    out.println("<text>You want to fly with: " + airlineBooked + "</text><br>");
     out.println("<text>On flight number: " + flightNumber + "</text><br>");
     out.println("<text>With class: " + classBooked + "</text><br>");
 
