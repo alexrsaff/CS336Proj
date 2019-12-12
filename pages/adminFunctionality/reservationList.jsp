@@ -41,10 +41,10 @@
 						<TD> <%= output.getString("class") %></TD>
 						<TD> <%= output.getString("seatNumber") %></td>
 						<TD> <%= output.getString("meal") %></TD>
-						<TD> <%= output.getString("airportID") %></td>
+						<TD> <%= output.getString("D.airportID") %></td>
 						<TD> <%= output.getString("departDate") %></TD>
 						<TD> <%= output.getString("departTime") %></td>
-						<TD> <%= output.getString("airportID") %></TD>
+						<TD> <%= output.getString("A.airportID") %></TD>
 						<TD> <%= output.getString("arriveDate") %></td>
 						<TD> <%= output.getString("arriveTime") %></TD>
                 </TR>
@@ -52,7 +52,7 @@
         }
         %>
                     </TABLE><br>
-                    <input type="button" onclick="window.location.href='../project/adminNavigation.jsp'" value="Back to admin page">
+                    <input type="button" onclick="window.location.href='adminNavigation.jsp'" value="Back to admin page">
                 </BODY>
             </HTML>
         <%
