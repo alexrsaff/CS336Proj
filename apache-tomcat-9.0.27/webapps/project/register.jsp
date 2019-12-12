@@ -11,10 +11,10 @@
     <body>
         <h1>Create your Account</h1>
         <form action = "checkRegistration.jsp" method = "POST">
-            <input type="text" name="firstname" placeholder="Enter your firstname" required maxlength="15"
+            <input type="text" name="firstname" placeholder="Enter your first name" required maxlength="15"
                 pattern="[A-Za-z '-]{1,20}">
             <br>
-            <input type="text" name="lastname" placeholder="Enter your firstname" required maxlength="15"
+            <input type="text" name="lastname" placeholder="Enter your last name" required maxlength="15"
                 pattern="[A-Za-z '-]{1,20}">
             <br>
             <input type="text" name="username" placeholder="Enter a username" required maxlength="15" 

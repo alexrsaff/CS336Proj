@@ -2,7 +2,7 @@
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
 
 <%
-	String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
+	String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
 	Connection conn = null;
 	PreparedStatement psa = null;
 	try {
@@ -36,8 +36,21 @@
             } 
             else 
             {
-	        	response.sendRedirect("registerSuccess.jsp");
-	        	return;
+                enter = "INSERT INTO Customer (username)" + "VALUES(?);";
+            
+                psa = conn.prepareStatement(enter);
+                psa.setString(1, user);
+                
+                outcome = 0;
+                outcome = psa.executeUpdate();
+                if (outcome == 0) {
+                    response.sendRedirect("registerFailure.jsp");
+                    return;
+                }
+                else {
+                    response.sendRedirect("registerSuccess.jsp");
+	        	    return;
+                }
 	        }
         } 
         else 

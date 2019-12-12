@@ -9,7 +9,7 @@
     <body>
     <%
         Class.forName("com.mysql.jdbc.Driver");
-        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
+        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
         Connection connection = DriverManager.getConnection(url, "Application", "JAAYS");
 
         String username = request.getParameter("username");
@@ -26,7 +26,7 @@
             session.setAttribute("username", username);
             out.println("welcome " + username);
             out.println("<a href='logout.jsp'>Log out</a>");
-            response.sendRedirect("loginSuccess.jsp");
+            response.sendRedirect("customerLogin.jsp");
         } else {
             out.println("Invalid password <a href='login.jsp'>try again</a>");
         }
