@@ -1,0 +1,14 @@
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:24:11 -0500] "GET /project/adminFunctionality/adminNavigation.jsp HTTP/1.1" 200 1095
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:24:15 -0500] "GET /project/adminFunctionality/reservationList.jsp HTTP/1.1" 200 424
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:24:18 -0500] "GET /project/adminFunctionality/reservationListFlight.jsp HTTP/1.1" 200 564
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:24:26 -0500] "GET /project/adminFunctionality/reservationListUN.jsp HTTP/1.1" 200 408
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:46:37 -0500] "GET /project/adminFunctionality/mostTotalRevenueB.jsp HTTP/1.1" 500 2688
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:48:38 -0500] "GET /project/adminFunctionality/mostTotalRevenueB.jsp HTTP/1.1" 500 2688
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:52:04 -0500] "GET /project/adminFunctionality/mostTotalRevenueB.jsp HTTP/1.1" 500 2743
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:53:12 -0500] "GET /project/adminFunctionality/mostTotalRevenueB.jsp HTTP/1.1" 200 185
+172.31.74.240 - - [10/Dec/2019:23:53:39 -0500] "GET / HTTP/1.1" 200 11415
+172.31.74.240 - - [10/Dec/2019:23:53:41 -0500] "GET /HNAP1/ HTTP/1.1" 404 1084
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:58:02 -0500] "GET /project/adminFunctionality/reservationList.jsp HTTP/1.1" 200 422
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:58:04 -0500] "GET /project/adminFunctionality/reservationListFlight.jsp HTTP/1.1" 200 582
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:58:08 -0500] "GET /project/adminFunctionality/reservationListUN.jsp HTTP/1.1" 200 408
+0:0:0:0:0:0:0:1 - - [10/Dec/2019:23:59:55 -0500] "GET /project/adminFunctionality/mostTotalRevenueB.jsp HTTP/1.1" 200 185
