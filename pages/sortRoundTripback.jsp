@@ -25,12 +25,12 @@
     PreparedStatement preparedStatement = null;
 
 		try {
-            String firsttripAirline = (String)session.getAttribute("airline");
-            String firsttripNumber = (String)session.getAttribute("flightNumber");
-            session.setAttribute("airline",firsttripAirline);
-            session.setAttribute("flightNumber",firsttripNumber);
-            String classBooked = (String)session.getAttribute("classBooked");
-            session.setAttribute("classBooked", classBooked);
+            String firsttripAirline = (String)session.getAttribute("firstairlineBooked");
+            String firsttripNumber = (String)session.getAttribute("firstflightNumberBooked");
+            session.setAttribute("firstairlineBooked", firsttripAirline);
+            session.setAttribute("firstflightNumberBooked", firsttripNumber);
+            String firstclassBooked = (String)session.getAttribute("firstclassBooked");
+            session.setAttribute("firstclassBooked", firstclassBooked);
 
 
 			Class.forName("com.mysql.jdbc.Driver"); 
@@ -108,7 +108,7 @@
     <br>
 
 	<form method="post" action="registerRoundTripPartTwo.jsp">
-        <div class="container" style=background-color:aqua>
+        <div class="container" style=background-color:yellow>
             <h3><b>Fill out the following about the flight you wish to book back home</b></h3>
             <table>
                 <tr>

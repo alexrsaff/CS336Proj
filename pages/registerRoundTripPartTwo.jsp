@@ -23,27 +23,57 @@
     Connection connection = null;
     PreparedStatement preparedStatement = null;
     
+    //Second plane information
     String airlineBooked = request.getParameter("airlineBooked");
     String flightNumber = request.getParameter("flightNumberBooked");
     String classBooked = request.getParameter("classBooked");
+    session.setAttribute("airlineBooked", airlineBooked);
+    session.setAttribute("flightNumberBooked", flightNumber);
+    session.setAttribute("classBooked", classBooked);
 
-    String firsttripAirline = (String)session.getAttribute("airline");
-    String firsttripNumber = (String)session.getAttribute("flightNumber");
-    String firstclassBooked = (String)session.getAttribute("classBooked");
+    //First plane information
+    String firsttripAirline = (String)session.getAttribute("firstairlineBooked");
+    String firsttripNumber = (String)session.getAttribute("firstflightNumberBooked");
+    session.setAttribute("firstairlineBooked", firsttripAirline);
+    session.setAttribute("firstflightNumberBooked", firsttripNumber);
+    String firstclassBooked = (String)session.getAttribute("firstclassBooked");
+    session.setAttribute("firstclassBooked", firstclassBooked);
 
 
-
-    out.println("<text>" + airlineBooked + "</text>");
-    out.println("<text>" + flightNumber + "</text>");
+    out.println("<text>You searched for: " + airlineBooked + ", </text><br>");
+    out.println("<text>" + flightNumber + ", </text><br>");
     out.println("<text>" + classBooked + "</text><br>");
 
-    out.println("<text> First flight:" + firsttripAirline + "</text>");
-    out.println("<text>" + firsttripNumber + "</text>");
-    out.println("<text>" + firstclassBooked + "</text>");
+    out.println("<text> First flight: " + firsttripAirline + ", </text><br>");
+    out.println("<text>" + firsttripNumber + ", </text><br>");
+    out.println("<text>" + firstclassBooked + "</text><br>");
 
 
-    session.setAttribute("airline", airlineBooked);
-    session.setAttribute("flightNumber", flightNumber);
+
+
+    String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.economyClassFare, f.businessClassFare, f.firstClassFare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID";
+    String strconcat = " AND f.airlineID = ('" + airlineBooked + "')";
+    String strconcat2 = " AND f.flightNumber = ('" + flightNumber + "')";
+    str = str + strconcat + strconcat2 + ";";
+
+
+    try{
+        Class.forName("com.mysql.jdbc.Driver"); 
+        connection = DriverManager.getConnection(url, "Application", "JAAYS");
+        preparedStatement = connection.prepareStatement(str);
+        ResultSet rs;
+        rs = preparedStatement.executeQuery();
+        if (rs.next()) {
+            //Must check that the occupancy of the flight is okay
+            //Must edit all the tables and add the person for ticket and stuff like that
+            out.println("<a href='roundTripCheckout.jsp'>Proceed to Checkout</a>");
+        } else {
+            out.println("No such flight #2 exists. <a href='searchRoundTripback.jsp'>Please try again.</a>");
+        }
+    } catch (Exception e) {
+        out.print(e);
+    }
+
 
     %>
     
