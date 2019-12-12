@@ -17,7 +17,7 @@
             PreparedStatement ps;
             ResultSet rs;
 
-            q = "SELECT p.username, MAX(SUM(f.firstClassFare + f.economyClassFare + f.businessClassFare + t.bookingFee)) AS revenue FROM Flight f LEFT JOIN TicketFor tf ON f.flightNumber = tf.flightNumber AND f.airlineID = tf.airlineID LEFT JOIN Ticket t ON tf.ticketNumber = t.ticketNumber RIGHT JOIN Buy b ON tf.ticketNumber = b.ticketNumber LEFT JOIN Person p ON b.username = p.username GROUP BY p.username HAVING p.username IS NOT NULL";
+            q = "SELECT un as username, MAX(revenue) as maxRevenue FROM(SELECT p.username AS un, SUM(f.firstClassFare + f.economyClassFare + f.businessClassFare + t.bookingFee) AS revenue FROM Flight f LEFT JOIN TicketFor tf ON f.flightNumber = tf.flightNumber AND f.airlineID = tf.airlineID LEFT JOIN Ticket t ON tf.ticketNumber = t.ticketNumber RIGHT JOIN Buy b ON tf.ticketNumber = b.ticketNumber LEFT JOIN Person p ON b.username = p.username GROUP BY p.username HAVING p.username IS NOT NULL) AS indvRev;";
             ps = connection.prepareStatement(q);
             rs = ps.executeQuery();
 
@@ -27,20 +27,14 @@
                     <td width = 300px>Customer</td>
                     <td width = 300px>Revenue Generated</td>
                 </tr>
-            <%
-            while (rs.next()) {
-            %>
                 <tr>
-                    <td><%=rs.getString("p.username")%></td>
-                    <td><%=rs.getString("revenue")%></td>
+                    <td><%=rs.getString("username")%></td>
+                    <td><%=rs.getString("maxRevenue")%></td>
                 </tr>
-            <%
-            }
-            %>
             </table>
             <br>
+            <input type="button" onclick="window.location.href='../adminFunctionality/adminNavigation.jsp'" value="Back to admin navigation page">
             <%
-            out.println("<a href = 'adminNavigation.jsp'>back to navigation</a>");
 	    } catch (Exception e) {
 			out.print(e);
 		}
