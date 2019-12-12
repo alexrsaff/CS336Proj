@@ -18,13 +18,14 @@
             int flightNumber = Integer.parseInt(request.getParameter("flightNumber"));
             
             String q;
+            String query;
             PreparedStatement ps;
             ResultSet rs;
             int outcome = 0;
-            q = "SELECT count(*) FROM Flight f f.airlineID = ? AND f.flightNumber = ?";
+            q = "SELECT count(*) FROM Flight AS f WHERE f.airlineID = ? AND f.flightNumber = ?";
             ps = connection.prepareStatement(q);
             ps.setString(1, airlineID);
-            ps.setInt(2,flightNumber)
+            ps.setInt(2,flightNumber);
             
             rs = ps.executeQuery();
             rs.next();
@@ -32,232 +33,181 @@
             if (cnt.equals("1")){ //flight exists in the db
                 if(action.equals("1")) { //change flight number
                     int newValue = Integer.parseInt(request.getParameter("newValue"));
-                    q = "UPDATE Flight SET flightNumber = ? WHERE flightNumber = ? AND airlineID = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setString(1, newValue);
+                    query = "UPDATE Flight SET flightNumber = ? WHERE flightNumber = ? AND airlineID = ?";
+                    ps = connection.prepareStatement(query);
+                    ps.setInt(1, newValue);
                     ps.setInt(2, flightNumber);
                     ps.setString(3,airlineID);
                     
                     outcome = ps.executeUpdate();
                     if (outcome != 0) {
                         out.println("Flight Number changed.");
+                        out.println("Flight data is successfully changed. <a href='manageInfo.jsp'>Back.</a>");
                     }
                     else {
                         out.println("u r Failure.");
                     }
-                }
-    
-                else if(action.equals("2")) { //change domestic or international
-                    q = "UPDATE Flights SET domInt = ? WHERE flightNumber = ? AND airportID = ?";
+                }else if(action.equals("2")){ //edit domInt
                     String newValue = request.getParameter("newValue");
-                    ps = connection.prepareStatement(q);
-                    ps.setString(1, newValue);
-                    ps.setInt(2, flightNumber);
+                    query = "UPDATE Flight SET domInt = ? WHERE flightNumber = ? AND airlineID = ?";
+                    ps = connection.prepareStatement(query);
+                    ps.setString(1,newValue);
+                    ps.setInt(2,flightNumber);
                     ps.setString(3,airlineID);
-                    
+
                     outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("Domestic/International changed.");
+                    if(outcome != 0){
+                        out.println("Domestic/International Changed");
+                        out.println("Flight data is successfully changed. <a href='manageInfo.jsp'>Back.</a>");
+                    }else{
+                        out.println("fail");
                     }
-                    else {
-                        out.println("u r Failure.");
-                    }
-                }
-                else if(action.equals("3")) { //change days of week
+                }else if(action.equals("3")){ //edit day of week
                     String newValue = request.getParameter("newValue");
-                    q = "UPDATE Flight SET dayOfWeek = ? WHERE username = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setString(1, newValue);
-                    ps.setString(2, username);
+                    query = "UPDATE Flight SET dayOfWeek = ? WHERE flightNumber = ? AND airlineID = ?";
+                    ps = connection.prepareStatement(query);
+                    ps.setString(1,newValue);
+                    ps.setInt(2,flightNumber);
                     ps.setString(3,airlineID);
-                    
+
                     outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("day of week changed.");
+                    if(outcome != 0){
+                        out.println("Domestic/International Changed");
+                        out.println("Flight data is successfully changed. <a href='manageInfo.jsp'>Back.</a>");
+                    }else{
+                        out.println("fail");
                     }
-                    else {
-                        out.println("u r Failure.");
+                    
+                }else if(action.equals("4")){ //edit first class fare
+                    float newValue = Float.parseFloat(request.getParameter("newValue"));
+                    query = "UPDATE Flight SET firstClassFare = ? WHERE flightNumber = ? AND airlineID = ?";
+                    ps = connection.prepareStatement(query);
+                    ps.setFloat(1,newValue);
+                    ps.setInt(2,flightNumber);
+                    ps.setString(3,airlineID);
+                    outcome = ps.executeUpdate();
+                    if(outcome != 0){
+                        out.println("First Class Fare Changed");
+                        out.println("Flight data is successfully changed. <a href='manageInfo.jsp'>Back.</a>");
+                    }else{
+                        out.println("fail");
+                    }
+                    
+                }else if(action.equals("5")){ //edit business class fare
+                    float newValue = Float.parseFloat(request.getParameter("newValue"));
+                    query = "UPDATE Flight SET businessClassFare = ? WHERE flightNumber = ? AND airlineID = ?";
+                    ps = connection.prepareStatement(query);
+                    ps.setFloat(1,newValue);
+                    ps.setInt(2,flightNumber);
+                    ps.setString(3,airlineID);
+                    outcome = ps.executeUpdate();
+                    if(outcome != 0){
+                        out.println("Business Class Fare Changed");
+                        out.println("Flight data is successfully changed. <a href='manageInfo.jsp'>Back.</a>");
+                    }else{
+                        out.println("fail");
+                    }
+                    
+                }else if(action.equals("6")){ //edit economy class fare
+                    float newValue = Float.parseFloat(request.getParameter("newValue"));
+                    query = "UPDATE Flight SET economyClassFare = ? WHERE flightNumber = ? AND airlineID = ?";
+                    ps = connection.prepareStatement(query);
+                    ps.setFloat(1,newValue);
+                    ps.setInt(2,flightNumber);
+                    ps.setString(3,airlineID);
+                    outcome = ps.executeUpdate();
+                    if(outcome != 0){
+                        out.println("Economy Class Fare Changed");
+                        out.println("Flight data is successfully changed. <a href='manageInfo.jsp'>Back.</a>");
+                    }else{
+                        out.println("fail");
+                    }
+                    
+                }else if(action.equals("7")){ //edit first class occupancy
+                    int newValue = Integer.parseInt(request.getParameter("newValue"));
+                    query = "UPDATE Flight SET firstClassOccupancy = ? WHERE flightNumber = ? AND airlineID = ?";
+                    ps = connection.prepareStatement(query);
+                    ps.setInt(1,newValue);
+                    ps.setInt(2,flightNumber);
+                    ps.setString(3,airlineID);
+
+                    outcome = ps.executeUpdate();
+                    if(outcome != 0){
+                        out.println("First Class Occupancy Changed");
+                        out.println("Flight data is successfully changed. <a href='manageInfo.jsp'>Back.</a>");
+                    }else{
+                        out.println("fail");
+                    }
+                    
+                }else if(action.equals("8")){ //edit business class occupancy
+                    int newValue = Integer.parseInt(request.getParameter("newValue"));
+                    query = "UPDATE Flight SET businessClassOccupancy = ? WHERE flightNumber = ? AND airlineID = ?";
+                    ps = connection.prepareStatement(query);
+                    ps.setInt(1,newValue);
+                    ps.setInt(2,flightNumber);
+                    ps.setString(3,airlineID);
+
+                    outcome = ps.executeUpdate();
+                    if(outcome != 0){
+                        out.println("Business Class Occupancy Changed");
+                        out.println("Flight data is successfully changed. <a href='manageInfo.jsp'>Back.</a>");
+                    }else{
+                        out.println("fail");
+                    }
+                    
+                }
+                else if(action.equals("9")){ //edit economy class occupancy
+                    int newValue = Integer.parseInt(request.getParameter("newValue"));
+                    query = "UPDATE Flight SET economyClassOccupancy = ? WHERE flightNumber = ? AND airlineID = ?";
+                    ps = connection.prepareStatement(query);
+                    ps.setInt(1,newValue);
+                    ps.setInt(2,flightNumber);
+                    ps.setString(3,airlineID);
+
+                    outcome = ps.executeUpdate();
+                    if(outcome != 0){
+                        out.println("Economy Class Occupancy Changed");
+                        out.println("Flight data is successfully changed. <a href='manageInfo.jsp'>Back.</a>");
+                    }else{
+                        out.println("fail");
+                    }
+
+                    
+                }else if(action.equals("10")){ //edit departure airport
+                    String newValue = request.getParameter("newValue");
+                    query = "UPDATE Departs SET airportID = ? WHERE flightNumber = ? AND airlineID = ?";
+                    ps = connection.prepareStatement(query);
+                    ps.setString(1,newValue);
+                    ps.setInt(2,flightNumber);
+                    ps.setString(3,airlineID);
+
+                    outcome = ps.executeUpdate();
+                    if(outcome != 0){
+                        out.println("Departure Airport Changed");
+                        out.println("Flight data is successfully changed. <a href='manageInfo.jsp'>Back.</a>");
+                    }else{
+                        out.println("fail");
+                    }
+
+                
+            }else if(action.equals("11")){ //edit arrival airport
+                    String newValue = request.getParameter("newValue");
+                    query = "UPDATE Arrives SET airportID = ? WHERE flightNumber = ? AND airlineID = ?";
+                    ps = connection.prepareStatement(query);
+                    ps.setString(1,newValue);
+                    ps.setInt(2,flightNumber);
+                    ps.setString(3,airlineID);
+
+                    outcome = ps.executeUpdate();
+                    if(outcome != 0){
+                        out.println("Arrival Airport Changed");
+                        out.println("Flight data is successfully changed. <a href='manageInfo.jsp'>Back.</a>");
+                    }else{
+                        out.println("fail");
                     }
                 }
-                else if(action.equals("4")) { //change depart date
-                    q = "UPDATE Flight SET departDate = ? WHERE flightNumber = ? AND airlineID = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setString(1, newValue);
-                    ps.setInt(2, flightNumber;
-                    ps.setString(3,airlineID)
-                    
-                    outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("depart date changed.");
-                    }
-                    else {
-                        out.println("u r Failure.");
-                    }
-                }else if(action.equals("5")) { //change depart time
-                    q = "UPDATE Flight SET departTime = ? WHERE flightNumber = ? AND airlineID = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setString(1, newValue);
-                    ps.setInt(2, flightNumber;
-                    ps.setString(3,airlineID)
-                    
-                    outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("depart time changed.");
-                    }
-                    else {
-                        out.println("u r Failure.");
-                    }
-                }else if(action.equals("6")) { //change arrival date
-                    q = "UPDATE Flight SET arriveDate = ? WHERE flightNumber = ? AND airlineID = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setString(1, newValue);
-                    ps.setInt(2, flightNumber;
-                    ps.setString(3,airlineID)
-                    
-                    outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("arrival date changed.");
-                    }
-                    else {
-                        out.println("u r Failure.");
-                    }
-                }else if(action.equals("7")) { //change arrival time
-                    q = "UPDATE Flight SET arriveTime = ? WHERE flightNumber = ? AND airlineID = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setString(1, newValue);
-                    ps.setInt(2, flightNumber;
-                    ps.setString(3,airlineID)
-                    
-                    outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("arrival time changed.");
-                    }
-                    else {
-                        out.println("u r Failure.");
-                    }
-                }else if(action.equals("8")) { //change first class fare
-                    float newValue = Float.parseFloatrequest.getParameter("newValue");
-                    q = "UPDATE Flight SET firstClassFare = ? WHERE flightNumber = ? AND airlineID = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setFloat(1, newValue);
-                    ps.setInt(2, flightNumber;
-                    ps.setString(3,airlineID)
-                    
-                    outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("first class fare changed.");
-                    }
-                    else {
-                        out.println("u r Failure.");
-                    }
-                }else if(action.equals("9")) { //change business class fare
-                    float newValue = Float.parseFloatrequest.getParameter("newValue");
-                    q = "UPDATE Flight SET businessClassFare = ? WHERE flightNumber = ? AND airlineID = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setFloat(1, newValue);
-                    ps.setInt(2, flightNumber;
-                    ps.setString(3,airlineID)
-                    
-                    outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("business class fare changed.");
-                    }
-                    else {
-                        out.println("u r Failure.");
-                    }
-                }else if(action.equals("10")) { //change economy fare
-                    float newValue = Float.parseFloatrequest.getParameter("newValue");
-                    q = "UPDATE Flight SET economyClassFare = ? WHERE flightNumber = ? AND airlineID = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setFloat(1, newValue);
-                    ps.setInt(2, flightNumber;
-                    ps.setString(3,airlineID)
-                    
-                    outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("economy fare changed.");
-                    }
-                    else {
-                        out.println("u r Failure.");
-                    }
-                }else if(action.equals("11")) { //change first class seats
-                    int newValue = Integer.parseInt(request.getParameter("newValue"));
-                    q = "UPDATE Flight SET firstClassOccupancy = ? WHERE flightNumber = ? AND airlineID = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setInt(1, newValue);
-                    ps.setInt(2, flightNumber;
-                    ps.setString(3,airlineID)
-                    
-                    outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("number of first class seats changed.");
-                    }
-                    else {
-                        out.println("u r Failure.");
-                    }
-                }else if(action.equals("12")) { //change business class occupancy
-                    int newValue = Integer.parseInt(request.getParameter("newValue"));
-                    q = "UPDATE Flight SET businessClassOccupancy = ? WHERE flightNumber = ? AND airlineID = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setInt(1, newValue);
-                    ps.setInt(2, flightNumber;
-                    ps.setString(3,airlineID)
-                    
-                    outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("Number of business class seats changed.");
-                    }
-                    else {
-                        out.println("u r Failure.");
-                    }
-                }else if(action.equals("13")) { //change economy class occupancy
-                    int newValue = Integer.parseInt(request.getParameter("newValue"));
-                    q = "UPDATE Flight SET economyClassOccupancy = ? WHERE flightNumber = ? AND airlineID = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setInt(1, newValue);
-                    ps.setInt(2, flightNumber;
-                    ps.setString(3,airlineID)
-                    
-                    outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("Number of Economy seats changed.");
-                    }
-                    else {
-                        out.println("u r Failure.");
-                    }
-                }else if(action.equals("14")) { //change depart airport
-                    String newValue = request.getParameter("newValue");
-                    q = "UPDATE Departs SET airportID = ? WHERE flightNumber = ? AND airlineID = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setString(1, newValue);
-                    ps.setInt(2, flightNumber;
-                    ps.setString(3,airlineID)
-                    
-                    outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("depart airport changed.");
-                    }
-                    else {
-                        out.println("u r Failure.");
-                    }
-                }else if(action.equals("15")) { //change arrival airport
-                    String newValue = request.getParameter("newValue");
-                    q = "UPDATE Arrive SET airportID = ? WHERE flightNumber = ? AND airlineID = ?";
-                    ps = connection.prepareStatement(q);
-                    ps.setString(1, newValue);
-                    ps.setInt(2, flightNumber;
-                    ps.setString(3,airlineID)
-                    
-                    outcome = ps.executeUpdate();
-                    if (outcome != 0) {
-                        out.println("Arrival Airport changed.");
-                    }
-                    else {
-                        out.println("u r Failure.");
-                    }
-            }
-            else {
-                out.println("The username you entered does not exist, <a href = 'editCustomerRep.jsp'>please try again.</a>");
+            }else{
+                out.println("Did not work. <a href = 'manageInfo.jsp'>please try again.</a>");
             }
 		} catch (Exception e) {
 			out.print(e);
