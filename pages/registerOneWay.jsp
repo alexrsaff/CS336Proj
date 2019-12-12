@@ -26,10 +26,36 @@
     String airlineBooked = request.getParameter("airlineBooked");
     String flightNumber = request.getParameter("flightNumberBooked");
     String classBooked = request.getParameter("classBooked");
+    session.setAttribute("airlineBooked", airlineBooked);
+    session.setAttribute("flightNumberBooked", flightNumber);
+    session.setAttribute("classBooked", classBooked);
 
-    out.println("<text>" + airlineBooked + "</text>");
-    out.println("<text>" + flightNumber + "</text>");
-    out.println("<text>" + classBooked + "</text>");
+    out.println("<text>Your want to fly with airline: " + airlineBooked + "</text><br>");
+    out.println("<text>On flight number: " + flightNumber + "</text><br>");
+    out.println("<text>With class: " + classBooked + "</text><br>");
+
+    String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.economyClassFare, f.businessClassFare, f.firstClassFare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID";
+    String strconcat = " AND f.airlineID = ('" + airlineBooked + "')";
+    String strconcat2 = " AND f.flightNumber = ('" + flightNumber + "')";
+    str = str + strconcat + strconcat2 + ";";
+
+    try{
+
+        Class.forName("com.mysql.jdbc.Driver"); 
+        connection = DriverManager.getConnection(url, "Application", "JAAYS");
+        preparedStatement = connection.prepareStatement(str);
+        ResultSet rs;
+        rs = preparedStatement.executeQuery();
+        if (rs.next()) {
+            //Must check that the occupancy of the flight is okay
+            //Must edit all the tables and add the person for ticket and stuff like that
+            out.println("<a href='oneWayCheckout.jsp'>Proceed to checkout</a>");
+        } else {
+            out.println("No such flight exists. <a href='searchOneWay.jsp'>Please try again.</a>");
+        }
+    } catch (Exception e) {
+        out.print(e);
+    }
 
     %>
     
