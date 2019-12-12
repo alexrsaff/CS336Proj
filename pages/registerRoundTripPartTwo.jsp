@@ -66,9 +66,9 @@
         if (rs.next()) {
             //Must check that the occupancy of the flight is okay
             //Must edit all the tables and add the person for ticket and stuff like that
-            out.println("<a href='roundTripCheckout.jsp'>Proceed to Checkout</a>");
+            out.println("<br><a href='roundTripCheckout.jsp'>Proceed to Checkout</a>");
         } else {
-            out.println("No such flight #2 exists. <a href='searchRoundTripback.jsp'>Please try again.</a>");
+            out.println("<br>No such flight #2 exists. <a href='searchRoundTripback.jsp'>Please try again.</a>");
         }
     } catch (Exception e) {
         out.print(e);
@@ -79,11 +79,6 @@
     
     <br>
     <br>
-
-    <form method="post" action="finsih.jsp">
-        <input type="submit" value="Finish">
-    </form>
-
 
 </body>
 </html>

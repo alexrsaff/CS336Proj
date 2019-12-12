@@ -25,9 +25,9 @@
     PreparedStatement preparedStatement = null;
     
     //Second plane information
-    String airlineBooked = request.getParameter("airlineBooked");
-    String flightNumber = request.getParameter("flightNumberBooked");
-    String classBooked = request.getParameter("classBooked");
+    String airlineBooked = (String)session.getAttribute("airlineBooked");
+    String flightNumber = (String)session.getAttribute("flightNumberBooked");
+    String classBooked = (String)session.getAttribute("classBooked");
     session.setAttribute("airlineBooked", airlineBooked);
     session.setAttribute("flightNumberBooked", flightNumber);
     session.setAttribute("classBooked", classBooked);
@@ -48,12 +48,12 @@
     out.println("<text>Information for flight 1: </text><br>");
     out.println("<text>You have successfully purchased your " + firsttripAirline + "flight.</text><br>");
     out.println("<text>On flight number: " + firsttripNumber + "</text><br>");
-    out.println("<text>With class: " + firstclassBooked + "</text><br>");
+    out.println("<text>With class: " + firstclassBooked + "</text><br><br>");
 
     out.println("<text>Information for flight 2 (back home): </text><br>");
     out.println("<text>You have successfully purchased your " + airlineBooked + "flight.</text><br>");
     out.println("<text>On flight number: " + flightNumber + "</text><br>");
-    out.println("<text>With class: " + classBooked + "</text><br>");
+    out.println("<text>With class: " + classBooked + "</text><br><br>");
 
 
     String str = "SELECT MAX(ticketNumber) AS tnum FROM Ticket;";
@@ -71,12 +71,12 @@
 
         rs.next();
         String maxTnum = rs.getString("tnum");
-        out.println("<text>" + maxTnum + "hello</text>");
+        //out.println("<text>" + maxTnum + "hello</text>");
 
         if(maxTnum != null && ! maxTnum.isEmpty()){
-            out.println("<text>not empty</text><br>");
-            //newTicketNumber = Integer.parseInt(maxTnum);
-            //newTicketNumber++;
+            //out.println("<text>not empty</text><br>");
+            newTicketNumber = Integer.parseInt(maxTnum);
+            newTicketNumber++;
         } else{
             newTicketNumber = 1000;
         }

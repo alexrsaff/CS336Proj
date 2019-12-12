@@ -24,9 +24,9 @@
     PreparedStatement preparedStatement = null;
     
     //Second plane information
-    String airlineBooked = request.getParameter("airlineBooked");
-    String flightNumber = request.getParameter("flightNumberBooked");
-    String classBooked = request.getParameter("classBooked");
+    String airlineBooked = (String)session.getAttribute("airlineBooked");
+    String flightNumber = (String)session.getAttribute("flightNumberBooked");
+    String classBooked = (String)session.getAttribute("classBooked");
     session.setAttribute("airlineBooked", airlineBooked);
     session.setAttribute("flightNumberBooked", flightNumber);
     session.setAttribute("classBooked", classBooked);

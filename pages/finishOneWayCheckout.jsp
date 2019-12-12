@@ -55,12 +55,12 @@
 
         rs.next();
         String maxTnum = rs.getString("tnum");
-        out.println("<text>" + maxTnum + "hello</text>");
+        //out.println("<text>" + maxTnum + "hello</text>");
 
         if(maxTnum != null && ! maxTnum.isEmpty()){
-            out.println("<text>not empty</text><br>");
-            //newTicketNumber = Integer.parseInt(maxTnum);
-            //newTicketNumber++;
+            //out.println("<text>not empty</text><br>");
+            newTicketNumber = Integer.parseInt(maxTnum);
+            newTicketNumber++;
         } else{
             newTicketNumber = 1000;
         }
