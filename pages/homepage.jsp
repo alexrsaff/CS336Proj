@@ -11,8 +11,8 @@
 <br><br><br>
 
 <p>Below is for employee use only</p>
-<a href="adminLogin.jsp"> <mark>I am a site administrator</mark></a>
+<a href="adminFunctionality/adminLogin.jsp"> <mark>I am a site administrator</mark></a>
 <br>
-<a href="crep.jsp"> <mark>I am a customer representative</mark></a>
+<a href="CustomerRepFunction/custRepLogin.jsp"> <mark>I am a customer representative</mark></a>
 </body>
 </html>
