@@ -9,10 +9,9 @@
         Class.forName("com.mysql.jdbc.Driver").newInstance();
         conn = DriverManager.getConnection(url, "Application", "JAAYS");
         String airportID = request.getParameter("airportID");
-        String attribute = request.getParameter("attribute");
         String data = request.getParameter("data");
         
-		if(airportID != null && !airportID.isEmpty() && attribute != null && !attribute.isEmpty() && data != null && !data.isEmpty())
+		if(airportID != null && !airportID.isEmpty() && data != null && !data.isEmpty())
 			{
 			String enter = "UPDATE Airport SET airportID = ? where airportID = ?";
             
@@ -37,7 +36,7 @@
         } 
         else 
         {
-            out.println("Airport Edit Error!");
+            out.println("Airport Edit Failure!.");
 			out.println("<a href='manageInfo.jsp'>Return</a>");
 			return;
 		}
@@ -45,7 +44,8 @@
     {
         if(e instanceof java.sql.SQLIntegrityConstraintViolationException)
         {
-            out.print("Invalid.");
+            out.print("Invalid.ID already taken.");
+            out.println("<a href='manageInfo.jsp'>Return</a>");
         }
         else{
         out.print("<p>Server Connection Error.</p>");

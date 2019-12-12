@@ -12,7 +12,7 @@
         String airlineID = request.getParameter("airlineID");
         int flightNumber = Integer.parseInt(request.getParameter(flightNumber));
         
-		if(airlineID != null && !airlineID.isEmpty() && flightNumber != null && !flightNumber.isEmpty())
+		if(airlineID != null && !airlineID.isEmpty() && !flightNumber.isEmpty())
 			{
 			String enter = "DELETE FROM Flight WHERE (flightNumber,airlineID) = (?,?)";
             

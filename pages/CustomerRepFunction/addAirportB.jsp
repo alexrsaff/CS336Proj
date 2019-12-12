@@ -13,7 +13,7 @@
         
 		if(airportID != null && !airportID.isEmpty())
 			{
-			String enter = "INSERT INTO Airport (airportID)" + "VALUES(?);";
+			String enter = "INSERT INTO Airport (airportID)" + "VALUES(?)";
             
             psa = conn.prepareStatement(enter);
 			psa.setString(1, airportID);
@@ -22,13 +22,12 @@
             outcome = psa.executeUpdate();
             if (outcome == 0) 
             {
-                out.println("Airport Addition Error!");
+                out.println("Oops! Errrrrrror");
                 response.sendRedirect("manageInfo.jsp");
                 return;
             } 
             else 
             {
-
                 out.println("Airport Added!");
                 response.sendRedirect("manageInfo.jsp");
 	        	return;
@@ -36,7 +35,7 @@
         } 
         else 
         {
-            out.println("Airport Addition Failure!");
+            out.println("Whoops! Something went wrong.");
 			response.sendRedirect("manageInfo.jsp");
 			return;
 		}
@@ -44,7 +43,8 @@
     {
         if(e instanceof java.sql.SQLIntegrityConstraintViolationException)
         {
-            out.print("Invalid.");
+            out.print("ID already taken.");
+            out.println("<a href='manageInfo.jsp'>Return</a>");
         }
         else{
         out.print("<p>Server Connection Error.</p>");
@@ -57,9 +57,3 @@
         try { conn.close(); } catch (Exception e) {}
     }
 %>
-
-
-%>
-
-</body>
-</html>

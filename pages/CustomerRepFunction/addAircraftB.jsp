@@ -43,7 +43,7 @@
     {
         if(e instanceof java.sql.SQLIntegrityConstraintViolationException)
         {
-            out.print("Invalid.");
+            out.print("ID already taken.");
             out.println("<a href='manageInfo.jsp'>Return</a>");
         }
         else{

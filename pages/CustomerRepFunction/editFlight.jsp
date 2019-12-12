@@ -11,14 +11,28 @@
 
             <p>Select an attribute you want to edit below:</p>
             <select name="action" size=1 required>
-                <option value="1">Edit password</option>
-                <option value="2">Edit first name</option>
-                <option value="3">Edit last name</option>
-                <option value="4">Edit e-mail</option>
+                <option value="1">Edit flight number</option>
+                <option value="2">Edit domestic or international</option>
+                <option value="3">Edit days of week</option>
+                <option value="4">Edit depart date</option>
+                <option value="5">Edit depart time</option>
+                <option value="6">Edit arrival date</option>
+                <option value="7">Edit arrival time </option>
+                <option value="8">Edit first class fare</option>
+                <option value="9">Edit business class fare</option>
+                <option value="10">Edit economy class fare</option>
+                <option value="11">Edit first class occupancy</option>
+                <option value="12">Edit business class occupancy</option>
+                <option value="13">Edit economy class occupancy</option>
+                <option value="14">Edit departure airport</option>
+                <option value="15">Edit arrival airport</option>
             </select>
 
             <p>New update value</p>
+            <p> If editing date or time, enter N/A into text box.</p>
             <p><input type="text" name="newValue" required></p>
+            <p><input type="date" name="newDate" ></p>
+            <p><input type="time" name="newtime" ></p>
 
             <input type="submit" value="submit">
 	    </form>
