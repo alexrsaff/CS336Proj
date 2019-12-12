@@ -20,6 +20,7 @@
             output.next();
             if(output.getInt(1) >= 1)
             {
+
                 out.println("The flight number wanted already exists: <a href='manageInfo.jsp'>please try again.</a>");
             }
             else

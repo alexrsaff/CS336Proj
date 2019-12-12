@@ -36,8 +36,21 @@
             } 
             else 
             {
-	        	response.sendRedirect("registerSuccess.jsp");
-	        	return;
+                enter = "INSERT INTO Customer (username)" + "VALUES(?);";
+            
+                psa = conn.prepareStatement(enter);
+                psa.setString(1, user);
+                
+                outcome = 0;
+                outcome = psa.executeUpdate();
+                if (outcome == 0) {
+                    response.sendRedirect("registerFailure.jsp");
+                    return;
+                }
+                else {
+                    response.sendRedirect("registerSuccess.jsp");
+	        	    return;
+                }
 	        }
         } 
         else 

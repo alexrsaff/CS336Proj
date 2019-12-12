@@ -3,12 +3,10 @@
 
 <html>
     <head>
-        <h1>hi, admin!</h1>
+        <h1>please enter your username and password.</h1>
     </head>
 
     <body>
-        <h2>hewo admin :3</h2>
-
         <form method="post" action="checkAdminLogin.jsp">
             <div class="container">
                 <label for="uname"><b>Username</b></label>

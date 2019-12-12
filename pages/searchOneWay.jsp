@@ -27,7 +27,7 @@
 			Class.forName("com.mysql.jdbc.Driver"); 
             connection = DriverManager.getConnection(url, "Application", "JAAYS");
     
-			String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.economyClassFare, f.businessClassFare, f.firstClassFare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID;";
+			String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.fare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID;";
 			
 			preparedStatement = connection.prepareStatement(str);
             
@@ -49,9 +49,8 @@
 			<th>Arrival Time</th>
 			<th>Arrival Date</th>
 			<th>Arrival Airport</th>
-			<th>Economy Class Price</th>
-			<th>Business Class Price</th>
-			<th>First Class Price</th>
+			<th>Ticket Price</th>
+			<th>Reserve</th>
 		</tr>
 
 		<%
@@ -70,9 +69,9 @@
 			<td><%=rs.getString("arriveTime")%></td>
 			<td><%=rs.getString("arriveDate")%></td>
 			<td><%=rs.getString("arriveairportID")%></td>
-			<td>$ <%=rs.getString("economyClassFare")%></td>
-			<td>$ <%=rs.getString("businessClassFare")%></td>
-			<td>$ <%=rs.getString("firstClassFare")%></td>
+			<td>$ <%=rs.getString("fare")%></td>
+			<td><%=rs.getString("flightNumber")%></td>
+
 		</tr>
 		<%
 			}
@@ -127,7 +126,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>Economy Price Range Filter: </td>
+				<td>Price Range Filter: </td>
 				<td><input type="number" name="priceMin"></td>
 				<td> to </td>
 				<td><input type="number" name="priceMax"></td>
@@ -136,40 +135,10 @@
 		</table>
 
 		<br>
+		<br>
 
 	<input type="submit" value="Search">
 	</form>
-	<br>
-	<br>
-
-	<form method="post" action="registerOneWay.jsp">
-		<div class="container" style=background-color:aqua>
-			<h3><b>Fill out the following about the flight you wish to book</b></h3>
-			<table>
-				<tr>
-					<td>Airline Company (2 letters): </td>
-					<td><input type="text" name="airlineBooked" pattern="[A-Z]{2}"></td>
-				</tr>
-				<tr>
-					<td>Flight Number: </td>
-					<td><input type="number" name="flightNumberBooked"></td>
-				</tr>
-				<tr>
-					<td>Class: </td>
-					<td>
-						<select name="classBooked" size=1>
-							<option value="economy">Economy Class</option>
-							<option value="business">Business Class</option>
-							<option value="first">First Class</option>
-						</select>				
-					</td>
-				</tr>
-			</table>
-			<br>
-			<input type="submit" value="Book Now!">
-		</div>
-	</form>
-
 </body>
 
 </html>

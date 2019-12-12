@@ -12,9 +12,9 @@
         <h1>Enter the month for which you would like the report to be generated</h1>
         <form action = "SalesReportOut.jsp" method = "POST">
             <input type="month" name="Month" required>
-            <br>
+            <br><br>
             <input type="submit" value="Generate report"/>
 		</form>
-		<input type="button" onclick="window.location.href='../project/login.jsp'" value="Back to login page">
+		<br><input type="button" onclick="window.location.href='../project/login.jsp'" value="Back to login page">
     </body>
 </html>

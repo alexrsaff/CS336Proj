@@ -1,13 +1,12 @@
 <%@ page import ="java.io.*,java.util.*,java.sql.*,java.lang.*" %>
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
-
 <html>
     <head>
-        <title>Admin: Most Active Flights</title>
+        <title>Admin: Most Total Revenue</title>
     </head>
     <body>
         <%
-        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
+        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 		try {
@@ -18,7 +17,7 @@
             PreparedStatement ps;
             ResultSet rs;
 
-            q = "SELECT p.username, sum(t.bookingFee) AS revenue FROM Buy b LEFT JOIN Person p ON b.username = p.username LEFT JOIN Ticket t ON b.ticketNumber = t.ticketNumber GROUP BY p.username ORDER BY revenue DESC";
+            q = "SELECT UN as username, MAX(revenue) as maxRevenue FROM(SELECT P.username AS un, SUM(IF(TF.class='first',F.firstClassFare,0) + IF(TF.class='economy',F.economyClassFare,0) + IF(TF.class='business',F.businessClassFare,0) + T.bookingFee) AS Revenue FROM Flight F LEFT JOIN TicketFor TF ON F.flightNumber = TF.flightNumber AND F.airlineID = TF.airlineID LEFT JOIN Ticket T ON TF.ticketNumber = T.ticketNumber RIGHT JOIN Buy B ON TF.ticketNumber = B.ticketNumber LEFT JOIN Person P ON B.username = P.username GROUP BY P.username) AS indvRev";
 
             ps = connection.prepareStatement(q);
             rs = ps.executeQuery();
@@ -29,25 +28,14 @@
                     <td width = 300px>Customer</td>
                     <td width = 300px>Revenue Generated</td>
                 </tr>
-            <%
-            while (rs.next()) {
-            %>
                 <tr>
                     <td><%=rs.getString("username")%></td>
-                    <td><%=rs.getString("revenue")%></td>
+                    <td><%=rs.getString("maxRevenue")%></td>
                 </tr>
-            <%
-            }
-            %>
             </table>
             <br>
+            <input type="button" onclick="window.location.href='../adminFunctionality/adminNavigation.jsp'" value="Back to admin navigation page">
             <%
-
-            rs.close();
-        ps.close();
-        connection.close();
-
-            out.println("<a href = 'adminNavigation.jsp'>back to navigation</a>");
 	    } catch (Exception e) {
 			out.print(e);
 		}

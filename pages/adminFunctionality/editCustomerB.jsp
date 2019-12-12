@@ -7,7 +7,7 @@
     </head>
     <body>
         <%
-        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/Project";
+        String url = "jdbc:mysql://project.cvxoxmir4k3m.us-east-2.rds.amazonaws.com:3306/tempfour";
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 		try {
@@ -104,6 +104,8 @@
 		} catch (Exception e) {
 			out.print(e);
 		}
-	%>
+    %>
+    <input type="button" onclick="window.location.href='../adminFunctionality/adminNavigation.jsp'" value="Back to admin navigation page">
+
     </body>
 </html>

@@ -55,10 +55,11 @@
                 airlineConcat = " AND f.airlineID = ('" + airlineCompany + "')";
             }
             if (! minPrice.isEmpty()){
-                minPriceConcat = " AND f.economyClassFare >= (" + minPrice + ")";
+                //int min = Integer.ParseInt(minPrice);
+                minPriceConcat = " AND f.fare >= (" + minPrice + ")";
             }
             if (! maxPrice.isEmpty()){
-                maxPriceConcat = " AND f.economyClassFare <= (" + maxPrice + ")";
+                maxPriceConcat = " AND f.fare <= (" + maxPrice + ")";
             }
 
             if (flexible.equals("no")){
@@ -124,16 +125,13 @@
             }
 
 
-            String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.economyClassFare, f.businessClassFare, f.firstClassFare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID";
+            String str = "SELECT f.airlineID, f.flightNumber, f.domInt, f.departTime, f.departDate, f.arriveTime, f.arriveDate, d.airportID, a.airportID as arriveairportID, f.fare FROM Flight as f, Departs as d, Arrives as a WHERE f.flightNumber=d.flightNumber AND f.flightNumber=a.flightNumber AND f.airlineID=d.airlineID AND f.airlineID=a.airlineID";
             
-            String strtemp = str + depAirConcat + arrAirConcat + airlineConcat + minPriceConcat + maxPriceConcat + departDateConcat + arriveDateConcat;
-            str = strtemp + ";";
-            session.setAttribute("searchString", strtemp);
-
-            preparedStatement = connection.prepareStatement(str);
+            str = str + depAirConcat + arrAirConcat + airlineConcat + minPriceConcat + maxPriceConcat + departDateConcat + arriveDateConcat + ";";
+			preparedStatement = connection.prepareStatement(str);
+            
 			ResultSet rs;
-            rs = preparedStatement.executeQuery(str);
-
+			rs = preparedStatement.executeQuery(str);
 
     %>
     <text>Search criteria: </text>
@@ -156,9 +154,8 @@
             <th>Arrival Time</th>
             <th>Arrival Date</th>
             <th>Arrival Airport</th>
-			<th>Economy Class Price</th>
-			<th>Business Class Price</th>
-			<th>First Class Price</th>
+            <th>Ticket Price</th>
+            <th>Reserve</th>
         </tr>
 
 		<%
@@ -176,9 +173,11 @@
                 <td><%=rs.getString("arriveTime")%></td>
                 <td><%=rs.getString("arriveDate")%></td>
                 <td><%=rs.getString("arriveairportID")%></td>
-                <td>$ <%=rs.getString("economyClassFare")%></td>
-                <td>$ <%=rs.getString("businessClassFare")%></td>
-                <td>$ <%=rs.getString("firstClassFare")%></td>    
+                <td>$ <%=rs.getString("fare")%></td>
+                <td><%=rs.getString("flightNumber")%></td>
+                
+
+			</td>
 		</tr>
 		<%
 			}
@@ -193,59 +192,29 @@
 	%>
 	<br>
 
-	<form method="post" action="sortOneWay.jsp">
-        <text>Choose what attribute you would like to sort: </text>
-		<select name="filter" size=1>
-            <option value="f.economyClassFare">Ticket Price (Economy)</option>
-            <option value="f.businessClassFare">Ticket Price (Business)</option>
-            <option value="f.firstClassFare">Ticket Price (First Class)</option>
-			<option value="f.departTime">Take-off Time</option>
-			<option value="f.arriveTime">Landing Time</option>
-        </select>
-        <br>
-        <br>
+	<form method="post" action="SortOneWay.jsp">
+		<select name="price" size=1>
+			<b> Price range from</b>
+			<!-- 1 means one way, 2 means round-trip-->
+			<option value="500">$500 and under</option>
+			<option value="1500">$1500 and under</option>
+			<option value="3000">$3000 and under</option>
+		</select>
 
-        <text>Choose how to sort: </text>
-        <select name="sortmethod" size=1>
-            <option value="ASC">Lowest to Highest (Earliest to Latest)</option>
-            <option value="DESC">Highest to Lowest (Latest to Earliest)</option>
-        </select>
-        <br>
-        <br>
+		<p>
+			<select name="stops" size=1>
+				<!-- stops = number of stops-->
+				<option value="0">Nonstop</option>
+				<option value="1">1 Stop</option>
+			</select>
+		</p>
 
-        <input type="submit" value="Filter">
-    </form>
-
-    <br>
-    <br>
-    
-    <form method="post" action="registerOneWay.jsp">
-            <div class="container" style=background-color:aqua>
-                <h3><b>Fill out the following about the flight you wish to book</b></h3>
-                <table>
-                    <tr>
-                        <td>Airline Company (2 letters): </td>
-                        <td><input type="text" name="airlineBooked" pattern="[A-Z]{2}"></td>
-                    </tr>
-                    <tr>
-                        <td>Flight Number: </td>
-                        <td><input type="number" name="flightNumberBooked"></td>
-                    </tr>
-                    <tr>
-                        <td>Class: </td>
-                        <td>
-                            <select name="classBooked" size=1>
-                                <option value="economy">Economy Class</option>
-                                <option value="business">Business Class</option>
-                                <option value="first">First Class</option>
-                            </select>				
-                        </td>
-                    </tr>
-                </table>
-                <br>
-                <input type="submit" value="Book Now!">
-            </div>
-        </form>
-    
+		<select name="name" size=1>
+			<!-- 1 means one way, 2 means round-trip-->
+			<option value="CA">China Airline</option>
+			<option value="UA">United Airline</option>
+        </select>&nbsp; <br> 
+	</form>
+	<br>
 </body>
 </html>
