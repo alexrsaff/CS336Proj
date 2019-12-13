@@ -11,19 +11,16 @@
         Connection conn = DriverManager.getConnection(url, "Application", "JAAYS");
         PreparedStatement ps;
         String airportID = request.getParameter("airportID");
-        String query = "SELECT a.airlineID, a.flightNumber, d.airlineID, d.flightNumber FROM Arrives AS a, Departs AS d WHERE a.airportID = ? OR d.airportID = ?";
+        String query = "SELECT a.airlineID, a.flightNumber FROM Arrives AS a WHERE a.airportID = ?";
         ps = conn.prepareStatement(query);
         ps.setString(1, airportID);
-        ps.setString(2, airportID);
         ResultSet output = ps.executeQuery();
         %>
-        <table border="3" style=color:black cellspacing="2" cellpadding="2">
+        <table border="4" style=color:black cellspacing="2" cellpadding="2">
                 <tr style=color:pink>
                 <TR>
                     <TH>Arrival Airline ID</TH>
                     <TH>Arrival Flight Number</TH>
-                    <TH>Departure Airline ID</TH>
-                    <TH>Departure Flight Number</TH>
                 </TR>
         <%
         while(output.next())
@@ -32,8 +29,34 @@
                 <TR>
                         <TD> <%= output.getString("a.airlineID") %></td>
                         <TD> <%= output.getString("a.flightNumber") %></TD>
-                        <TD> <%= output.getString("d.airlineID") %></td>
-                        <TD> <%= output.getString("d.flightNumber") %></TD>
+                </TR>
+            <%
+        }
+        %>
+                    </TABLE>
+                </BODY>
+            </HTML>
+        <%
+        String query2 = "SELECT d.airlineID, d.flightNumber FROM Departs AS d WHERE d.airportID = ?";
+        ps = conn.prepareStatement(query2);
+        ps.setString(1, airportID);
+        ResultSet output2 = ps.executeQuery();
+        %>
+        <table border="3" style=color:black cellspacing="2" cellpadding="2">
+                <tr style=color:pink>
+                    <br>
+                    <br>
+                <TR>
+                    <TH>Departure Airline ID</TH>
+                    <TH>Departure Flight Number</TH>
+                </TR>
+        <%
+        while(output2.next())
+        {
+            %>
+                <TR>
+                        <TD> <%= output2.getString("d.airlineID") %></td>
+                        <TD> <%= output2.getString("d.flightNumber") %></TD>
                 </TR>
             <%
         }
@@ -44,6 +67,7 @@
             </HTML>
         <%
         output.close();
+        output2.close();
         conn.close();
     }
     catch(Exception e)
