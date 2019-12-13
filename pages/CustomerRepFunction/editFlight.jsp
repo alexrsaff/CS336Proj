@@ -25,10 +25,7 @@
             </select>
 
             <h1>New update value:</h1>
-            <p> If editing date or time, enter N/A into text box.</p>
             <p><input type="text" name="newValue" required></p>
-            <p><input type="date" name="newDate" ></p>
-            <p><input type="time" name="newtime" ></p>
 
             <input type="submit" value="submit">
 	    </form>

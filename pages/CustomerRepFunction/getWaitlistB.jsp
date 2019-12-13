@@ -51,6 +51,7 @@
                     </tr>
                 <%
                 }
+                out.println("<a href = 'manageInfo.jsp'>Return</a>");
             }
             else {
                 out.println("The flight you're searching for does not exist, <a href = 'getWaitlist.jsp'>please try again.</a>");
