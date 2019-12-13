@@ -15,6 +15,7 @@
 
 <button onclick="location.href = 'SearchFlight.jsp';" type="submit">Search Flight</button>
 <button onclick="location.href = 'viewReservations.jsp';" type="submit">View Reservations</button>
+<button onclick="location.href = 'cancelReservationF.jsp';" type="submit">Cancel Reservations</button>
 <h1></h1>
 <button onclick="location.href = 'logout.jsp';" type="submit">Logout</button>
 
